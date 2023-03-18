@@ -1,0 +1,65 @@
+.faq .faq-list a.collapse, 
+.faq .faq-list a.collapsed:hover, 
+.team .member .social a:hover, 
+.contact .info i,
+ .section-title h2,
+.section-title h3 span,
+.mobile-nav a:hover,
+.mobile-nav .active>a,
+.about .content ul i,
+.mobile-nav li:hover>a,
+.mobile-nav-toggle i,
+.services .icon i,
+.about .content .btn-learn-more,
+.nav-menu .drop-down ul a:hover,
+.nav-menu .drop-down ul .active>a,
+.nav-menu .drop-down ul li:hover>a,
+.features .icon-box:hover a,
+.pricing .box ul i,
+.faq .faq-list a,
+.pricing .box .btn-buy,
+#footer .social-links a,
+#footer .footer-top .footer-links ul a:hover,
+a {
+	color: #e43c5c;
+}
+
+#hero .btn-get-started:hover,
+.contact .php-email-form button[type="submit"],
+.portfolio-details .portfolio-details-carousel .owl-dot.active ,
+.back-to-top i,
+.services .icon-box:hover::before,
+.nav-menu>ul>li>a:before,
+.download-app a.btn,
+.contact .info .email:hover i,
+#footer .footer-newsletter form input[type="submit"],
+.contact .info .address:hover i,
+.contact .info .phone:hover i,
+.pricing .box h4,
+.portfolio #portfolio-flters li:hover,
+.portfolio #portfolio-flters li.filter-active,
+.about .content .btn-learn-more:hover,
+.pricing .box .btn-buy:hover,
+.portfolio .portfolio-item .portfolio-info {
+	background-color: #e43c5c;
+}
+
+
+
+.pricing .box .btn-buy,
+.about .content .btn-learn-more,
+#hero .btn-get-started:hover {
+	border: 2px solid #e43c5c;
+}
+  
+
+.pricing .recommended,
+.contact .php-email-form input:focus,
+.contact .php-email-form textarea:focus {
+	border-color: #e43c5c;
+}
+  
+ 
+ 
+
+ 
