@@ -24,15 +24,15 @@ class HomeController extends Controller
 	*	Function to render homepage and it's content dynamically
 	*/
 
-    public function index(){
-        $category = Category::all();
-        $services = Service::all();
-        $testimonials = Testimonial::all();
-        $employees = Employee::all();
-        $banner = Banner::all();
+public function index(){
+        $category = Category::where('status',1)->get();
+        $services = Service::where('status',1)->get();
+        $testimonials = Testimonial::where('status',1)->get();
+        $employees = Employee::where('status',1)->get();
+        $banner = Banner::where('status',1)->get();
         $demo  = Category::where('slug','demo')->first();
 		$projects = Project::where('cat_id',$demo->id)->get();
         $aboutPage = Page::where('slug', 'about-us')->first();
         return view('front.home.index',compact('category','projects','aboutPage','services','employees','banner','testimonials'));
-    }     
+    }
 }
