@@ -2,7 +2,7 @@
 * Template Name: Tempo - v2.1.0
 * Template URL: https://bootstrapmade.com/tempo-free-onepage-bootstrap-theme/
 * Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
+
 */
 !(function($) {
   "use strict";
@@ -166,8 +166,44 @@
   $(".portfolio-details-carousel").owlCarousel({
     autoplay: true,
     dots: true,
-    loop: true,
+    loop: false,
     items: 1
   });
 
-})(jQuery);
+
+
+
+  var owl = $('.testimonials-slider');
+owl.owlCarousel({
+    items:2,
+    loop:true,
+    margin:50,
+    autoplay:true,
+    autoplayTimeout:1000,
+    autoplayHoverPause:true
+});
+$('.play').on('click',function(){
+    owl.trigger('play.owl.autoplay',[1000]);
+})
+$('.stop').on('click',function(){
+    owl.trigger('stop.owl.autoplay');
+});
+
+  var owl = $('.slider-boxs');
+owl.owlCarousel({
+    items:2,
+    loop:true,
+    margin:10,
+    autoplay:true,
+    autoplayTimeout:1000,
+    autoplayHoverPause:true
+});
+$('.play').on('click',function(){
+    owl.trigger('play.owl.autoplay',[1000]);
+})
+$('.stop').on('click',function(){
+    owl.trigger('stop.owl.autoplay');
+});
+
+}(jQuery));
+

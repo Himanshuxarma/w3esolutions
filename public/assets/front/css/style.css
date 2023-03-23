@@ -1,4 +1,4 @@
- /*--------------------------------------------------------------
+/*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
 body {
@@ -965,8 +965,7 @@ section {
   background:#f9f9f9;
 }
 .contact .info {
-  width: 100%;
- 
+  width: 100%; 
 }
 
 .contact .info i {
@@ -1391,4 +1390,48 @@ section {
   background: #d01d3f;
   color: #fff;
   text-decoration: none;
+
+  /****************service page start**********/
 }
+
+.service-page{
+  background-color: #e43c5c;
+}
+
+.serve-content i{
+  font-size: 40px;
+}
+
+.sevice-heading h1{
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.service-tap .fst-hading h3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size:25 ;
+}
+
+.fst-hading span{
+  color:#e43c5c;
+  padding-right: 10px;
+}
+
+.contant-group img{
+  width:  30% !important;
+  height: 30% !important;
+  border-radius: 50%;
+}
+
+.icones{
+  display: flex;
+} 
+
+.testimonials-slider .img-sec{ max-width:120px; margin-right:20px; max-height:120px; border-radius:100px; }
+.testimonials-slider .img-sec img{ width:120px !important; display: block;  height:120px !important; }
+.testimonials-slider .rating { margin-bottom:10px; display: block; }
+.testimonials-slider .client-name{ margin-bottom: 10px; font-weight:600 !important;  }
+.testimonials-slider .comment p{ font-size:14px;}
