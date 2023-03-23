@@ -9,6 +9,6 @@ use Illuminate\Http\Request;
 class ProjectDetailController extends Controller
 {
     public function index(){
-        return view('front.projectdetail.index');
+        return view('front.project_detail.index');
     }
 }

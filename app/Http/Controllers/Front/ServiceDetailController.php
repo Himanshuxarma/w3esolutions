@@ -9,6 +9,6 @@ use Illuminate\Http\Request;
 class ServiceDetailController extends Controller
 {
     public function index(){
-        return view('front.servicedetail.index');
+        return view('front.service_detail.index');
     }
 }
