@@ -1,9 +1,10 @@
 @extends('front.layouts.master')
 @section('content')
 <style>
-.img {
-  border-radius: 50%;
-}
+    .img {
+        border-radius: 50%;
+    }
+
 </style>
 <!-- ======= About Section ======= -->
 {{!! $aboutPage->description !!}}
@@ -13,69 +14,72 @@
 <section id="services" class="services">
     <div class="container">
 
-        <div class="section-title">
+        <div class="section-title ">
             <h2>Services</h2>
             <h3>We do offer awesome <span>Services</span></h3>
-            <p>Ut possimus qui ut LiveMeetUpsribus culpa velit eveniet modi omnis est adipisci expedita at voluptas
+            <p>Ut possimus qui ut W3esloutions culpa velit eveniet modi omnis est adipisci expedita at voluptas
                 atque vitae autem.</p>
         </div>
 
         <div class="row">
-        @foreach($services as $service)
+            @foreach($services as $service)
             <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-               
+
                 <div class="icon-box">
-                @php $serviceImg = '/assets/front/img/default_product.png'; @endphp
-                        @if(file_exists(public_path('/uploads/services/').$service->image))
-                        @php $serviceImg = asset('/uploads/services').'/'.$service->image; @endphp
-                        @endif
-                    <div class="icon"><img class=""src="{{$serviceImg}}" alt="{{$service->title}}"width="50px"height="50px" /></div>
-                   
+                    @php $serviceImg = '/assets/front/img/default_product.png'; @endphp
+                    @if(file_exists(public_path('/uploads/services/').$service->image))
+                    @php $serviceImg = asset('/uploads/services').'/'.$service->image; @endphp
+                    @endif
+                    <div class="icon"><img class="" src="{{$serviceImg}}" alt="{{$service->title}}" width="50px"
+                            height="50px" /></div>
+
                     <h4 class="title"> <a href="{{route('serviceDetails',$service->id)}}">{{$service->title}}</a></h4>
                     <p class="description">{{$service->description}} </p>
                 </div>
-                
-           
+
+
             </div>
             @endforeach
-           
-        </div>
 
+        </div>
     </div>
+
+
 </section>
 <!-- End Services Section -->
 
 <!-- ======= Testimonial Section ======= -->
-<section id="services" class="services ">
+<section id="testimonials" class="services ">
     <div class="container">
 
         <div class="section-title">
             <h2>Testimonial</h2>
             <h3>We do offer awesome <span>Testimonial</span></h3>
-            <p>Ut possimus qui ut LiveMeetUpsribus culpa velit eveniet modi omnis est adipisci expedita at voluptas
+            <p>Ut possimus qui ut W3esloutions culpa velit eveniet modi omnis est adipisci expedita at voluptas
                 atque vitae autem.</p>
         </div>
 
         <div class="row">
-        @foreach($testimonials as $data)
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-               
-                <div class="icon-box">
-                @php $testimonialImg = '/assets/front/img/default_product.png'; @endphp
-                        @if(file_exists(public_path('/uploads/testimonials/').$data->image))
-                        @php $testimonialImg = asset('/uploads/testimonials').'/'.$data->image; @endphp
-                        @endif
-                    <div class="icon"><img class="img"src="{{$testimonialImg}}" alt="{{$data->title}}"width="100px"height="100px" /></div>
-                   
+            @foreach($testimonials as $data)
+            <div class=" col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0 ">
+
+                <div class="icon-box ">
+                    @php $testimonialImg = '/assets/front/img/testimonials.png'; @endphp
+                    @if(file_exists(public_path('/uploads/testimonials/').$data->image))
+                    @php $testimonialImg = asset('/uploads/testimonials').'/'.$data->image; @endphp
+                    @endif
+                    <div class="icon"><img class="img" src="{{$testimonialImg}}" alt="{{$data->title}}" width="100px"
+                            height="100px" /></div>
+
                     <h4 class="title"> <a href="{{route('serviceDetails',$service->id)}}">{{$data->title}}</a></h4>
                     <p class="description">{{$data->description}} </p>
                     <a href="javascript:void(0);" class="btn-get-started scrollto">Read More</a>
                 </div>
-                
-           
+
+
             </div>
             @endforeach
-           
+
         </div>
 
     </div>
@@ -112,43 +116,46 @@
         <div class="section-title">
             <h2>Project</h2>
             <h3>Check our <span>Project</span></h3>
-            <p>Ut possimus qui ut LiveMeetUpsribus culpa velit eveniet modi omnis est adipisci expedita at voluptas
+            <p>Ut possimus qui ut W3esloutions culpa velit eveniet modi omnis est adipisci expedita at voluptas
                 atque vitae autem.</p>
         </div>
-       
+
         <div class="row">
             <div class="col-lg-12 d-flex justify-content-center">
                 <ul id="portfolio-flters">
                     <li data-filter="*" class="filter-active">All</li>
                     @foreach($category as $data)
-                    <li data-filter=".filter-app">{{$data->name}}</li>
+                    <li data-filter=".{{$data->name}}">{{$data->name}}</li>
                     @endforeach
-                
+
                 </ul>
             </div>
         </div>
-      
-        @foreach($projects as $project)
-        <div class="row portfolio-container">
 
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            @php $productImg = '/assets/front/img/default_product.png'; @endphp
-                            @if(file_exists(public_path('/uploads/projects/').$project->image))
-                            @php $productImg = asset('/uploads/projects').'/'.$project->image; @endphp
-                            @endif
+
+        <div class="row portfolio-container">
+            @foreach($category as $data)
+            @php $projects = \Helper::getProjectsByCategory($data->id); @endphp
+            @foreach($projects as $project)
+            <div class="col-lg-4 col-md-6 portfolio-item {{$data->name}}">
+                @php $productImg = '/assets/front/img/default_product.png'; @endphp
+                @if(file_exists(public_path('/uploads/projects/').$project->image))
+                @php $productImg = asset('/uploads/projects').'/'.$project->image; @endphp
+                @endif
                 <img src="{{$productImg}}" class="img-fluid" alt="">
                 <div class="portfolio-info">
                     <h4>{{$project->title}}</h4>
-                    <p>App</p>
-                    <a href="assets/front/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery"
-                        class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-                    <a href="portfolio-details.html" class="details-link" title="More Details"><i
+                    <!-- <p>App</p> -->
+                    <!-- <a href="assets/front/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a> -->
+                    <a href="{{route('projectDetails',$project->id)}}" class="details-link" title="More Details"><i
                             class="bx bx-link"></i></a>
                 </div>
             </div>
+            @endforeach
+            @endforeach
         </div>
-        @endforeach
-    
+
+
 
     </div>
 </section><!-- End Portfolio Section -->
@@ -257,12 +264,16 @@
         </div>
 
         <div class="row">
-          
-              @foreach($employees as $data)
+
+            @foreach($employees as $data)
             <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                 <div class="member">
                     <div class="member-img">
-                        <img src="assets/front/img/team/team-1.jpg" class="img-fluid" alt="">
+                        @php $employeeImg = '/assets/front/img/default_product.png'; @endphp
+                        @if(file_exists(public_path('/uploads/employees/').$data->photo))
+                        @php $employeeImg = asset('/uploads/employees').'/'.$data->photo; @endphp
+                        @endif
+                        <img src="{{$employeeImg}}" class="img-fluid" alt="">
                         <div class="social">
                             <a href=""><i class="icofont-twitter"></i></a>
                             <a href=""><i class="icofont-facebook"></i></a>
@@ -277,9 +288,10 @@
                 </div>
             </div>
             @endforeach
-          </div>
+        </div>
 
     </div>
 </section><!-- End Team Section -->
+
 
 @endsection

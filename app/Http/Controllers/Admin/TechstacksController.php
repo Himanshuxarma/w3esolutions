@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class TechstacksController extends Controller
 {
     public function index(){
-		$data['techstacks'] = Techstack::orderBy('id', 'asc')->paginate(10);
+		$data['techstacks'] = Techstack::orderBy('id', 'asc')->paginate(20);
 		return view('admin.techstacks.index', $data);
 	}
 		/**
@@ -77,29 +77,28 @@ class TechstacksController extends Controller
 
     public function update($id, Request $request){
 		$request->validate([
-		'technology' => 'required',
-		'tech_icon' => 'required',
-		'description' => 'required'
-		]);
-		$techstacks = Techstack::find($id);
-		if ($request->tech_icon != '') {
+			'technology' => 'required',
+			'description' => 'required'
+			]);
+			$techstacks = Techstack::find($id);
+			if ($request->tech_icon != '') {
 			$path = public_path() . '/uploads/techstacks/';
 			//code for remove old file
 			if ($techstacks->tech_icon != '' && $techstacks->tech_icon != null) {
 			$file_old = $path . $techstacks->tech_icon;
 			if (file_exists($file_old)) {
 			unlink($file_old);
-			}
-			}
+			}}
 			//upload new file
-			if(!empty($request->tech_icon)){
+			if(!empty( $request->tech_icon)){
 			$fileName = time() . '.' . $request->tech_icon->getClientOriginalExtension();
-			$request->tech_icon->move(public_path('/uploads/techstacks'), $fileName);
+			$request->tech_icon->move(public_path('uploads/techstacks'), $fileName);
 			$techstacks->tech_icon = $fileName;
 			}}
-		$techstacks->technology = $request->technology;
-		$techstacks->description = $request->description;
-		$techstacks->save();
+			$techstacks->technology = $request->technology;
+			$techstacks->description = $request->description;
+			$techstacks->status = $request->status ? $request->status : 0;
+			$techstacks->save();
 		return redirect()->route('techstacksList')->with('success', 'Tech Stacks Has Been updated successfully');
 	}
 

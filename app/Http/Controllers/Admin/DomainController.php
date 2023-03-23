@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Middleware\Authenticate;
 use App\Models\Domain;
-use App\Models\Category;
+use App\Models\Techstack;
 
 use Illuminate\Http\Request;
 
@@ -21,8 +21,8 @@ class DomainController extends Controller
 		*/
 
     public function create(){
-        $category = Category::all();
-		return view('admin.domains.create',compact('category'));
+        $technology = Techstack::all();
+		return view('admin.domains.create',compact('technology'));
 	}
 		/**
 		* Store a newly created resource in storage.

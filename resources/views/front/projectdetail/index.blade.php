@@ -1,0 +1,1 @@
+<h1>Project Deatails Page Coming Soon</h1>

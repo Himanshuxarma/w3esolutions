@@ -33,8 +33,8 @@
                                         <label for="technology"> Technology </label>
                                         <select class="form-control" name="technology" id="technology">
                                             <option value="">--Select Technology--</option>
-                                            @foreach($category as $cat){
-                                            <option value="{{$cat->id}}">{{ $cat->name }}</option>
+                                            @foreach($technology as $data){
+                                            <option value="{{$data->id}}">{{ $data->technology }}</option>
                                             }
                                             @endforeach
                                         </select>

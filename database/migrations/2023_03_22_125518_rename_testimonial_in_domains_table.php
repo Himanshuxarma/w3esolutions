@@ -14,7 +14,7 @@ class RenameTestimonialInDomainsTable extends Migration
     public function up()
     {
         Schema::table('domains', function (Blueprint $table) {
-            $table->renameColumn('testimonial', 'technology');
+            $table->renameColumn('testimonial', 'techonology');
         });
     }
 
@@ -26,7 +26,7 @@ class RenameTestimonialInDomainsTable extends Migration
     public function down()
     {
         Schema::table('domains', function (Blueprint $table) {
-            $table->renameColumn('technology', 'testimonial');
+            
         });
     }
 }

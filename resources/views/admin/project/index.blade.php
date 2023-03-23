@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 @section('customstyle')
-@section('product_select','active')
+@section('project_select','active')
 @endsection
 @section('content')
 <div class="row">
@@ -12,7 +12,7 @@
             {{ $message }}
             </p>
             @endif
-                <a class="btn btn-sm btn-success  " href="{{route('projectsCreate')}}"> Create Product</a>
+                <a class="btn btn-sm btn-success  " href="{{route('projectsCreate')}}"> Create project</a>
 
                 <div class="card-tools">
                     <div class="input-group input-group-sm" style="width: 150px;">
@@ -32,7 +32,7 @@
                     <thead>
                         <tr>
                             <th scope="col" width="10%">#</th>
-                            <th scope="col" width="10%">Cat Id</th>
+                            <th scope="col" width="10%">Category </th>
                             <th scope="col" width="10%">Title</th>
                             <th scope="col" width="10%">Slug</th>
                             <th scope="col" width="10%">Description</th>
@@ -46,7 +46,8 @@
                         @foreach ($projects as $project)
                         <tr>
                             <td>{{ $project->id }}</td>
-                            <td>{{ $project->cat_id }}</td>
+                            <td>{{$project->cat_id}}</td>
+                            <!-- <td>{{ (!empty($project->category) && $project->category->name != '') ? $project->category->name : 'N/A'}}</td> -->
                             <td>{{ $project->title }}</td>
                             <td>{{ $project->slug }}</td>
                             <td>{{ strlen(strip_tags($project->description) < 100 ) ? substr(strip_tags($project->description), 0, 50).' ...' : strip_tags($project->description)}}
