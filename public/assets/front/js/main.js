@@ -171,7 +171,7 @@
   });
   var owl = $('.owl-carousel');
 owl.owlCarousel({
-    items:4,
+    items:2,
     loop:true,
     margin:10,
     autoplay:false,

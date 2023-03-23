@@ -9,7 +9,7 @@ use App\Models\Testimonial;
 class TestimonialController extends Controller
 {
     public function index(){
-		$data['testimonials'] = Testimonial::orderBy('id', 'desc')->paginate(10);
+		$data['testimonials'] = Testimonial::orderBy('id', 'asc')->paginate(10);
 		return view('admin.testimonial.index', $data);
 	}
 		/**

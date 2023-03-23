@@ -71,7 +71,7 @@
                     <div class="icon"><img class="img" src="{{$testimonialImg}}" alt="{{$data->title}}" width="100px"
                             height="100px" /></div>
 
-                    <h4 class="title"> <a href="{{route('serviceDetails',$service->id)}}">{{$data->title}}</a></h4>
+                    <h4 class="title">{{$data->title}}</h4>
                     <p class="description">{{$data->description}} </p>
                     <a href="javascript:void(0);" class="btn-get-started scrollto">Read More</a>
                 </div>
