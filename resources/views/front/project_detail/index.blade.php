@@ -1,1 +1,7 @@
-<h1>Project Deatails Page Coming Soon</h1>
+<section class="prodects">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">fssadfsdjlkfsafhaskdfjksdffhjjfhh</div>
+        </div>
+    </div>
+</section>
