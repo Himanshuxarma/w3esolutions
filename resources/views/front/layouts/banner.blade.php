@@ -6,7 +6,10 @@
             <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
-            <?php $i = 1; ?>
+            <?php 
+            $i = 1; 
+            $banner = \Helper::getBanners();
+            ?>
             @foreach($banner as $slider)
                 <div class="carousel-item @if($i==1) active @endif">
                     @php $sliderImg = '/assets/front/img/default_product.png'; @endphp
@@ -15,7 +18,7 @@
                     @endif
                     <img class="slide-img" src="{{$sliderImg}}" class="d-block w-100" alt="Slide">
                     <div class="carousel-caption">
-                        <h3>Welcome to <strong>W3esloutions</strong></h3>
+                        <h3>Welcome to <strong>W3esolutions</strong></h3>
                         <h1>We're Creative Agency</h1>
                         <h2>{{$slider->banner_title}}</h2>
                         <a href="#about" class="btn-get-started scrollto">Get Started</a>

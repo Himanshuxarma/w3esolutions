@@ -27,7 +27,7 @@
             <div class="item">
                <div class="contant-group w-100 d-flex align-items-center">
                   <div class="img-sec">
-                     <img src="/assets/front/img/blog-1.jpg" alt="sliding">
+                     <img src="/assets/front/img/team/team-1.jpg" alt="sliding">
                   </div>
                   <div class="content-sec">
                      <div class="rating">
@@ -46,7 +46,7 @@
             <div class="item">
                <div class="contant-group w-100 d-flex align-items-center">
                   <div class="img-sec">
-                     <img src="/assets/front/img/blog-1.jpg" alt="sliding">
+                     <img src="/assets/front/img/team/team-1.jpg" alt="sliding">
                   </div>
                   <div class="content-sec">
                      <div class="rating">
@@ -65,7 +65,7 @@
             <div class="item">
                <div class="contant-group w-100 d-flex align-items-center">
                   <div class="img-sec">
-                     <img src="/assets/front/img/blog-1.jpg" alt="sliding">
+                     <img src="/assets/front/img/team/team-1.jpg" alt="sliding">
                   </div>
                   <div class="content-sec">
                      <div class="rating">

@@ -29,8 +29,7 @@ class HomeController extends Controller
         $services = Service::where('status',1)->get();
         $testimonials = Testimonial::where('status',1)->get();
         $employees = Employee::where('status',1)->get();
-        $banner = Banner::where('status',1)->get();
-		$aboutPage = Page::where('slug', 'about-us')->first();
-        return view('front.home.index',compact('category','aboutPage','services','employees','banner','testimonials'));
+        $aboutPage = Page::where('slug', 'about-us')->first();
+        return view('front.home.index',compact('category','aboutPage','services','employees','testimonials'));
     }
 }

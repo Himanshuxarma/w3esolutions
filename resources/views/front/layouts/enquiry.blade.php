@@ -8,13 +8,12 @@ $settings = Helper::getSettings();
         <div class="section-title">
             <h2>Contact</h2>
             <h3>Contact <span>Us</span></h3>
-            <p>Ut possimus qui ut W3esloutions culpa velit eveniet modi omnis est adipisci expedita at voluptas atque
+            <p>Ut possimus qui ut W3esolutions culpa velit eveniet modi omnis est adipisci expedita at voluptas atque
                 vitae autem.</p>
         </div>
 
         <div>
-            <iframe style="border:0; width: 100%; height: 400px;"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3556.9523130410876!2d75.70383742368114!3d26.936726211559925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396c4db898b85a2f%3A0x71f2c078534db7f3!2sSonu%20Banna%20Ki%20Hawali!5e0!3m2!1sen!2sin!4v1679384689788!5m2!1sen!2sin"width="600" height="500" style="border:0;" allowfullscreen="" loading="lazy"referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe style="border:0; width: 100%; height: 400px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3556.170611350155!2d75.66844471471805!3d26.96149596447953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396c4d00f4b65531%3A0xdfb30754519e72f0!2sW3esolutions%20Pvt.%20Ltd!5e0!3m2!1sen!2sin!4v1679569712696!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
            
         </div>
 

@@ -3,6 +3,7 @@
 namespace App\Helpers;
 use App\Models\Setting;
 use App\Models\Project;
+use App\Models\Banner;
 
 class Helper {
 
@@ -19,6 +20,15 @@ class Helper {
     public function getProjectsByCategory($categoryId){
         $projects= Project::where('cat_id', $categoryId)->get();
         return $projects;
+    }
+
+    /**
+     * Himanshu Sharma
+     * Globally fetching banners
+     */
+    public static function getBanners(){
+        $banner = Banner::where('status',1)->get();
+        return $banner;
     }
 }
 
