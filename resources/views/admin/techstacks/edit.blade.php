@@ -23,7 +23,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="tech_icon">Tech Icon</label>
-                                        <input type="text" name="tech_icon" class="form-control" value="{{$techstacks->tech_icon}}" require placeholder="tech_icon">
+                                        <input type="file" name="tech_icon" class="form-control" value="{{$techstacks->tech_icon}}" require>
+                                        <img src="/uploads/techstacks/{{$techstacks->tech_icon}}" alt="{{$techstacks->tech_icon}}" width="20%" />
                                     </div>
                                 </div>
                             </div>

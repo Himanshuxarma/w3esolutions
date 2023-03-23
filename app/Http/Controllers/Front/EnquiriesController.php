@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 use Auth;
 use Mail;
+use App\Mail\ContactMail;
 use App\Http\Middleware\Authenticate;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -26,10 +27,10 @@ class EnquiriesController extends Controller{
 	* 	Ramesh Singh
 	*	Function to render Enquiry  Store and it's content Enquiry dynamically
 	*/
-	public function store(Request $request){
-        dd($request);
+	public function sendEmail(Request $request){
+        // dd($request);
 			$request->validate([
-			'name' => 'required',
+			'full_name' => 'required',
 			'email' => 'required',
 			'phone' => 'required',
 			'subject' => 'required',
@@ -41,7 +42,12 @@ class EnquiriesController extends Controller{
 		$contacts->phone = $request->phone;
 		$contacts->subject = $request->subject;
 		$contacts->message = $request->message;
-		$contacts->save();
+		if($contacts->save()){
+			Mail::to('admin@w3esolutions.com')->send(new ContactMail($contacts));
+			
+			
+		}
+
 			
 		return redirect()->route('contactForm')->with('success','Your Enquiry has been sent, Admin will contact you soon.');
 	}

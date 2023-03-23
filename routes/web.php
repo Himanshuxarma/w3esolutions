@@ -31,14 +31,15 @@ use App\Http\Controllers\Front\HomeController;
 Route::get('/', [App\Http\Controllers\Front\HomeController::class, 'index']);
 Route::get('/servicedetail/{id}', [App\Http\Controllers\Front\ServiceDetailController::class, 'index'])->name('serviceDetails');
 Route::get('/contact-us', [App\Http\Controllers\Front\EnquiriesController::class, 'index'])->name("contactForm");
-Route::post('contact/store', [App\Http\Controllers\Front\EnquiriesController::class, 'store'])->name('contactsSave');
+Route::post('contact/store', [App\Http\Controllers\Front\EnquiriesController::class, 'sendEmail'])->name('contactsSave');
+Route::get('/projectdetail/{id}', [App\Http\Controllers\Front\ProjectDetailController::class, 'index'])->name('projectDetails');
 
 
-Route::prefix("/admin")->namespace("Admin")->group(function(){
-    Route::namespace("Auth")->group(function(){
-        Route::group(["middleware" => ["guest:admin"]], function () {
-            Route::get("login", [App\Http\Controllers\Admin\Auth\LoginController::class, 'login',])->name('login');
-            Route::post("login", [App\Http\Controllers\Admin\Auth\LoginController::class, 'postLogin',]);
+    Route::prefix("/admin")->namespace("Admin")->group(function(){
+         Route::namespace("Auth")->group(function(){
+             Route::group(["middleware" => ["guest:admin"]], function () {
+                Route::get("login", [App\Http\Controllers\Admin\Auth\LoginController::class, 'login',])->name('login');
+                Route::post("login", [App\Http\Controllers\Admin\Auth\LoginController::class, 'postLogin',]);
         });
         Route::get("logout", [App\Http\Controllers\Admin\Auth\LoginController::class, "logout",])->name("adminLogout");
     });
