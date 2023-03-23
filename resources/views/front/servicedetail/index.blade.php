@@ -20,7 +20,7 @@
    <div class="container">
       <div class="section-title">
          <h2>Testimonals</h2>
-         <h3>Client <span>Reviews</span></h3>
+         <h3>Client2 <span>Reviews</span></h3>
       </div>
       <div class="row">
          <div class="testimonials-slider owl-carousel owl-theme">
@@ -69,14 +69,14 @@
                   </div>
                   <div class="content-sec">
                      <div class="rating">
-                        <i class="icofont-star"></i>
+                     <i class="icofont-star"></i>
                         <i class="icofont-star"></i>
                         <i class="icofont-star"></i>
                         <i class="icofont-star"></i>
                      </div>
-                     <div class="client-name">Parth Kumar</div>
+                     <div class="client-name">Parth singh</div>
                      <div class="comment">
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+                        <p>Contrary to popular belief Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
                      </div>
                   </div>
                </div>
