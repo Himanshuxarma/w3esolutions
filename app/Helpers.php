@@ -16,7 +16,7 @@ class Helper {
     }
 
 
-    public function getProjectsByCategory($categoryId){
+    public static function getProjectsByCategory($categoryId){
         $projects= Project::where('cat_id', $categoryId)->get();
         return $projects;
     }

@@ -1437,6 +1437,7 @@ section {
   display: flex;
 } 
 
+
 .testimonials-slider .img-sec{ max-width:120px; margin-right:20px; max-height:120px; border-radius:100px; }
 .testimonials-slider .img-sec img{ width:120px !important; display: block;  height:120px !important; }
 .testimonials-slider .rating { margin-bottom:10px; display: block; }
