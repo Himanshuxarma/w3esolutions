@@ -17,7 +17,7 @@
         <div class="section-title ">
             <h2>Services</h2>
             <h3>We do offer awesome <span>Services</span></h3>
-            <p>Ut possimus qui ut W3esloutions culpa velit eveniet modi omnis est adipisci expedita at voluptas
+            <p>Ut possimus qui ut W3esolutions culpa velit eveniet modi omnis est adipisci expedita at voluptas
                 atque vitae autem.</p>
         </div>
 
@@ -116,7 +116,7 @@
         <div class="section-title">
             <h2>Project</h2>
             <h3>Check our <span>Project</span></h3>
-            <p>Ut possimus qui ut W3esloutions culpa velit eveniet modi omnis est adipisci expedita at voluptas
+            <p>Ut possimus qui ut W3esolutions culpa velit eveniet modi omnis est adipisci expedita at voluptas
                 atque vitae autem.</p>
         </div>
 
