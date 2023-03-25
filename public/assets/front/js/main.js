@@ -139,7 +139,7 @@
     }, 1500, 'easeInOutExpo');
     return false;
   });
-
+  
   // Porfolio isotope and filter
   $(window).on('load', function() {
     var portfolioIsotope = $('.portfolio-container').isotope({
@@ -169,21 +169,38 @@
     loop: false,
     items: 1
   });
-  var owl = $('.owl-carousel');
-owl.owlCarousel({
-    items:4,
-    loop:true,
-    margin:10,
-    autoplay:false,
-    autoplayTimeout:1000,
-    autoplayHoverPause:true
-});
+  
+  jQuery('.project-slider').owlCarousel({
+      items:4,
+      loop:true,
+      margin:10,
+      autoplay:true,
+      nav: true,
+      autoplayHoverPause:true
+  });
+
+  jQuery('.review-slider').owlCarousel({
+      items:2,
+      loop:true,
+      margin:10,
+      autoplay:true,
+      nav: true,
+      autoplayHoverPause:true
+  });
+  $('.play').on('click',function(){
+      owl.trigger('play.owl.autoplay',[1000])
+  });
+  $('.stop').on('click',function(){
+      owl.trigger('stop.owl.autoplay')
+  });
+
+
 $('.play').on('click',function(){
-    owl.trigger('play.owl.autoplay',[1000])
+    owl.trigger('play.owl.autoplay',[1000]);
 })
 $('.stop').on('click',function(){
-    owl.trigger('stop.owl.autoplay')
-})
+    owl.trigger('stop.owl.autoplay');
+});
 
 
 
@@ -223,4 +240,6 @@ $('.stop').on('click',function(){
 });
 
 }(jQuery));
+
+
 
