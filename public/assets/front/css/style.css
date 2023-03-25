@@ -582,13 +582,9 @@ section {
   background-size: cover;
   padding: 80px 0;
 }
-<<<<<<< HEAD
-.download-app img.iphone-frame{ max-width:100%; height:auto; }
-=======
 
 .download-app img.iphone-frame{ max-width:100%; height:360px; }
 
->>>>>>> ade91786a41af69e9b004ba24b912ba8061d3ebd
 .download-app h2 {
   color: #fff;
   font-size: 35px;
@@ -1191,7 +1187,7 @@ section {
 }
 #footer .footer-newsletter form input[type="submit"]:hover {
   background: #d01d3f;
-}
+} 
 #footer .credits {
   padding-top: 5px;
   font-size: 13px;
