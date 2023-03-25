@@ -21,9 +21,10 @@
                 atque vitae autem.</p>
         </div>
 
-        <div class="services-slider owl-carousel owl-theme">
+        <div class="row">
             @foreach($services as $service)
-            
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+
                 <div class="icon-box">
                     @php $serviceImg = '/assets/front/img/default_product.png'; @endphp
                     @if(file_exists(public_path('/uploads/services/').$service->image))
@@ -37,7 +38,7 @@
                 </div>
 
 
-            
+            </div>
             @endforeach
 
         </div>
@@ -48,7 +49,7 @@
 <!-- End Services Section -->
 
 <!-- ======= Testimonial Section ======= -->
-<section id="testimonials" class=" ">
+<section id="testimonials" class="services ">
     <div class="container">
 
         <div class="section-title">
@@ -98,11 +99,11 @@
                     and scrambled it to make a type specimen book.</p>
                 <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining
                     essentially unchanged.</p>
-                <a class="btn align-middle" href="#">Play Store</a> <a class="btn align-middle" href="#">App Store</a>
+                <a class="btn align-middle" href="javascript:void(0);">Play Store</a> <a class="btn align-middle" href="javascript:void(0);">App Store</a>
             </div>
 
             <div class="col-xs-5 col-md-5 col-sm-12 text-center">
-                <img class="iphone-frame" src="assets/front/img/iphone-frame.png" alt="" />
+                <img class="iphone-frame" src="assets/front/img/iphone14-frame.png" alt="" />
             </div>
         </div>
     </div>
@@ -258,7 +259,7 @@
         <div class="section-title">
             <h2>Employee</h2>
             <h3>Our Hardworking <span>Employee</span></h3>
-            <p>Ut possimus qui ut LiveMeetUpsribus culpa velit eveniet modi omnis est adipisci expedita at voluptas
+            <p>Ut possimus qui ut W3esolutions culpa velit eveniet modi omnis est adipisci expedita at voluptas
                 atque vitae autem.</p>
         </div>
 
@@ -274,10 +275,10 @@
                         @endif
                         <img src="{{$employeeImg}}" class="img-fluid" alt="">
                         <div class="social">
-                            <a href=""><i class="icofont-twitter"></i></a>
-                            <a href=""><i class="icofont-facebook"></i></a>
-                            <a href=""><i class="icofont-instagram"></i></a>
-                            <a href=""><i class="icofont-linkedin"></i></a>
+                            <a href="javascript:void(0);"><i class="icofont-twitter"></i></a>
+                            <a href="javascript:void(0);"><i class="icofont-facebook"></i></a>
+                            <a href="javascript:void(0);"><i class="icofont-instagram"></i></a>
+                            <a href="javascript:void(0);"><i class="icofont-linkedin"></i></a>
                         </div>
                     </div>
                     <div class="member-info">
