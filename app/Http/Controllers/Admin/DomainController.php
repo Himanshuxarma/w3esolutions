@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class DomainController extends Controller
 {
     public function index(){
-		$data['domains'] = Domain::orderBy('id', 'desc')->paginate(10);
+		$data['domains'] = Domain::orderBy('id', 'ASC')->paginate(10);
 		return view('admin.domains.index', $data);
 	}
 		/**

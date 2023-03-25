@@ -9,7 +9,7 @@ use App\Models\Testimonial;
 class TestimonialController extends Controller
 {
     public function index(){
-		$data['testimonials'] = Testimonial::orderBy('id', 'desc')->paginate(10);
+		$data['testimonials'] = Testimonial::orderBy('id', 'ASC')->paginate(10);
 		return view('admin.testimonial.index', $data);
 	}
 		/**
@@ -29,7 +29,6 @@ class TestimonialController extends Controller
 		*/
 		
     public function store(Request $request){
-		// dd($request);
 		$request->validate([
 		'title' => 'required',
 		'description' => 'required',
@@ -55,8 +54,6 @@ class TestimonialController extends Controller
 		* @param  \App\Testimonial  $testimonials
 		* @return \Illuminate\Http\Response
 		*/
-
-   
 
     public function edit($id){
 		$testimonials = Testimonial::find($id);

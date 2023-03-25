@@ -76,7 +76,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{url('/admin/projects')}}" class="nav-link @yield('project_select')">
-                        <i class="nav-icon fas fa-th"></i>
+                        <i class="nav-icon fas fa-project-diagram"></i>
                         <p>
                             Projects
                         </p>
@@ -100,7 +100,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{url('/admin/employees')}}" class="nav-link @yield('employees_select')">
-                        <i class="nav-icon fa fa-quote-left"></i>
+                        <i class="nav-icon fa fa-users"></i>
                         <p>
                         Employee
                         </p>
@@ -108,7 +108,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{url('/admin/techstacks')}}" class="nav-link @yield('techstacks_select')">
-                        <i class="nav-icon fa fa-quote-left"></i>
+                        <i class="nav-icon fas fa-ethernet"></i>
                         <p>
                             Tech Stacks
                         </p>
@@ -116,7 +116,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{url('/admin/domains')}}" class="nav-link @yield('domains_select')">
-                        <i class="nav-icon fa fa-quote-left"></i>
+                        <i class="nav-icon fa fa-server"></i>
                         <p>
                              Domains
                         </p>

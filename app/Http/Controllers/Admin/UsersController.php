@@ -11,9 +11,9 @@ class UsersController extends Controller
 {
     public function index(){
        
-        $data['users'] = User::orderBy('id')->paginate(10);
+        $data['users'] = User::orderBy('id','ASC')->paginate(10);
         return view('admin.users.index',$data);
-        }
+    }
         
         /**
         * Show the form for creating a new resource.

@@ -33,6 +33,7 @@ Route::get('/service_detail/{id}', [App\Http\Controllers\Front\ServiceDetailCont
 Route::get('/contact-us', [App\Http\Controllers\Front\EnquiriesController::class, 'index'])->name("contactForm");
 Route::post('contact/store', [App\Http\Controllers\Front\EnquiriesController::class, 'sendEmail'])->name('contactsSave');
 Route::get('/project_detail/{id}', [App\Http\Controllers\Front\ProjectDetailController::class, 'index'])->name('projectDetails');
+Route::get('/reviews', [App\Http\Controllers\Front\ReviewsController::class, 'index'])->name('reviewsDetails');
 
 
     Route::prefix("/admin")->namespace("Admin")->group(function(){

@@ -13,7 +13,7 @@ class PagesController extends Controller
     }
 
     public function index(){
-		$data['pages'] = Page::orderBy('id', 'desc')->paginate(10);
+		$data['pages'] = Page::orderBy('id', 'ASC')->paginate(10);
 		return view('admin.page.index', $data);
 	}
 		/**

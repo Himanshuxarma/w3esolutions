@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 class BannersController extends Controller{
 
   	 public function index(){	
-		$data['banners'] = Banner::orderBy('id', 'desc')->paginate(10);
+		$data['banners'] = Banner::orderBy('id', 'ASC')->paginate(10);
 		return view('admin.banners.index', $data);
 	}
 

@@ -21,13 +21,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="first_name"> First Name </label>
-                                        <input type="text" name="first_name" class="form-control" value="{{$settings->first_name}}" id="first_name" require placeholder="Enter  First Name">
+                                        <input type="text" name="first_name" class="form-control" value="{{$settings->first_name}}"  require>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="last_name">Last Name</label>
-                                        <input type="text" name="last_name" class="form-control" value="{{$settings->last_name}}" id="last_name" require placeholder="last_name">
+                                        <input type="text" name="last_name" class="form-control" value="{{$settings->last_name}}"  require >
                                     </div>
                                 </div>
                             </div>
@@ -36,13 +36,14 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="email"> Email </label>
-                                        <input type="email" name="email" class="form-control" id="email" value="{{$settings->email}}" require placeholder="Enter  Email">
+                                        <input type="email" name="email" class="form-control"  value="{{$settings->email}}" require >
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="phone1">Phone1</label>
-                                        <input type="text" name="phone1" class="form-control" value="{{$settings->phone1}}" id="phone1" require placeholder="phone1">
+                                        <input type="text" name="phone1" class="form-control" value="{{$settings->phone1}}" minlength="10" maxlength="10"
+                                onkeypress="return isNumberKey(event)" require>
                                     </div>
                                 </div>
                             </div>
@@ -52,13 +53,14 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="phone2"> Phone2 </label>
-                                        <input type="text" name="phone2" class="form-control" value="{{$settings->phone2}}" id="phone2" requireplaceholder="Enter Phone2">
+                                        <input type="text" name="phone2" class="form-control" value="{{$settings->phone2}}"  minlength="10" maxlength="10"
+                                onkeypress="return isNumberKey(event)">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="front_logo">Front Logo</label>
-                                        <input type="file" name="front_logo" class="form-control" id="front_logo" require placeholder="Front Logo">
+                                        <input type="file" name="front_logo" class="form-control" require >
                                         <img src="/uploads/settings/{{$settings->front_logo}}"alt="{{$settings->front_logo}}" width="20%" />
                                     </div>
                                 </div>
@@ -69,14 +71,14 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="back_logo"> Back Logo </label>
-                                        <input type="file" name="back_logo" class="form-control" id="back_logo" require placeholder="Enter  Back Logo">
+                                        <input type="file" name="back_logo" class="form-control"  require >
                                         <img src="/uploads/settings/{{$settings->back_logo}}"alt="{{$settings->back_logo}}" width="20%" />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="profile_picture">Profile Picture</label>
-                                        <input type="file" name="profile_picture" class="form-control" id="profile_picture" require placeholder="Profile Picture">
+                                        <input type="file" name="profile_picture" class="form-control" id="profile_picture" require >
                                         <img src="/uploads/settings/{{$settings->profile_picture}}"alt="{{$settings->profile_picture}}" width="20%" />
                                     </div>
                                 </div>
@@ -86,13 +88,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="address"> Address </label>
-                                        <input type="text" name="address" class="form-control" value="{{$settings->address}}" id="address" require placeholder="Enter  Address">
+                                        <input type="text" name="address" class="form-control" value="{{$settings->address}}" require>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="last_login">Last Login</label>
-                                        <input type="date" name="last_login" class="form-control" value="{{$settings->last_login}}" id="last_login" require placeholder="last_login">
+                                        <input type="date" name="last_login" class="form-control" value="{{$settings->last_login}}" require >
                                     </div>
                                 </div>
                             </div>
@@ -101,13 +103,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="facebook_link"> Facebook Link </label>
-                                        <input type="text" name="facebook_link" class="form-control" value="{{$settings->facebook_link}}" id="facebook_link" require placeholder="Enter  Facebook Link">
+                                        <input type="text" name="facebook_link" class="form-control" value="{{$settings->facebook_link}}" require >
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="instagram_link">Instagram Link</label>
-                                        <input type="text" name="instagram_link" class="form-control" value="{{$settings->instagram_link}}" id="instagram_link" require placeholder="instagram_link">
+                                        <input type="text" name="instagram_link" class="form-control" value="{{$settings->instagram_link}}" require>
                                     </div>
                                 </div>
                             </div>
@@ -115,13 +117,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="google_link"> Google Link </label>
-                                        <input type="text" name="google_link" class="form-control" value="{{$settings->google_link}}" id="google_link" require placeholder="Enter  google Link">
+                                        <input type="text" name="google_link" class="form-control" value="{{$settings->google_link}}" require>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="linkedin_link">Linkedin Link</label>
-                                        <input type="text" name="linkedin_link" class="form-control" value="{{$settings->linkedin_link}}" id="linkedin_link" require placeholder="Linkedin Link">
+                                        <input type="text" name="linkedin_link" class="form-control" value="{{$settings->linkedin_link}}"  require >
                                     </div>
                                 </div>
                             </div>
@@ -129,13 +131,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="pinterest_link"> Pinterest Link </label>
-                                        <input type="text" name="pinterest_link" class="form-control" value="{{$settings->pinterest_link}}" id="pinterest_link" require placeholder="Enter  Pinterest Link">
+                                        <input type="text" name="pinterest_link" class="form-control" value="{{$settings->pinterest_link}}"  require >
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="Snapchat_link">Snapchat Link</label>
-                                        <input type="text" name="Snapchat_link" class="form-control" value="{{$settings->snapchat_link}}" id="Snapchat_link" require placeholder="Snapchat Link">
+                                        <input type="text" name="Snapchat_link" class="form-control" value="{{$settings->snapchat_link}}"  require >
                                     </div>
                                 </div>
                             </div>
@@ -143,13 +145,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="twitter_link"> Twitter Link </label>
-                                        <input type="text" name="twitter_link" class="form-control" id="twitter_link" value="{{$settings->twitter_link}}" require placeholder="Enter  Twitter Link">
+                                        <input type="text" name="twitter_link" class="form-control" value="{{$settings->twitter_link}}" require>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="themeforest_link">Themeforest Link</label>
-                                        <input type="text" name="themeforest_link" class="form-control" id="themeforest_link" value="{{$settings->themeforest_link}}" require placeholder="Themeforest Link">
+                                        <input type="text" name="themeforest_link" class="form-control"  value="{{$settings->themeforest_link}}" require>
                                     </div>
                                 </div>
                             </div>
@@ -157,13 +159,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="projects_done"> Projects Done </label>
-                                        <input type="text" name="projects_done" class="form-control" id="projects_done" value="{{$settings->projects_done}}" require placeholder="Enter Projects Done">
+                                        <input type="text" name="projects_done" class="form-control" value="{{$settings->projects_done}}" require >
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="satisfied_clients">Satisfied Clients</label>
-                                        <input type="text" name="satisfied_clients" class="form-control" id="satisfied_clients" value="{{$settings->satisfied_clients}}" require placeholder="Satisfied Clients">
+                                        <input type="text" name="satisfied_clients" class="form-control"  value="{{$settings->satisfied_clients}}" require >
                                     </div>
                                 </div>
                             </div>
@@ -171,13 +173,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="country_numbers"> Country Numbers Done </label>
-                                        <input type="text" name="country_numbers" class="form-control" id="country_numbers" value="{{$settings->country_numbers}}" require placeholder="Enter Country Number">
+                                        <input type="text" name="country_numbers" class="form-control"  value="{{$settings->country_numbers}}" require >
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="employee_counts">Employee Counts</label>
-                                        <input type="text" name="employee_counts" class="form-control" id="employee_counts" value="{{$settings->employee_counts}}" require placeholder="Employee Counts">
+                                        <input type="text" name="employee_counts" class="form-control" value="{{$settings->employee_counts}}" require >
                                     </div>
                                 </div>
                             </div>
@@ -191,58 +193,7 @@
         </div>
     </div>
 </section>
-<script>
-    $(function () {
 
-        $('#quickForm').validate({
-                rules: {
-                    banner_title: {
-                        required: true,
-                        banner_title: true,
-                    },
-                    page_name: {
-                        required: true,
-
-                    },
-                    banner_image: {
-                        required: true
-                    },
-                    status: {
-                        required: true
-                    },
-                },
-                messages: {
-                    banner_title: {
-                        required: "Please enter a banner title",
-
-                    },
-                    page_name: {
-                        required: "Please enter a page name",
-
-                    },
-                    banner_image: {
-                        required: "Please enter a banner image",
-
-                    },
-
-
-                },
-            },
-            errorElement: 'span',
-            errorPlacement: function (error, element) {
-                error.addClass('invalid-feedback');
-                element.closest('.form-group').append(error);
-            },
-            highlight: function (element, errorClass, validClass) {
-                $(element).addClass('is-invalid');
-            },
-            unhighlight: function (element, errorClass, validClass) {
-                $(element).removeClass('is-invalid');
-            }
-        });
-    });
-
-</script>
 @endsection
 @section('customscript')
 <script>
@@ -256,6 +207,15 @@
             theme: "monokai"
         });
     })
+
+</script>
+<script>
+    function w(evt) {
+        var charCode = (evt.which) ? evt.which : evt.keyCode
+        if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+        return true;
+    }
 
 </script>
 @endsection

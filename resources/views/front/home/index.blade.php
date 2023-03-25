@@ -71,7 +71,7 @@
                     <div class="icon"><img class="img" src="{{$testimonialImg}}" alt="{{$data->title}}" width="100px"
                             height="100px" /></div>
 
-                    <h4 class="title"> <a href="{{route('serviceDetails',$service->id)}}">{{$data->title}}</a></h4>
+                    <h4 class="title"><a href="{{route('reviewsDetails')}}">{{$data->title}}</a></h4>
                     <p class="description">{{$data->description}} </p>
                     <a href="javascript:void(0);" class="btn-get-started scrollto">Read More</a>
                 </div>
@@ -99,11 +99,11 @@
                     and scrambled it to make a type specimen book.</p>
                 <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining
                     essentially unchanged.</p>
-                <a class="btn align-middle" href="#">Play Store</a> <a class="btn align-middle" href="#">App Store</a>
+                <a class="btn align-middle" href="javascript:void(0);">Play Store</a> <a class="btn align-middle" href="javascript:void(0);">App Store</a>
             </div>
 
             <div class="col-xs-5 col-md-5 col-sm-12 text-center">
-                <img class="iphone-frame" src="assets/front/img/iphone-frame.png" alt="" />
+                <img class="iphone-frame" src="assets/front/img/iphone14-frame.png" alt="" />
             </div>
         </div>
     </div>
@@ -259,7 +259,7 @@
         <div class="section-title">
             <h2>Employee</h2>
             <h3>Our Hardworking <span>Employee</span></h3>
-            <p>Ut possimus qui ut LiveMeetUpsribus culpa velit eveniet modi omnis est adipisci expedita at voluptas
+            <p>Ut possimus qui ut W3esolutions culpa velit eveniet modi omnis est adipisci expedita at voluptas
                 atque vitae autem.</p>
         </div>
 
@@ -275,10 +275,10 @@
                         @endif
                         <img src="{{$employeeImg}}" class="img-fluid" alt="">
                         <div class="social">
-                            <a href=""><i class="icofont-twitter"></i></a>
-                            <a href=""><i class="icofont-facebook"></i></a>
-                            <a href=""><i class="icofont-instagram"></i></a>
-                            <a href=""><i class="icofont-linkedin"></i></a>
+                            <a href="javascript:void(0);"><i class="icofont-twitter"></i></a>
+                            <a href="javascript:void(0);"><i class="icofont-facebook"></i></a>
+                            <a href="javascript:void(0);"><i class="icofont-instagram"></i></a>
+                            <a href="javascript:void(0);"><i class="icofont-linkedin"></i></a>
                         </div>
                     </div>
                     <div class="member-info">

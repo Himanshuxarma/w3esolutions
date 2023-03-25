@@ -41,13 +41,21 @@
                        </tr>
                     </thead>
                     <tbody>
+                    
+
                         @foreach ($testimonials as $data)
                         <tr>
                             <td>{{ $data->id }}</td>
                             <td>{{ $data->title }}</td>
                             <td>{{ strlen(strip_tags($data->description) < 100 ) ? substr(strip_tags($data->description), 0, 100).' ...' : strip_tags($data->description)}}</td>
                             <td><img src="/uploads/testimonials/{{$data->image}}" alt="{{$data->image}}" width="50%"/></td>
-                            <td>{{$data->rating}}</td>
+                           
+                            <td class="rating">
+                            @for($i=1; $i<=$data->rating; $i++) 
+                            <span  style="color: orange;"class="fa fa-star"></span>
+                            @endfor
+                            </td>
+                        
                                  @if($data->status == "1")
 
                             <td class="project-state">
