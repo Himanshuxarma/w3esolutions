@@ -8,6 +8,11 @@ use App\Http\Middleware\Authenticate;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Enquiry;	
+use App\Models\Page;	
+use App\Models\Service;	
+use App\Models\Testimonial;
+use App\Models\Category;
+use App\Models\Employee;
 
 class EnquiriesController extends Controller{
 
@@ -20,7 +25,12 @@ class EnquiriesController extends Controller{
 	*	Function to render Enquiry and it's content Enquiry dynamically
 	*/
     public function index(){
-        return view('front.home.index');
+		$aboutPage = Page::where('slug','about-us')->first();
+		$services = Service::where('status',1)->get();
+		$testimonials =Testimonial::where('status',1)->get();
+		$category = Category:: where('status',1)->get();
+		$employees = Employee ::where('status',1)->get();
+        return view('front.home.index', compact('aboutPage','services','testimonials','category','employees'));
     }
 
 	/**

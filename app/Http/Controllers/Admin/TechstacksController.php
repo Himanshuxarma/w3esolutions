@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class TechstacksController extends Controller
 {
     public function index(){
-		$data['techstacks'] = Techstack::orderBy('id', 'asc')->paginate(20);
+		$data['techstacks'] = Techstack::orderBy('id', 'ASC')->paginate(20);
 		return view('admin.techstacks.index', $data);
 	}
 		/**

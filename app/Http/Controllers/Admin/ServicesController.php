@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class ServicesController extends Controller
 {
 		public function index(){
-			$data['services'] = Service::orderBy('id')->paginate(10);
+			$data['services'] = Service::orderBy('id','ASC')->paginate(10);
 			return view('admin.service.index', $data);
 		}
 			/**
@@ -108,7 +108,6 @@ class ServicesController extends Controller
 			return redirect()->route('servicesList')->with('success','services has been deleted successfully');
 		}
 		public function service_status($id){
-			// dd("dhdjs");
 			$services = Service::find($id);
 			if($services->status == 1){
 			$services->status = 0;

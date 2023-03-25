@@ -21,10 +21,9 @@
                 atque vitae autem.</p>
         </div>
 
-        <div class="row">
+        <div class="services-slider owl-carousel owl-theme">
             @foreach($services as $service)
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-
+            
                 <div class="icon-box">
                     @php $serviceImg = '/assets/front/img/default_product.png'; @endphp
                     @if(file_exists(public_path('/uploads/services/').$service->image))
@@ -38,7 +37,7 @@
                 </div>
 
 
-            </div>
+            
             @endforeach
 
         </div>
@@ -49,7 +48,7 @@
 <!-- End Services Section -->
 
 <!-- ======= Testimonial Section ======= -->
-<section id="testimonials" class="services ">
+<section id="testimonials" class=" ">
     <div class="container">
 
         <div class="section-title">
@@ -71,7 +70,7 @@
                     <div class="icon"><img class="img" src="{{$testimonialImg}}" alt="{{$data->title}}" width="100px"
                             height="100px" /></div>
 
-                    <h4 class="title">{{$data->title}}</h4>
+                    <h4 class="title"><a href="{{route('reviewsDetails')}}">{{$data->title}}</a></h4>
                     <p class="description">{{$data->description}} </p>
                     <a href="javascript:void(0);" class="btn-get-started scrollto">Read More</a>
                 </div>

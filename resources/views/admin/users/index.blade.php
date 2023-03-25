@@ -16,6 +16,7 @@
                         <table id="example2" class="table table-bordered table-hover">
                             <thead>
                                 <tr>
+                                    <th>Id</th>
                                     <th>UserName</th>
                                     <th>Email</th>
                                     <th>Email Verified At</th>
@@ -25,6 +26,7 @@
                             <tbody>
                                 @foreach($users as $data)
                                 <tr>
+                                    <td>{{$data->id}}</td>
                                     <td>{{$data->name}}</td>
                                     <td>{{$data->email}}</td>
                                     <td>{{$data->email_verified_at}}</td>

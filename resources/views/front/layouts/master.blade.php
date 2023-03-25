@@ -17,7 +17,16 @@
 @yield('content')
     
     <!-- ======= Contact Section ======= -->
-  @include('front.layouts.enquiry')
+    <?php
+    if(Request::is('/')) {
+      
+    ?>
+@include('front.layouts.enquiry')
+<?php
+    }
+    ?>
+    
+  
     <!-- End Contact Section -->
 
   </main>

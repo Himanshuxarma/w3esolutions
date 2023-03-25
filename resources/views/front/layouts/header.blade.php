@@ -1,19 +1,37 @@
+<?php $settings = Helper::getSettings();?>
 <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo mr-auto"><a href="{{url('/')}}">W3esolutions</a></h1>
+      <h1 class="logo mr-auto"><a href="{{url('/')}}"> <span style="color:#e43c5c;">W3e</span>solutions</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
+      <!-- <a href="{{url('/')}}" class="logo mr-auto">
+                        @php
+                        $logo = !empty($settings) && !empty($settings->front_logo) ? $settings->front_logo : '';
+                        @endphp
+        <img src="/uploads/settings/{{$logo}}" alt="{{$logo}}" class="img-fluid"></a> -->
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="{{url('/')}}">Home</a></li>
+              <?php
+    if(Request::is('/')) {
+      ?>
+       <li class="active"><a href="{{url('/')}}">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#testimonials">Testimonial</a></li>
           <li><a href="#portfolio">Project</a></li>
           <li><a href="#team">Employee</a></li>
           <li><a href="#contact">Contact</a></li>
+        <?php
+    } else {
+      ?>
+      <li class="active"><a href="{{url('/')}}">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#testimonials">Testimonial</a></li>
+      <?php
+    }
+    ?>
+          
           <!-- <li class="drop-down"><a href="">Drop Down</a>
             <ul>
               <li><a href="javascript:void(0);">Drop Down 1</a></li>

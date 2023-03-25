@@ -590,14 +590,18 @@ section {
 }
 
 .services .icon {
-  margin-bottom: 15px;
+  width:auto;
+  height:70px;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  margin:0px auto  15px;
 }
 
-.services .icon i {
-  font-size: 48px;
-  line-height: 1;
-  
-  transition: all 0.3s ease-in-out;
+.services .icon img {
+  max-width:100%;
+  max-width:100%;
+  width:auto;
 }
 
 .services .title {

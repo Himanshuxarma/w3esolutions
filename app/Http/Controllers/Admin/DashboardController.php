@@ -23,7 +23,7 @@ class DashboardController extends Controller
           $pages = Page::count();
           $enquiry = Enquiry::count();
           $settings = Setting::count();
-            return view('admin.dashboard.index',compact('users','pages','enquiry','settings'));
+          return view('admin.dashboard.index',compact('users','pages','enquiry','settings'));
         }
 }
 ?>
