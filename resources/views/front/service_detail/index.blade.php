@@ -204,54 +204,20 @@
          <h3>Similar <span>Projects</span></h3>
       </div>
       <div class="ser-carousels project-slider owl-carousel owl-theme">
+         @foreach($projects as $project)
          <div class="item">
             <div class="ser-contant">
-               <img src="/assets/front/img/cards-1.png" alt="card-img">
-               <h5>Web Development</h5>
-               <p>The advanced, highly practical Oxford Digital Marketing: Disruptive  for innovative </p>
-               <a href="#" title="View Detail">View Detail</a>
+            @php $projectImg = '/assets/front/img/default_product.png'; @endphp
+                    @if(file_exists(public_path('/uploads/projects/').$project->image))
+                    @php $projectImg = asset('/uploads/projects').'/'.$project->image; @endphp
+                    @endif
+               <img src="{{$projectImg}}" alt="card-img">
+               <h5>{{$project->title}}</h5>
+               <p>{{$project->description}}</p>
+               <a href="{{route('projectDetails',$project->id)}}" title="View Detail">View Detail</a>
             </div>
          </div>
-         <div class="item">
-            <div class="ser-contant">
-            <img src="/assets/front/img/cards-1.png" alt="card-img">
-               <h5>Web Design</h5>
-               <p>The advanced, highly practical Oxford Digital Marketing: Disruptive  for innovative </p>
-               <a href="#" title="View Detail">View Detail</a>
-            </div>
-         </div>
-         <div class="item">
-            <div class="ser-contant">
-            <img src="/assets/front/img/cards-1.png" alt="card-img">
-               <h5>Laravel</h5>
-               <p>The advanced, highly practical Oxford Digital Marketing: Disruptive  for innovative </p>
-               <a href="#" title="View Detail">View Detail</a>
-            </div>
-         </div>
-         <div class="item">
-            <div class="ser-contant">
-            <img src="/assets/front/img/cards-1.png" alt="card-img">
-               <h5>PHP</h5>
-               <p>The advanced, highly practical Oxford Digital Marketing: Disruptive  for innovative </p>
-               <a href="#" title="View Detail">View Detail</a>
-            </div>
-         </div>
-         <div class="item">
-            <div class="ser-contant">
-            <img src="/assets/front/img/cards-1.png" alt="card-img">
-               <h5>Wordpress</h5>
-               <p>The advanced, highly practical Oxford Digital Marketing: Disruptive  for innovative </p>
-               <a href="#" title="View Detail">View Detail</a>
-            </div>
-         </div>
-         <div class="item">
-            <div class="ser-contant">
-            <img src="/assets/front/img/cards-1.png" alt="card-img">
-               <h5>HTML</h5>
-               <p>The advanced, highly practical Oxford Digital Marketing: Disruptive  for innovative </p>
-               <a href="#" title="View Detail">View Detail</a>
-            </div>
-         </div>
+         @endforeach
       </div>
    </div>
 </section>

@@ -85,8 +85,8 @@
 @endsection
 @section('customscript')
 <script>
-setTimeout(function() {
-$('.hide1').fadeOut('slow');
-}, 5000);
+    setTimeout(function() {
+    $('.hide1').fadeOut('slow');
+    }, 5000);
 </script>
 @endsection

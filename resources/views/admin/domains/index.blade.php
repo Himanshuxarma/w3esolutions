@@ -44,8 +44,8 @@
                         <tr>
                             <td>{{ $data->id }}</td>
                             <td>{{ $data->name }}</td>
-                            <td>{{ $data->project_done }}</td>
-                            <td>{{ $data->technology }}</td>
+                            <td>{{ (!empty($data->projects) && $data->projects->title != '') ? $data->projects->title : 'N/A'}}</td>
+                            <td>{{ (!empty($data->techstack) && $data->techstack->technology != '') ? $data->techstack->technology : 'N/A'}}</td>
                             <td>{{ strlen(strip_tags($data->description) < 100 ) ? substr(strip_tags($data->description), 0, 100).' ...' : strip_tags($data->description) }}
                             </td>
                             @if($data->status == "1")

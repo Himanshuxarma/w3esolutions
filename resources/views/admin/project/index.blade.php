@@ -46,8 +46,8 @@
                         @foreach ($projects as $project)
                         <tr>
                             <td>{{ $project->id }}</td>
-                            <td>{{$project->cat_id}}</td>
-                            <!-- <td>{{ (!empty($project->category) && $project->category->name != '') ? $project->category->name : 'N/A'}}</td> -->
+                            <!-- <td>{{$project->cat_id}}</td> -->
+                            <td>{{ (!empty($project->category) && $project->category->name != '') ? $project->category->name : 'N/A'}}</td>
                             <td>{{ $project->title }}</td>
                             <td>{{ $project->slug }}</td>
                             <td>{{ strlen(strip_tags($project->description) < 100 ) ? substr(strip_tags($project->description), 0, 50).' ...' : strip_tags($project->description)}}

@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Middleware\Authenticate;
 use App\Models\Domain;
 use App\Models\Techstack;
+use App\Models\Project;
 
 use Illuminate\Http\Request;
 
@@ -22,7 +23,8 @@ class DomainController extends Controller
 
     public function create(){
         $technology = Techstack::all();
-		return view('admin.domains.create',compact('technology'));
+		$projects = Project::all();
+		return view('admin.domains.create',compact('technology','projects'));
 	}
 		/**
 		* Store a newly created resource in storage.
@@ -39,7 +41,7 @@ class DomainController extends Controller
 		]);
 		$domains = new Domain;
 		$domains->name = $request->name;
-		$domains->project_name = $request->project_name;
+		$domains->project_done = $request->project_done;
 		$domains->technology = $request->technology;
 		$domains->description = $request->description;
 		$domains->status = $request->status ? $request->status : 0;

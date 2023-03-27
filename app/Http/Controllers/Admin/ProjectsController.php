@@ -5,6 +5,7 @@ use Auth;
 use App\Models\Project;
 use App\Models\ProductImage;
 use App\Models\Category;
+use App\Models\Techstack;
 use App\Http\Middleware\Authenticate;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -28,7 +29,8 @@ class ProjectsController extends Controller
             
         public function create(){
             $category = Category::all();
-            return view('admin.project.create',compact('category'));
+            $technology = Techstack::all();
+            return view('admin.project.create',compact('category','technology'));
         }
 
             /**

@@ -30,8 +30,7 @@
                     @if(file_exists(public_path('/uploads/services/').$service->image))
                     @php $serviceImg = asset('/uploads/services').'/'.$service->image; @endphp
                     @endif
-                    <div class="icon"><img class="" src="{{$serviceImg}}" alt="{{$service->title}}" width="50px"
-                            height="50px" /></div>
+                    <div class="icon"><img class="" src="{{$serviceImg}}" alt="{{$service->title}}" width="50px"height="50px" /></div>
 
                     <h4 class="title"> <a href="{{route('serviceDetails',$service->id)}}">{{$service->title}}</a></h4>
                     <p class="description">{{$service->description}} </p>

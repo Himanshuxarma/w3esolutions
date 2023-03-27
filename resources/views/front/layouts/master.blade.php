@@ -10,7 +10,15 @@
   <!-- End Header -->
       
   <!-- ======= Hero Section ======= -->
- @include('front.layouts.banner')
+  <?php
+    if(Request::is('/')) {
+      
+    ?>
+@include('front.layouts.banner')
+<?php
+    }
+    ?>
+ 
   <!-- End Hero -->
 
   <main id="main">

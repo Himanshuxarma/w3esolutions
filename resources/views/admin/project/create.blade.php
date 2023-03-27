@@ -31,7 +31,8 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label for="title"> Title </label>
-                                            <input type="text" name="title" class="form-control" id="product_title" require placeholder="Enter  Title">
+                                            <input type="text" name="title" class="form-control" id="product_title"
+                                                require placeholder="Enter  Title">
                                         </div>
                                     </div>
                                 </div>
@@ -42,10 +43,30 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label for="page_name">Slug</label>
-                                            <input type="text" name="slug" class="form-control" id="product_slug" require placeholder="slug">
+                                            <input type="text" name="slug" class="form-control" id="product_slug"
+                                                require placeholder="slug">
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <label for="project_technologies">Project Technology</label>
+                                            <select class="form-control" name="project_technologies"
+                                                id="project_technologies">
+                                                <option value=""> -- Project Technologies--</option>
+                                                @foreach($technology as $techstacks)
+                                                <option value="{{$techstacks->id}}">{{$techstacks->technology}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <div class="form-group">
@@ -54,9 +75,6 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <div class="form-group">

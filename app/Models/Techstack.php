@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Techstack extends Model
 {
     use HasFactory;
+    public function domain(){
+        return hasMany('App\Models\Domain');
+    }
 }

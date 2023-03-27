@@ -556,6 +556,7 @@ class ComposerStaticInit58ebbd4d68ddba7e92abe71a15bb295b
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\Front\\EnquiriesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/EnquiriesController.php',
         'App\\Http\\Controllers\\Front\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/HomeController.php',
+        'App\\Http\\Controllers\\Front\\ProjectDetailController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/ProjectDetailController.php',
         'App\\Http\\Controllers\\Front\\ServiceDetailController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/ServiceDetailController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',

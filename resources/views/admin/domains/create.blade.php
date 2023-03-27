@@ -23,7 +23,12 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="project_done">Project Done</label>
-                                        <input type="text" name="project_done" class="form-control" require>
+                                        <select class="form-control"name="project_done" id="project_done">
+                                            <option value="">--Project Done--</option>
+                                            @foreach($projects as $project)
+                                            <option value="{{$project->id}}">{{$project->title}}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -64,7 +69,6 @@
         </div>
     </div>
 </section>
-
 @endsection
 @section('customscript')
 

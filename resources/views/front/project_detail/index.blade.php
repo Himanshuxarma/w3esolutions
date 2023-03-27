@@ -4,7 +4,7 @@
 <section class="project">
     <div class="container">
         <div class="project-headings">
-            <h2>Subharambh <span>Arts</span></h2>
+            <h2><span>{{$projects->title}}</span></h2>
         </div>
         <div class="row mt-5">
             <div class="col-lg-7 col-md-7 col-sm-12 col-12">
@@ -47,23 +47,19 @@
                             <img class="ml-3" src="/assets/front/img/img-icon1.png" alt="img-icons" width="30">
                             <p class="technology-name ml-1">E-Commerce</p>
                         </div>
-                    <div>
-                <div>
-            </div>
-        </div>
-    </div>
+                        <div>
+                            <div>
+                            </div>
+                        </div>
+                    </div>
 </section>
 <section class="description">
     <div class="container">
         <div class="row">
             <div class="discrep-content">
-                <h4> Digital Web Development. Now with us! Latest Today. Relevant Results</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur Now with us! Latest Today. Relevant Results adipisicing elit.
-                    Voluptates laborum eaque porro nulla fugit a libero, neque iste doloremque ducimus. Numquam
-                    doloremque suscipit atque odit impedit dicta iure consectetur sapiente.</p>
-                <p>Lorem ipsum, dolor sit amet consectetur Now with us! Latest Today. Relevant Results adipisicing elit.
-                    Voluptates laborum eaque porro nulla fugit a libero, neque iste doloremque ducimus. Numquam
-                    doloremque suscipit atque odit impedit dicta iure consectetur sapiente.</p>
+                <h4> {{$projects->title}}. Now with us! Latest Today. Relevant Results</h4>
+                <p>{{$projects->description}}</p>
+               
 
             </div>
         </div>
