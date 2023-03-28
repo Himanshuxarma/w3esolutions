@@ -16,8 +16,8 @@ class CreateProjectTechnologiesTable extends Migration
         Schema::create('project_technologies', function (Blueprint $table) {
             $table->id();
             $table->string('project_id');
-            $table->string('cat_id');
-            $table->string('technologies');
+            $table->string('technology_id');
+            $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });
     }

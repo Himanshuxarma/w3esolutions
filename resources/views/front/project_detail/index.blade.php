@@ -9,7 +9,7 @@
         <div class="row mt-5">
             <div class="col-lg-7 col-md-7 col-sm-12 col-12">
                 <div class="img-sec float-left">
-                    <img src="/assets/front/img/responsive-web.png" class="img-fluid" alt="Responsive Web">
+                    <img src="/assets/front/img/demo.png" class="img-fluid" alt="Responsive Web">
                 </div>
             </div>
             <div class="col-lg-5 col-md-5 col-sm-12 col-12">
@@ -58,8 +58,8 @@
         <div class="row">
             <div class="discrep-content">
                 <h4> {{$projects->title}}. Now with us! Latest Today. Relevant Results</h4>
-                <p>{{$projects->description}}</p>
-               
+                <p>{{strip_tags($projects->description)}}</p>
+
 
             </div>
         </div>

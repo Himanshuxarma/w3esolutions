@@ -20,7 +20,7 @@
                                     <div class="form-group">
                                         <label for="title"> Category Name </label>
                                         <select class="form-control" name="cat_id" id="cat_id">
-                                            @foreach($category as $cat){
+                                            @foreach($category as $cat)
                                             <option value="{{$cat->id}}">@if($cat->id==$projects->cat_id)@endif{{$cat->name }}</option>
                                             @endforeach
                                         </select>

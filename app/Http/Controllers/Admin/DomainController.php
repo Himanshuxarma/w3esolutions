@@ -69,7 +69,9 @@ class DomainController extends Controller
 
     public function edit($id){
 		$domains = Domain::find($id);
-		return view('admin.domains.edit', compact('domains'));
+		$projects = Project::all();
+		$techstack = Techstack::all();
+		return view('admin.domains.edit', compact('domains','projects','techstack'));
 	}
 
 		/**

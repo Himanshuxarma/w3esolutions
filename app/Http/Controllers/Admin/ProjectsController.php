@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 use Auth;
 use App\Models\Project;
+use App\Models\ProjectTechnologies;
 use App\Models\ProductImage;
 use App\Models\Category;
 use App\Models\Techstack;
@@ -59,9 +60,15 @@ class ProjectsController extends Controller
             $projects->image = $fileName;
             $projects->is_featured = $request->is_featured ? $request->is_featured : 0;
             $projects->status = $request->status ? $request->status : 0;
-            
-            $projects->save(); 
-            // dd($projects);  
+            $projects->status=1;
+            if( $projects->save()){
+                 $data = [];
+                foreach($request->technology_id as $key=>$technology){
+                    $data[] = ['project_id'=>$projects->id, 'technology_id'=> $technology, 'status'=>1];
+                   
+                }
+                ProjectTechnologies::insert($data);
+            }
             return redirect()->route('projectList')->with('success','Project has been created successfully.');
         }
 

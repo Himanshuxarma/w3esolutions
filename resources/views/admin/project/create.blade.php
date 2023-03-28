@@ -52,9 +52,7 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label for="project_technologies">Project Technology</label>
-                                            <select class="form-control" name="project_technologies"
-                                                id="project_technologies">
-                                                <option value=""> -- Project Technologies--</option>
+                                            <select class="form-control select2" multiple="multiple" name="technology_id[]">
                                                 @foreach($technology as $techstacks)
                                                 <option value="{{$techstacks->id}}">{{$techstacks->technology}}</option>
                                                 @endforeach
@@ -136,6 +134,18 @@
     $('#product_title').keyup(function () {
         var takedata = $(this).val()
         $('#product_slug').val(slug(takedata));
+    });
+
+</script>
+<script>
+    $(function () {
+        //Initialize Select2 Elements
+        $('.select2').select2()
+
+        //Initialize Select2 Elements
+        $('.select2bs4').select2({
+            theme: 'bootstrap4'
+        })
     });
 
 </script>

@@ -8,7 +8,7 @@
             <div class="col-md-12">
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Add Domain </h3>
+                        <h3 class="card-title">Update Domain </h3>
                     </div>
                     <form action="{{route('domainsUpdate',$domains->id)}}" method="POST" enctype="multipart/form-data">
                         @csrf
@@ -17,13 +17,19 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="name"> Name </label>
-                                        <input type="text" name="name"value="{{$domains->name}}" class="form-control" require>
+                                        <input type="text" name="name" class="form-control" value="{{$domains->name}}" require>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="project_done">Project Done</label>
-                                        <input type="text" name="project_done" value="{{$domains->project_done}}"class="form-control" require>
+                                        <select class="form-control" name="project_done" id="project_done">
+                                            <option value="">--Project Done--</option>
+                                                @foreach($projects as $project)
+                                                    <option value="{{$project->id}}" {{$project->project_done == $project->id  ? 'selected' : ''}}>{{ $project->title}}</option>
+
+                                                @endforeach
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -33,9 +39,8 @@
                                         <label for="technology"> Technology </label>
                                         <select class="form-control" name="technology" id="technology">
                                             <option value="">--Select Technology--</option>
-                                            @foreach($category as $cat){
-                                            <option value="{{$cat->id}}">{{ $cat->name }}</option>
-                                            }
+                                            @foreach($techstack as $data)
+                                            <option value="{{$data->id}}"{{$data->technology == $data->id  ? 'selected' : ''}}>{{ $data->technology}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -50,7 +55,7 @@
 
                             <div class="form-group">
                                 <div class="form-check">
-                                    <input class="form-check-input" name="status" value="1" type="checkbox">
+                                    <input class="form-check-input" name="status" type="checkbox" value="1"{{($domains->status==1 ? 'checked': '')}}>
                                     <label class="form-check-label">Status</label>
                                 </div>
                             </div>
@@ -64,7 +69,6 @@
         </div>
     </div>
 </section>
-
 @endsection
 @section('customscript')
 

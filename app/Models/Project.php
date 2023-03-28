@@ -17,5 +17,9 @@ class Project extends Model
     public function category(){
         return $this->hasOne('App\Models\Category', 'id', 'cat_id');
     }
+    public function technology(){
+        return $this->belongsToMany('App\Models\Techstack', 'project_technologies', 'project_id', 'technology_id');
+    }
+ 
    
 }

@@ -213,7 +213,8 @@
                     @endif
                <img src="{{$projectImg}}" alt="card-img">
                <h5>{{$project->title}}</h5>
-               <p>{{$project->description}}</p>
+               
+               <p>{{ strlen(strip_tags($project->description) < 100 ) ? substr(strip_tags($project->description), 0, 50).' ...' : strip_tags($project->description)}}</p>
                <a href="{{route('projectDetails',$project->id)}}" title="View Detail">View Detail</a>
             </div>
          </div>

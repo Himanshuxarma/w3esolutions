@@ -32,4 +32,6 @@
 <script src="{{asset('/assets/admin/dist/js/pages/dashboard.js')}}"></script>
 <script src="{{asset('/assets/admin/plugins/jquery-validation/jquery.validate.min.js')}}"></script>
 <script src="{{asset('/assets/admin/plugins/jquery-validation/additional-methods.min.js')}}"></script>
+<!-- Select2 -->
+<script src="{{asset('/assets/admin/plugins/select2/js/select2.full.min.js')}}"></script>
 @yield('customscript')

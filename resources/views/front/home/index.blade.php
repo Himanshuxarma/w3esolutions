@@ -33,7 +33,7 @@
                     <div class="icon"><img class="" src="{{$serviceImg}}" alt="{{$service->title}}" width="50px"height="50px" /></div>
 
                     <h4 class="title"> <a href="{{route('serviceDetails',$service->id)}}">{{$service->title}}</a></h4>
-                    <p class="description">{{$service->description}} </p>
+                    <p class="description">{{ strlen(strip_tags($service->description) < 100 ) ? substr(strip_tags($service->description), 0, 50).' ...' : strip_tags($service->description)}} </p>
                 </div>
 
 
