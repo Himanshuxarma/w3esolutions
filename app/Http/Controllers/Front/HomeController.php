@@ -12,6 +12,7 @@ use App\Models\Service;
 use App\Models\Employee;
 use App\Models\Banner;
 use App\Models\Testimonial;
+use App\Models\Faq;
 
 class HomeController extends Controller
 {
@@ -30,6 +31,7 @@ class HomeController extends Controller
         $testimonials = Testimonial::where('status',1)->get();
         $employees = Employee::where('status',1)->get();
         $aboutPage = Page::where('slug', 'about-us')->first();
-        return view('front.home.index',compact('category','aboutPage','services','employees','testimonials'));
+        $faqs = Faq::where('status',1)->get();
+        return view('front.home.index',compact('category','aboutPage','services','employees','testimonials','faqs'));
     }
 }

@@ -35,6 +35,7 @@ class EmployeeController extends Controller
 		'employee_id' => 'required',
 		'name' => 'required',
         'job_profile' => 'required',
+        'total_exp' => 'required',
 		'photo' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         'joining_date' => 'required',
 		'salary' => 'required',
@@ -46,6 +47,7 @@ class EmployeeController extends Controller
 		$employees->employee_id = $request->employee_id;
 		$employees->name = $request->name;
 		$employees->job_profile = $request->job_profile;
+		$employees->total_exp = $request->total_exp;
 		$fileName = time() . '.' . $request->photo->getClientOriginalExtension();
 		$request->photo->move(public_path('/uploads/employees'), $fileName);
 		$employees->photo = $fileName;
@@ -83,6 +85,7 @@ class EmployeeController extends Controller
 				'employee_id' => 'required',
                 'name' => 'required',
                 'job_profile' => 'required',
+                'total_exp' => 'required',
                 'joining_date' => 'required',
                 'salary' => 'required',
                 'description' => 'required',
@@ -107,6 +110,7 @@ class EmployeeController extends Controller
                 $employees->employee_id = $request->employee_id;
                 $employees->name = $request->name;
                 $employees->job_profile = $request->job_profile;
+                $employees->total_exp = $request->total_exp;
                 $employees->joining_date = $request->joining_date;
                 $employees->salary = $request->salary;
                 $employees->description = $request->description;

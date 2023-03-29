@@ -33,7 +33,8 @@ $settings = Helper::getSettings();?>
                     <div class="phone">
                         <i class="icofont-phone"></i>
                         <h4>Call:</h4>
-                        <p>+91 - {{$settings->phone1}}</p>
+                        @php $DefaultNumber = isset($settings) && !empty($settings->phone1) ? $settings->phone1:'9828886639';@endphp
+                        <p>+91 - {{$DefaultNumber}}</p>
                         <p>+91 - {{$settings->phone2}}</p>
                     </div>
 

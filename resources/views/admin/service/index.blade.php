@@ -7,13 +7,13 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-            @if ($message = Session::get('success'))
+             @if ($message = Session::get('success'))
 
-            <p class="alert alert-success hide1 ">
-            {{ $message }}
-            </p>
-            @endif
-                <a class="btn btn-sm btn-success  " href="{{route('servicesCreate')}}"> Create Services</a>
+                <p class="alert alert-success hide1 ">
+                {{ $message }}
+                </p>
+                @endif
+                <a class="btn btn-sm btn-success" href="{{route('servicesCreate')}}"> Create Services</a>
                 <div class="card-tools">
                     <div class="input-group input-group-sm" style="width: 150px;">
                         <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
@@ -43,7 +43,7 @@
                             <td>{{ $service->id }}</td>
                             <td>{{ $service->title }}</td>
                             <td>{{ strlen(strip_tags($service->description) < 100 ) ? substr(strip_tags($service->description), 0, 100).' ...' : strip_tags($service->description)}}</td>
-                            <td><img src="/uploads/services/{{$service->image}}" alt="{{$service->image}}" width="50%" /></td>
+                            <td><img src="/uploads/services/{{$service->image}}" alt="{{$service->image}}" width="100%" /></td>
 
                             @if($service->status == "1")
                             <td>
@@ -73,7 +73,6 @@
         </div>
     </div>
 </div>
-
 @endsection
 @section('customscript')
 <script>

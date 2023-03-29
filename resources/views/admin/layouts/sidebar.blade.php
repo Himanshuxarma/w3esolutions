@@ -123,6 +123,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{url('/admin/faqs')}}" class="nav-link @yield('faqs_select')">
+                        <i class="nav-icon fa fa-server"></i>
+                        <p>
+                             FAQ
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{url('/admin/service')}}" class="nav-link @yield('service_select')">
                         <i class="nav-icon fa fa-wrench"></i>
                         <p>

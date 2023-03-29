@@ -26,11 +26,11 @@
             <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
 
                 <div class="icon-box">
-                    @php $serviceImg = '/assets/front/img/default_product.png'; @endphp
+                    @php $serviceImg = '/assets/front/img/service.png'; @endphp
                     @if(file_exists(public_path('/uploads/services/').$service->image))
-                    @php $serviceImg = asset('/uploads/services').'/'.$service->image; @endphp
+                    @php $serviceImg = '/uploads/services/'.$service->image; @endphp
                     @endif
-                    <div class="icon"><img class="" src="{{$serviceImg}}" alt="{{$service->title}}" width="50px"height="50px" /></div>
+                    <div class="icon"><img class="" src="{{$serviceImg}}" alt="{{$service->title}}" width="100px"height="100px" /></div>
 
                     <h4 class="title"> <a href="{{route('serviceDetails',$service->id)}}">{{$service->title}}</a></h4>
                     <p class="description">{{ strlen(strip_tags($service->description) < 100 ) ? substr(strip_tags($service->description), 0, 50).' ...' : strip_tags($service->description)}} </p>
@@ -54,8 +54,7 @@
         <div class="section-title">
             <h2>Testimonial</h2>
             <h3>We do offer awesome <span>Testimonial</span></h3>
-            <p>Ut possimus qui ut W3esloutions culpa velit eveniet modi omnis est adipisci expedita at voluptas
-                atque vitae autem.</p>
+            <p>Ut possimus qui ut W3esloutions culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
         </div>
 
         <div class="row">
@@ -67,8 +66,7 @@
                     @if(file_exists(public_path('/uploads/testimonials/').$data->image))
                     @php $testimonialImg = asset('/uploads/testimonials').'/'.$data->image; @endphp
                     @endif
-                    <div class="icon"><img class="img" src="{{$testimonialImg}}" alt="{{$data->title}}" width="100px"
-                            height="100px" /></div>
+                    <div class="icon"><img class="img" src="{{$testimonialImg}}" alt="{{$data->title}}" width="100px" height="100px" /></div>
 
                     <h4 class="title"><a href="{{route('reviewsDetails')}}">{{$data->title}}</a></h4>
                     <p class="description">{{$data->description}} </p>
@@ -157,7 +155,8 @@
 
 
     </div>
-</section><!-- End Portfolio Section -->
+</section>
+<!-- End Portfolio Section -->
 
 <!-- ======= F.A.Q Section ======= -->
 <section id="faq" class="faq">
@@ -169,97 +168,34 @@
         </div>
 
         <ul class="faq-list">
+            @foreach($faqs as $faq)
 
             <li>
-                <a data-toggle="collapse" class="" href="#faq1">Non consectetur a erat nam at lectus urna duis? <i
+                <a data-toggle="collapse" class="" href="#faq{{$faq->id}}">{{$faq->question}}? <i
                         class="icofont-simple-up"></i></a>
-                <div id="faq1" class="collapse show" data-parent=".faq-list">
+                <div id="faq{{$faq->id}}" class="collapse show" data-parent=".faq-list">
                     <p>
-                        Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non
-                        curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                       {{$faq->answer}}.
                     </p>
                 </div>
             </li>
+            @endforeach
 
-            <li>
-                <a data-toggle="collapse" href="#faq2" class="collapsed">Feugiat scelerisque varius morbi enim nunc
-                    faucibus a pellentesque? <i class="icofont-simple-up"></i></a>
-                <div id="faq2" class="collapse" data-parent=".faq-list">
-                    <p>
-                        Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit
-                        laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est
-                        pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt
-                        dui.
-                    </p>
-                </div>
-            </li>
-
-            <li>
-                <a data-toggle="collapse" href="#faq3" class="collapsed">Dolor sit amet consectetur adipiscing elit
-                    pellentesque habitant morbi? <i class="icofont-simple-up"></i></a>
-                <div id="faq3" class="collapse" data-parent=".faq-list">
-                    <p>
-                        Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar
-                        elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus
-                        pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at
-                        elementum eu facilisis sed odio morbi quis
-                    </p>
-                </div>
-            </li>
-
-            <li>
-                <a data-toggle="collapse" href="#faq4" class="collapsed">Ac odio LiveMeetUpsr orci dapibus. Aliquam
-                    eleifend mi in nulla? <i class="icofont-simple-up"></i></a>
-                <div id="faq4" class="collapse" data-parent=".faq-list">
-                    <p>
-                        Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit
-                        laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est
-                        pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt
-                        dui.
-                    </p>
-                </div>
-            </li>
-
-            <li>
-                <a data-toggle="collapse" href="#faq5" class="collapsed">Tempus quam pellentesque nec nam aliquam sem et
-                    tortor consequat? <i class="icofont-simple-up"></i></a>
-                <div id="faq5" class="collapse" data-parent=".faq-list">
-                    <p>
-                        Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante
-                        in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum
-                        est. Purus gravida quis blandit turpis cursus in
-                    </p>
-                </div>
-            </li>
-
-            <li>
-                <a data-toggle="collapse" href="#faq6" class="collapsed">Tortor vitae purus faucibus ornare. Varius vel
-                    pharetra vel turpis nunc eget lorem dolor? <i class="icofont-simple-up"></i></a>
-                <div id="faq6" class="collapse" data-parent=".faq-list">
-                    <p>
-                        Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer
-                        malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor
-                        sed. Ut venenatis tellus in metus vulputate eu scelerisque. Pellentesque diam volutpat commodo
-                        sed egestas egestas fringilla phasellus faucibus. Nibh tellus molestie nunc non blandit massa
-                        enim nec.
-                    </p>
-                </div>
-            </li>
-
+      
         </ul>
 
     </div>
-</section><!-- End F.A.Q Section -->
+</section>
+<!-- End F.A.Q Section -->
 
-<!-- ======= Team Section ======= -->
+<!-- ======= Employee Section ======= -->
 <section id="team" class="team">
     <div class="container">
 
         <div class="section-title">
             <h2>Employee</h2>
             <h3>Our Hardworking <span>Employee</span></h3>
-            <p>Ut possimus qui ut W3esolutions culpa velit eveniet modi omnis est adipisci expedita at voluptas
-                atque vitae autem.</p>
+            <p>Ut possimus qui ut W3esolutions culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
         </div>
 
         <div class="row">
@@ -268,7 +204,7 @@
             <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                 <div class="member">
                     <div class="member-img">
-                        @php $employeeImg = '/assets/front/img/default_product.png'; @endphp
+                        @php $employeeImg = '/assets/front/img/Singh-Shaab.jpg'; @endphp
                         @if(file_exists(public_path('/uploads/employees/').$data->photo))
                         @php $employeeImg = asset('/uploads/employees').'/'.$data->photo; @endphp
                         @endif
@@ -290,7 +226,6 @@
         </div>
 
     </div>
-</section><!-- End Team Section -->
-
-
+</section>
+<!-- End Employee Section -->
 @endsection

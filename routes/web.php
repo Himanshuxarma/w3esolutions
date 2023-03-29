@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\TechstacksController;
 use App\Http\Controllers\Admin\EmployeeController;
 use App\Http\Controllers\Admin\DomainController;
+use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Front\HomeController;
 
 /*
@@ -144,14 +145,23 @@ Route::get('/reviews', [App\Http\Controllers\Front\ReviewsController::class, 'in
         Route::post('employees/update/{id}', [EmployeeController::class, 'update'])->name('employeesUpdate');
         Route::get('employees/delete/{id}', [EmployeeController::class, 'destroy'])->name('employeesDelete');
         Route::get('employees/employee_status/{id}', [EmployeeController::class, 'employee_status'])->name('employeesStatus');
-          //domains
-          Route::get("/domains", [DomainController::class, 'index'])->name("domainsList");
-          Route::get('domains/create', [DomainController::class, 'create'])->name('domainsCreate');
-          Route::post('domains/store', [DomainController::class, 'store'])->name('domainsSave');
-          Route::get('domains/edit/{id}', [DomainController::class, 'edit'])->name('domainsEdit');
-          Route::post('domains/update/{id}', [DomainController::class, 'update'])->name('domainsUpdate');
-          Route::get('domains/delete/{id}', [DomainController::class, 'domains'])->name('domainsDelete');
-          Route::get('domains/domains_status/{id}', [DomainController::class, 'domains_status'])->name('domainsStatus');
+        //domains
+        Route::get("/domains", [DomainController::class, 'index'])->name("domainsList");
+        Route::get('domains/create', [DomainController::class, 'create'])->name('domainsCreate');
+        Route::post('domains/store', [DomainController::class, 'store'])->name('domainsSave');
+        Route::get('domains/edit/{id}', [DomainController::class, 'edit'])->name('domainsEdit');
+        Route::post('domains/update/{id}', [DomainController::class, 'update'])->name('domainsUpdate');
+        Route::get('domains/delete/{id}', [DomainController::class, 'domains'])->name('domainsDelete');
+        Route::get('domains/domains_status/{id}', [DomainController::class, 'domains_status'])->name('domainsStatus');
+
+        //faq
+        Route::get("/faqs", [FaqController::class, 'index'])->name("faqsList");
+        Route::get('faqs/create', [FaqController::class, 'create'])->name('faqsCreate');
+        Route::post('faqs/store', [FaqController::class, 'store'])->name('faqsSave');
+        Route::get('faqs/edit/{id}', [FaqController::class, 'edit'])->name('faqsEdit');
+        Route::post('faqs/update/{id}', [FaqController::class, 'update'])->name('faqsUpdate');
+        Route::get('faqs/delete/{id}', [FaqController::class, 'faqs'])->name('faqsDelete');
+        Route::get('faqs/faqs_status/{id}', [FaqController::class, 'faqs_status'])->name('faqsStatus');
  
           
       

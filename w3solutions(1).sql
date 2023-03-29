@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 23, 2023 at 02:48 PM
+-- Generation Time: Mar 29, 2023 at 03:17 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.28
 
@@ -46,7 +46,10 @@ INSERT INTO `banners` (`id`, `banner_title`, `page_name`, `banner_image`, `statu
 (2, 'This is a list of notable companies in the information technology sector based in India.', 'home_page', '1679291263.jpg', 1, '2023-03-17 23:58:01', '2023-03-20 05:46:30'),
 (3, 'Several foreign companies have more employees in India than their parent countries.', 'home_page', '1679291250.jpg', 1, '2023-03-18 00:01:28', '2023-03-20 05:46:12'),
 (4, 'On the other hand', 'home_page', '1679291320.jpg', 1, '2023-03-20 00:18:40', '2023-03-20 05:46:28'),
-(5, 'On the other hand,', 'home_page', '1679311052.jpg', 0, '2023-03-20 00:19:45', '2023-03-20 05:47:52');
+(6, 'omnis voluptas assumenda est, omnis dolor repellendus.', 'Home Page', '1679748016.jpg', 1, '2023-03-25 07:10:16', '2023-03-25 07:10:16'),
+(7, 'omnis voluptas assumenda est, omnis dolor repellendus.', 'Home Page', '1679748070.jpg', 0, '2023-03-25 07:11:10', '2023-03-25 07:13:53'),
+(8, 'omnis voluptas assumenda est, omnis dolor repellendus.', 'Home Page', '1679748108.jpg', 1, '2023-03-25 07:11:48', '2023-03-25 07:11:48'),
+(9, 'omnis voluptas assumenda est, omnis dolor repellendus.', 'Home Page', '1679748128.jpg', 1, '2023-03-25 07:12:08', '2023-03-25 07:12:08');
 
 -- --------------------------------------------------------
 
@@ -83,12 +86,22 @@ CREATE TABLE `domains` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `project_done` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `techonology` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `technology` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` tinyint(4) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `domains`
+--
+
+INSERT INTO `domains` (`id`, `name`, `project_done`, `technology`, `description`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Test', 'Demo', '2', 'sd', 1, '2023-03-27 06:32:57', '2023-03-27 06:32:57'),
+(2, 'demo', '5', '1', 'wdd', 1, '2023-03-27 06:55:39', '2023-03-27 06:55:39'),
+(3, 'ssds', '5', '10', 'dd', 1, '2023-03-27 07:03:28', '2023-03-27 07:03:28'),
+(4, 'sdsds', '3', '4', 'sdsds', 1, '2023-03-27 23:54:54', '2023-03-27 23:54:54');
 
 -- --------------------------------------------------------
 
@@ -101,6 +114,7 @@ CREATE TABLE `employees` (
   `employee_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `job_profile` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `total_exp` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `photo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `joining_date` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `salary` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -115,11 +129,11 @@ CREATE TABLE `employees` (
 -- Dumping data for table `employees`
 --
 
-INSERT INTO `employees` (`id`, `employee_id`, `name`, `job_profile`, `photo`, `joining_date`, `salary`, `description`, `dob`, `status`, `created_at`, `updated_at`) VALUES
-(2, '101', 'Ramesh Singh Shekhawat', 'Product Manager', '1679376566.jpg', '2023-03-17', '80000', 'Singh', '2023-03-17', 1, '2023-03-17 01:55:30', '2023-03-20 23:59:26'),
-(3, '102', 'Sonu Singh', 'Chief Executive Officer', '1679302075.jpg', '2023-03-31', '900000', 'Test', '2023-04-04', 1, '2023-03-20 03:13:36', '2023-03-20 03:17:55'),
-(4, '103', 'Amanda Jepson', 'Accountant', '1679302328.jpg', '2023-03-20', '70000', 'Demo', '2023-03-23', 1, '2023-03-20 03:14:37', '2023-03-20 03:22:08'),
-(5, '105', 'Sarah Jhonson', 'CTO', '1679302314.jpg', '2023-07-10', '4545454', 'Test', '2023-03-22', 1, '2023-03-20 03:15:46', '2023-03-20 03:21:54');
+INSERT INTO `employees` (`id`, `employee_id`, `name`, `job_profile`, `total_exp`, `photo`, `joining_date`, `salary`, `description`, `dob`, `status`, `created_at`, `updated_at`) VALUES
+(2, '101', 'Ramesh Singh Shekhawat', 'Product Manager', '', '1679376566.jpg', '2023-03-17', '80000', 'Singh', '2023-03-17', 1, '2023-03-17 01:55:30', '2023-03-20 23:59:26'),
+(3, '102', 'Sonu Singh', 'Chief Executive Officer', '', '1679302075.jpg', '2023-03-31', '900000', 'Test', '2023-04-04', 1, '2023-03-20 03:13:36', '2023-03-20 03:17:55'),
+(4, '103', 'Amanda Jepson', 'Accountant', '', '1679302328.jpg', '2023-03-20', '70000', 'Demo', '2023-03-23', 1, '2023-03-20 03:14:37', '2023-03-20 03:22:08'),
+(5, '105', 'Sarah Jhonson', 'CTO', '', '1679748788.jpg', '2023-07-10', '4545454', 'Test', '2023-03-22', 1, '2023-03-20 03:15:46', '2023-03-25 07:23:08');
 
 -- --------------------------------------------------------
 
@@ -138,27 +152,6 @@ CREATE TABLE `enquiries` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `enquiries`
---
-
-INSERT INTO `enquiries` (`id`, `full_name`, `email`, `phone`, `subject`, `message`, `created_at`, `updated_at`) VALUES
-(1, 'Ramesh Singh Shekhawat', 'shekhawat123@gmail.com', '9828886639', 'Hello Ramesh', 'gh', '2023-03-22 06:20:26', '2023-03-22 06:20:26'),
-(2, 'Ramesh Singh Shekhawat', 'shekhawat123@gmail.com', '9828886639', 'Hello Ramesh', 'gh', '2023-03-22 06:22:37', '2023-03-22 06:22:37'),
-(3, 'Himanshu Sharma', 'himanshuxarma28@gmail.com', '8005517323', 'Hello testing', 'Hii testing', '2023-03-22 06:57:40', '2023-03-22 06:57:40'),
-(4, 'Himanshu Sharma', 'himanshuxarma28@gmail.com', '8005517323', 'Hello testing', 'Hii testing', '2023-03-22 06:59:48', '2023-03-22 06:59:48'),
-(5, 'Himanshu Sharma', 'himanshuxarma28@gmail.com', '8005517323', 'Hello testing', 'Hii testing', '2023-03-22 07:00:48', '2023-03-22 07:00:48'),
-(6, 'Himanshu Sharma', 'himanshuxarma28@gmail.com', '8005517323', 'Hello testing', 'Hii testing', '2023-03-22 07:01:52', '2023-03-22 07:01:52'),
-(7, 'Himanshu Sharma', 'himanshuxarma28@gmail.com', '8005517323', 'Hello testing', 'Hii testing', '2023-03-22 07:03:02', '2023-03-22 07:03:02'),
-(8, 'Himanshu Sharma', 'himanshuxarma28@gmail.com', '8005517323', 'Hello testing', 'Hii testing', '2023-03-22 07:05:04', '2023-03-22 07:05:04'),
-(9, 'Himanshu Sharma', 'himanshuxarma28@gmail.com', '8005517323', 'Hello testing', 'Hii testing', '2023-03-22 07:06:05', '2023-03-22 07:06:05'),
-(10, 'Himanshu Sharma', 'himanshuxarma28@gmail.com', '8005517323', 'Hello testing', 'Hii testing', '2023-03-22 07:07:11', '2023-03-22 07:07:11'),
-(11, 'Himanshu Sharma', 'himanshuxarma28@gmail.com', '8005517323', 'Hello testing', 'Hii testing', '2023-03-22 07:14:27', '2023-03-22 07:14:27'),
-(12, 'Himanshu Sharma', 'himanshuxarma28@gmail.com', '8005517323', 'Hello testing', 'Hii testing', '2023-03-22 07:17:21', '2023-03-22 07:17:21'),
-(13, 'Himanshu Sharma', 'himanshuxarma28@gmail.com', '8005517323', 'Hello testing', 'Hii testing', '2023-03-22 07:18:15', '2023-03-22 07:18:15'),
-(14, 'Himanshu Sharma', 'himanshuxarma28@gmail.com', '8005517323', 'Hello testing', 'Hii testing', '2023-03-22 07:19:03', '2023-03-22 07:19:03'),
-(15, 'Himanshu Sharma', 'himanshuxarma28@gmail.com', '8005517323', 'Hello testing', 'Hii testing', '2023-03-22 07:19:25', '2023-03-22 07:19:25');
-
 -- --------------------------------------------------------
 
 --
@@ -174,6 +167,33 @@ CREATE TABLE `failed_jobs` (
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `faqs`
+--
+
+CREATE TABLE `faqs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `question` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `answer` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `faqs`
+--
+
+INSERT INTO `faqs` (`id`, `question`, `answer`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Non consectetur a erat nam at lectus urna duis?', 'Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.', 1, '2023-03-29 01:27:25', '2023-03-29 01:27:25'),
+(2, 'Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?', 'Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi.Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.', 1, '2023-03-29 01:31:13', '2023-03-29 01:31:13'),
+(3, 'Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi?', 'Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus.  quis', 1, '2023-03-29 01:32:02', '2023-03-29 01:32:02'),
+(4, 'Ac odio LiveMeetUpsr orci dapibus. Aliquam eleifend mi in nulla?', 'Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim.', 1, '2023-03-29 01:33:12', '2023-03-29 01:33:12'),
+(5, 'Tempus quam pellentesque nec nam aliquam sem et tortor consequat?', 'Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in', 1, '2023-03-29 01:33:44', '2023-03-29 01:33:44'),
+(6, 'Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor?', 'Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque.', 1, '2023-03-29 01:35:04', '2023-03-29 01:35:04');
 
 -- --------------------------------------------------------
 
@@ -232,7 +252,11 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (23, '2023_03_13_072028_rename_products_table_to_projects', 7),
 (24, '2023_03_16_102447_create_employees_table', 8),
 (25, '2023_03_17_102329_create_domains_table', 9),
-(26, '2023_03_22_125518_rename_testimonial_in_domains_table', 10);
+(26, '2023_03_22_125518_rename_testimonial_in_domains_table', 10),
+(29, '2023_03_27_115233_rename_technology_in_domains_table', 12),
+(30, '2023_03_28_053709_create_project_technologies_table', 13),
+(31, '2023_03_29_060303_create_faqs_table', 14),
+(32, '2023_03_29_074225_add_total_exp_to_employees_table', 15);
 
 -- --------------------------------------------------------
 
@@ -256,7 +280,7 @@ CREATE TABLE `pages` (
 --
 
 INSERT INTO `pages` (`id`, `title`, `slug`, `description`, `banner_image`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'About Us', 'about-us', '<section id=\"about\" class=\"about\">\r\n      <div class=\"container\">\r\n\r\n        <div class=\"section-title\">\r\n          <h2>About</h2>\r\n          <h3>Learn More <span>About Us</span></h3>\r\n          <p>Ut possimus qui ut LiveMeetUps culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>\r\n        </div>\r\n\r\n        <div class=\"row content\">\r\n          <div class=\"col-lg-6\">\r\n            <p>\r\n              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod LiveMeetUpsr incididunt ut labore et dolore\r\n              magna aliqua.\r\n            </p>\r\n            <ul>\r\n              <li><i class=\"ri-check-double-line\"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>\r\n              <li><i class=\"ri-check-double-line\"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>\r\n              <li><i class=\"ri-check-double-line\"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>\r\n            </ul>\r\n          </div>\r\n          <div class=\"col-lg-6 pt-4 pt-lg-0\">\r\n            <p>\r\n              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate\r\n              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in\r\n              culpa qui officia deserunt mollit anim id est laborum.\r\n            </p>\r\n            <a href=\"#\" class=\"btn-learn-more\">Learn More</a>\r\n          </div>\r\n        </div>\r\n\r\n      </div>\r\n    </section>', '1679034166.jpg', 1, '2023-03-17 00:52:46', '2023-03-17 04:18:48');
+(1, 'About Us', 'about-us', '<section id=\"about\" class=\"about\">\r\n      <div class=\"container\">\r\n\r\n        <div class=\"section-title\">\r\n          <h2>About</h2>\r\n          <h3>Learn More <span>About Us</span></h3>\r\n          <p>Ut possimus qui ut LiveMeetUps culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>\r\n        </div>\r\n\r\n        <div class=\"row content\">\r\n          <div class=\"col-lg-6\">\r\n            <p>\r\n              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod LiveMeetUpsr incididunt ut labore et dolore\r\n              magna aliqua.\r\n            </p>\r\n            <ul>\r\n              <li><i class=\"ri-check-double-line\"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>\r\n              <li><i class=\"ri-check-double-line\"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>\r\n              <li><i class=\"ri-check-double-line\"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>\r\n            </ul>\r\n          </div>\r\n          <div class=\"col-lg-6 pt-4 pt-lg-0\">\r\n            <p>\r\n              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate\r\n              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in\r\n              culpa qui officia deserunt mollit anim id est laborum.\r\n            Excepteur sint occaecat cupidatat non proident, sunt in\r\n              culpa qui officia deserunt mollit anim id est laborum.\r\n            </p>\r\n            <br>\r\n          </div>\r\n        </div>\r\n\r\n      </div>\r\n    </section>', '1679034166.jpg', 1, '2023-03-17 00:52:46', '2023-03-24 01:28:48');
 
 -- --------------------------------------------------------
 
@@ -339,10 +363,34 @@ CREATE TABLE `projects` (
 --
 
 INSERT INTO `projects` (`id`, `cat_id`, `title`, `slug`, `description`, `image`, `is_featured`, `status`, `created_at`, `updated_at`) VALUES
-(1, '1', 'testing', 'testing', 'test<br>', '1679309743.jpg', '1', 1, '2023-03-16 23:33:49', '2023-03-20 05:25:43'),
-(2, '2', 'dfsf', 'dfsf', 'dfdsf', '1679294150.jpg', '1', 1, '2023-03-20 01:05:50', '2023-03-20 06:09:59'),
 (3, '2', 'Hospitality', 'hospitality', 'Test Project about hospitality<br>', '1679312654.jpg', '1', 1, '2023-03-20 06:14:14', '2023-03-20 06:14:14'),
-(5, '1', 'Shubharambh Arts', 'shubharambh-arts', 'shubharambh', '1679556810.png', '1', 1, '2023-03-23 02:03:30', '2023-03-23 02:03:30');
+(5, '1', 'Shubharambh Arts', 'shubharambh-arts', '<p>It is a long established fact that a reader will be distracted \r\nby the readable content of a page when looking at its layout. The point \r\nof using Lorem Ipsum is that it has a more-or-less normal distribution \r\nof letters, as opposed to using \'Content here, content here\', making it \r\nlook like readable English. Many desktop publishing packages and web \r\npage editors now use Lorem Ipsum as their default model text, and a \r\nsearch for \'lorem ipsum\' will uncover many web sites still in their \r\ninfancy. Various versions have evolved over the years, sometimes by \r\naccident, sometimes on purpose (injected humour and the like).</p>', '1679556810.png', '1', 1, '2023-03-23 02:03:30', '2023-03-28 05:04:10');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `project_technologies`
+--
+
+CREATE TABLE `project_technologies` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `project_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `technology_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `project_technologies`
+--
+
+INSERT INTO `project_technologies` (`id`, `project_id`, `technology_id`, `status`, `created_at`, `updated_at`) VALUES
+(1, '13', '2', 1, NULL, NULL),
+(2, '13', '5', 1, NULL, NULL),
+(3, '14', '2', 1, NULL, NULL),
+(4, '14', '5', 1, NULL, NULL),
+(5, '14', '6', 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -353,7 +401,7 @@ INSERT INTO `projects` (`id`, `cat_id`, `title`, `slug`, `description`, `image`,
 CREATE TABLE `services` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` tinyint(4) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -365,11 +413,11 @@ CREATE TABLE `services` (
 --
 
 INSERT INTO `services` (`id`, `title`, `description`, `image`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Web Development', 'We have taken resources from Simplilearn to fulfill the technical hiring needs of our clients.', '1679059018.png', 1, '2023-03-17 07:46:58', '2023-03-18 06:02:54'),
-(2, 'Web Designing', 'We were able to hire many candidates.', '1679059140.png', 1, '2023-03-17 07:49:00', '2023-03-18 00:41:11'),
-(3, 'Graphic Design', 'Simplilearn has been a pivotal partner in assisting Zeomega to identify entry-level skilled resources.', '1679059191.png', 1, '2023-03-17 07:49:51', '2023-03-18 00:41:32'),
-(4, 'Motion graphics', 'Motion Graphics means Graphics in Movement. It\'s the most straightforward definition you can get.', '1679138052.png', 1, '2023-03-18 05:44:12', '2023-03-18 05:53:29'),
-(5, 'Social Media Marketing', 'Fully Update Your Social Media Accounts.', '1679138321.png', 0, '2023-03-18 05:48:41', '2023-03-21 07:15:18');
+(1, 'Web Development', 'There are many variations of passages of Lorem Ipsum available, but the \r\nmajority have suffered alteration in some form, by injected humour, or \r\nrandomised words which don\'t look even slightly believable. If you are \r\ngoing to use a passage of Lorem Ipsum, you need to be sure there isn\'t \r\nanything embarrassing hidden in the middle of text. All the Lorem Ipsum \r\ngenerators on the Internet tend to repeat predefined chunks as \r\nnecessary.', '1680087702.gif', 1, '2023-03-17 07:46:58', '2023-03-29 05:31:42'),
+(2, 'Web Designing', 'Fully Update Your Social Media Accounts.', '1680087555.gif', 1, '2023-03-17 07:49:00', '2023-03-29 05:29:15'),
+(3, 'Graphic Design', 'Fully Update Your Social Media Accounts.', '1679059191.png', 1, '2023-03-17 07:49:51', '2023-03-24 07:02:59'),
+(4, 'Motion graphics', 'Fully Update Your Social Media Accounts.', '1679138052.png', 1, '2023-03-18 05:44:12', '2023-03-24 07:03:14'),
+(5, 'Social Media Marketing', 'Fully Update Your Social Media Accounts.', '1679138321.png', 0, '2023-03-18 05:48:41', '2023-03-25 06:31:04');
 
 -- --------------------------------------------------------
 
@@ -411,7 +459,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `first_name`, `last_name`, `email`, `phone1`, `phone2`, `front_logo`, `back_logo`, `profile_picture`, `address`, `last_login`, `facebook_link`, `instagram_link`, `google_link`, `linkedin_link`, `pinterest_link`, `snapchat_link`, `twitter_link`, `themeforest_link`, `projects_done`, `satisfied_clients`, `country_numbers`, `employee_counts`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Ramesh', 'Singh', 'admin@w3esloutions.com', '9828886639', '9680814546', '1677569724_front_logo.png', '1677569724_back_logo.png', '1677569724_profile_picture.jpg', 'B-50, Chandra Nagar 9 Dukan,Kalwar Road Govindpura,Jotwara,Jaipur,Rajasthan-302012', '', 'https://www.facebook.com', 'https://www.instagram.com/', 'google_link', 'linkedin_link', 'https://in.pinterest.com/', '', 'https://twitter.com', 'https://themeforest.net/', '10', '20', '30', '408', 1, '2023-02-28 02:05:24', '2023-03-20 23:56:17');
+(1, 'Ramesh', 'Singh', 'admin@w3esolutions.com', '9828886639', '9680814546', '1679651836_front_logo.png', '1679649742_back_logo.png', '1677569724_profile_picture.jpg', 'B-50, Chandra Nagar 9 Dukan,Kalwar Road Govindpura,Jotwara,Jaipur,Rajasthan-302012', '', 'https://www.facebook.com', 'https://www.instagram.com/', 'google_link', 'linkedin_link', 'https://in.pinterest.com/', '', 'https://twitter.com', 'https://themeforest.net/', '10', '20', '30', '408', 1, '2023-02-28 02:05:24', '2023-03-24 04:27:16');
 
 -- --------------------------------------------------------
 
@@ -434,17 +482,22 @@ CREATE TABLE `techstacks` (
 --
 
 INSERT INTO `techstacks` (`id`, `technology`, `tech_icon`, `description`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Laravel 9', '1679548090.png', 'Welcome to the Laravel Admin Panel Documentation for version 0.2. These \r\ndocs will teach you how to install, configure, and use Laravel Admin \r\nPanel so that way you can create some kick ass stuff.', 1, '2023-03-17 06:35:00', '2023-03-22 23:39:15'),
+(1, 'Laravel 9', '1680088106.gif', 'Welcome to the Laravel Admin Panel Documentation for version 0.2. These \r\ndocs will teach you how to install, configure, and use Laravel Admin \r\nPanel so that way you can create some kick ass stuff.', 1, '2023-03-17 06:35:00', '2023-03-29 05:38:26'),
 (2, 'Designing', '1679055377.png', 'design', 1, '2023-03-17 06:46:17', '2023-03-17 06:46:17'),
-(3, 'Html 5', '1679548111.png', 'Html', 1, '2023-03-17 06:48:18', '2023-03-22 23:38:31'),
+(3, 'Html 5', '1680088534.gif', 'Html', 1, '2023-03-17 06:48:18', '2023-03-29 05:45:34'),
 (4, 'Css 3', '1679056461.png', 'css', 1, '2023-03-17 07:04:21', '2023-03-22 23:39:54'),
 (5, 'Bootstrap 5', '1679056539.png', 'bootstrap', 1, '2023-03-17 07:05:39', '2023-03-17 07:05:39'),
 (6, 'CakePhp', '1679056568.png', 'cakephp', 1, '2023-03-17 07:06:08', '2023-03-17 07:06:08'),
 (7, 'CodeIgniter 4', '1679056642.png', 'CodeIgniter', 1, '2023-03-17 07:07:22', '2023-03-17 07:07:22'),
 (8, 'React Js', '1679056667.png', 'react js<br>', 1, '2023-03-17 07:07:47', '2023-03-17 07:07:47'),
 (9, 'Node Js', '1679056687.png', 'node js<br>', 1, '2023-03-17 07:08:07', '2023-03-17 07:08:07'),
-(10, 'Php', '1679056708.png', 'php', 1, '2023-03-17 07:08:28', '2023-03-17 07:08:28'),
-(11, 'Wordpress', '1679056744.png', 'wordpress', 1, '2023-03-17 07:09:04', '2023-03-17 07:09:04');
+(10, 'Php', '1680088028.gif', 'php', 1, '2023-03-17 07:08:28', '2023-03-29 05:37:08'),
+(11, 'Wordpress', '1679056744.png', 'wordpress', 1, '2023-03-17 07:09:04', '2023-03-17 07:09:04'),
+(12, 'Angular', '1679747390.png', 'angular', 1, '2023-03-25 06:59:50', '2023-03-25 06:59:50'),
+(13, 'MySql', '1679747445.png', 'mysql', 1, '2023-03-25 07:00:45', '2023-03-25 07:00:45'),
+(14, 'Rails', '1679747498.png', 'rails', 1, '2023-03-25 07:01:38', '2023-03-25 07:01:38'),
+(15, 'Yii', '1679747541.png', 'yii', 1, '2023-03-25 07:02:21', '2023-03-25 07:02:21'),
+(16, 'Python', '1680089353.png', 'python', 1, '2023-03-29 05:59:13', '2023-03-29 05:59:13');
 
 -- --------------------------------------------------------
 
@@ -473,7 +526,7 @@ INSERT INTO `testimonials` (`id`, `title`, `description`, `image`, `rating`, `st
 (3, 'Kendall Jenner', 'omnis voluptas assumenda est, omnis dolor repellendus.', '1679380103.jpg', '3', 1, '2023-03-21 00:58:23', '2023-03-23 07:26:22'),
 (4, 'sdff', 'sddddsddddddddddddddddddddddd', '1679395034.jpg', '4', 0, '2023-03-21 05:07:14', '2023-03-23 07:26:34'),
 (5, 'sdsdd', 'sdsdsd', '1679395091.jpeg', '5', 0, '2023-03-21 05:08:11', '2023-03-23 07:26:45'),
-(6, 'sdsfsdf', 'sdsd', '1679576293.jpg', '5', 0, '2023-03-23 07:28:13', '2023-03-23 07:32:14');
+(6, 'Sonu Singh SHekhawat', 'There are two ways: ask for them and catch them as they flow past', '1679576293.jpg', '5', 1, '2023-03-23 07:28:13', '2023-03-25 07:15:31');
 
 -- --------------------------------------------------------
 
@@ -550,6 +603,12 @@ ALTER TABLE `failed_jobs`
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
+-- Indexes for table `faqs`
+--
+ALTER TABLE `faqs`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `metals`
 --
 ALTER TABLE `metals`
@@ -600,6 +659,12 @@ ALTER TABLE `projects`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `project_technologies`
+--
+ALTER TABLE `project_technologies`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `services`
 --
 ALTER TABLE `services`
@@ -638,7 +703,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `banners`
 --
 ALTER TABLE `banners`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -650,25 +715,31 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `domains`
 --
 ALTER TABLE `domains`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `enquiries`
 --
 ALTER TABLE `enquiries`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `faqs`
+--
+ALTER TABLE `faqs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `metals`
@@ -680,7 +751,7 @@ ALTER TABLE `metals`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `pages`
@@ -710,6 +781,12 @@ ALTER TABLE `productimages`
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT for table `project_technologies`
+--
+ALTER TABLE `project_technologies`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
@@ -728,7 +805,7 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT for table `techstacks`
 --
 ALTER TABLE `techstacks`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `testimonials`
