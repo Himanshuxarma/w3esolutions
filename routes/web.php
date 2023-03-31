@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\TechstacksController;
 use App\Http\Controllers\Admin\EmployeeController;
 use App\Http\Controllers\Admin\DomainController;
 use App\Http\Controllers\Admin\FaqController;
+use App\Http\Controllers\Admin\CareerController;
 use App\Http\Controllers\Front\HomeController;
 
 /*
@@ -35,6 +36,8 @@ Route::get('/contact-us', [App\Http\Controllers\Front\EnquiriesController::class
 Route::post('contact/store', [App\Http\Controllers\Front\EnquiriesController::class, 'sendEmail'])->name('contactsSave');
 Route::get('/project_detail/{id}', [App\Http\Controllers\Front\ProjectDetailController::class, 'index'])->name('projectDetails');
 Route::get('/reviews', [App\Http\Controllers\Front\ReviewsController::class, 'index'])->name('reviewsDetails');
+Route::get('/careers', [App\Http\Controllers\Front\CareerController::class, 'index'])->name('careersDetails');
+Route::post('careers/store', [App\Http\Controllers\Front\CareerController::class, 'store'])->name('careersSave');
 
 
     Route::prefix("/admin")->namespace("Admin")->group(function(){
@@ -163,6 +166,10 @@ Route::get('/reviews', [App\Http\Controllers\Front\ReviewsController::class, 'in
         Route::get('faqs/delete/{id}', [FaqController::class, 'faqs'])->name('faqsDelete');
         Route::get('faqs/faqs_status/{id}', [FaqController::class, 'faqs_status'])->name('faqsStatus');
  
+        
+        //careers
+        Route::get("/careers", [CareerController::class, 'index'])->name("careersList");
+       
           
       
     });

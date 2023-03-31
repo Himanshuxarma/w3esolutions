@@ -1351,7 +1351,16 @@ section {
   border: 1px solid black;
   color: black;
 }
-
+/* ramesh singh shekhawat change */
+.myimg{
+  max-width: 100% !important;
+  height: 380px !important;
+}
+.similarprojects
+{
+  height: 200px;
+  object-fit: fill;
+}
 
 
 

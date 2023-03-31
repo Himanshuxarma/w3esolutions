@@ -29,8 +29,9 @@
                     @php $serviceImg = '/assets/front/img/service.png'; @endphp
                     @if(file_exists(public_path('/uploads/services/').$service->image))
                     @php $serviceImg = '/uploads/services/'.$service->image; @endphp
+                    
                     @endif
-                    <div class="icon"><img class="" src="{{$serviceImg}}" alt="{{$service->title}}" width="100px"height="100px" /></div>
+                    <div class="icon"><img class="" src="{{$serviceImg}}" alt="{{$service->title}}" width="50px"height="50px" /></div>
 
                     <h4 class="title"> <a href="{{route('serviceDetails',$service->id)}}">{{$service->title}}</a></h4>
                     <p class="description">{{ strlen(strip_tags($service->description) < 100 ) ? substr(strip_tags($service->description), 0, 50).' ...' : strip_tags($service->description)}} </p>
@@ -208,7 +209,7 @@
                         @if(file_exists(public_path('/uploads/employees/').$data->photo))
                         @php $employeeImg = asset('/uploads/employees').'/'.$data->photo; @endphp
                         @endif
-                        <img src="{{$employeeImg}}" class="img-fluid" alt="">
+                        <img src="{{$employeeImg}}" class="myimg" alt="">
                         <div class="social">
                             <a href="javascript:void(0);"><i class="icofont-twitter"></i></a>
                             <a href="javascript:void(0);"><i class="icofont-facebook"></i></a>
@@ -219,6 +220,7 @@
                     <div class="member-info">
                         <h4>{{$data->name}}</h4>
                         <span>{{$data->job_profile}}</span>
+                        <span>Experience {{$data->total_exp}} Years</span>
                     </div>
                 </div>
             </div>

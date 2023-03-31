@@ -34,7 +34,7 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="description">Description</label>
-                          <textarea id="summernote" name="description"> </textarea>
+                          <textarea id="summernote" name="description" > </textarea>
                         </div>
                       </div>
                       <div class="col-md-6">
@@ -81,35 +81,41 @@
     });
 
 </script>
-<script>
-$(function () {
-// Summernote
-$('#summernote').summernote()
 
-// CodeMirror
-CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
-mode: "htmlmixed",
-theme: "monokai"
-});
-})
+<script>
+    $(function () {
+    // Summernote
+    $('#summernote').summernote()
+
+    // CodeMirror
+    CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+    mode: "htmlmixed",
+    theme: "monokai"
+    });
+    })
 </script>
 
 <script>
 $(function () {
-   $('#quickForm').validate({
+ 
+  $('#quickForm').validate({
     rules: {
-      page_title: {
+      title: {
         required: true,
-        page_title: true,
+        title: true,
       },
-     
+      description: {
+        required: true,
+        description: true,
+      },
     },
     messages: {
-      page_title: {
-        required: "Please enter a email address",
-        page_title: "Please enter a valid email address"
+      title: {
+        required: "Please enter a Title",
       },
-   
+      description: {
+        required: "Please enter a Description",
+      },
     },
     errorElement: 'span',
     errorPlacement: function (error, element) {

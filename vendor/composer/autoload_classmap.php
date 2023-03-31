@@ -40,6 +40,7 @@ return array(
     'App\\Mail\\ContactMail' => $baseDir . '/app/Mail/ContactMail.php',
     'App\\Models\\About' => $baseDir . '/app/Models/About.php',
     'App\\Models\\Banner' => $baseDir . '/app/Models/Banner.php',
+    'App\\Models\\Career' => $baseDir . '/app/Models/Career.php',
     'App\\Models\\Category' => $baseDir . '/app/Models/Category.php',
     'App\\Models\\Domain' => $baseDir . '/app/Models/Domain.php',
     'App\\Models\\Employee' => $baseDir . '/app/Models/Employee.php',

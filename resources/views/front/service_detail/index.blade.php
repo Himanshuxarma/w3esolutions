@@ -211,10 +211,10 @@
                     @if(file_exists(public_path('/uploads/projects/').$project->image))
                     @php $projectImg = asset('/uploads/projects').'/'.$project->image; @endphp
                     @endif
-               <img src="{{$projectImg}}" alt="card-img">
+               <img src="{{$projectImg}}" class="similarprojects" alt="card-img">
                <h5>{{$project->title}}</h5>
                
-               <p>{{ strlen(strip_tags($project->description) < 100 ) ? substr(strip_tags($project->description), 0, 50).' ...' : strip_tags($project->description)}}</p>
+               <p>{{ strlen(strip_tags($project->description) < 100 ) ? substr(strip_tags($project->description), 0, 30).' ...' : strip_tags($project->description)}}</p>
                <a href="{{route('projectDetails',$project->id)}}" title="View Detail">View Detail</a>
             </div>
          </div>

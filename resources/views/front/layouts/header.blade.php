@@ -22,6 +22,7 @@
           <li><a href="#portfolio">Project</a></li>
           <li><a href="#team">Employee</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="{{route('careersDetails')}}">Career</a></li>
         <?php
     } else {
       ?>
