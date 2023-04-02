@@ -59,7 +59,7 @@ textarea:focus{ outline:none;  }
   text-transform: uppercase;
 }
 #header .logo a {
-  color: #fff;
+  color: #ffffff;
 }
 #header .logo img {
   max-height: 40px;
@@ -69,6 +69,13 @@ textarea:focus{ outline:none;  }
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   padding: 12px 0;
 }
+.inner-pages .nav-menu a{
+  color:#493c3e;
+}
+#header.inner-pages .logo a{
+  color:#493c3e;
+}
+
 #header.header-scrolled .logo a, #header.header-inner-pages .logo a {
   color: #493c3e;
 }
@@ -97,7 +104,7 @@ textarea:focus{ outline:none;  }
 .nav-menu a {
   display: block;
   position: relative;
-  color: #fff;
+  color: #ffffff;
   transition: 0.3s;
   font-size: 15px;
   padding: 0 4px;
@@ -173,8 +180,12 @@ textarea:focus{ outline:none;  }
   position: absolute;
   right: 15px;
 }
-.header-scrolled .nav-menu > ul > li > a, .header-inner-pages .nav-menu > ul > li > a {
+.header-scrolled .nav-menu > ul > li > a, 
+.header-inner-pages .nav-menu > ul > li > a {
   color: #493c3e;
+}
+.inner-header .nav-menu a{
+  color: #493c3e; 
 }
 @media (max-width: 1366px) {
   .nav-menu .drop-down .drop-down ul {
@@ -1362,7 +1373,27 @@ section {
   object-fit: fill;
 }
 
+.services {
+  margin-top: 100px;
+}
 
+.btn-decor a{
+  background-color: #e43c5c;
+  color: #ffffff;
+  padding: 7px 25px;
+  display: inline-block;
+  border-radius: 20px;
+}
+
+.icon-box:hover .btn-decor>a{
+  background-color: #fff;
+  color:#e43c5c;
+  font-weight: 600;
+}
+
+.owl-nav {
+  display: none;
+}
 
 
 

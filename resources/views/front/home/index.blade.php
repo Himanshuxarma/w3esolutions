@@ -43,15 +43,12 @@
 
         </div>
     </div>
-
-
 </section>
 <!-- End Services Section -->
 
 <!-- ======= Testimonial Section ======= -->
 <section id="testimonials" class="services ">
     <div class="container">
-
         <div class="section-title">
             <h2>Testimonial</h2>
             <h3>We do offer awesome <span>Testimonial</span></h3>
@@ -61,25 +58,21 @@
         <div class="row">
             @foreach($testimonials as $data)
             <div class=" col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0 ">
-
                 <div class="icon-box ">
                     @php $testimonialImg = '/assets/front/img/testimonials.png'; @endphp
                     @if(file_exists(public_path('/uploads/testimonials/').$data->image))
                     @php $testimonialImg = asset('/uploads/testimonials').'/'.$data->image; @endphp
                     @endif
                     <div class="icon"><img class="img" src="{{$testimonialImg}}" alt="{{$data->title}}" width="100px" height="100px" /></div>
-
                     <h4 class="title"><a href="{{route('reviewsDetails')}}">{{$data->title}}</a></h4>
                     <p class="description">{{$data->description}} </p>
-                    <a href="javascript:void(0);" class="btn-get-started scrollto">Read More</a>
+                    <div class="btn-decor">
+                        <a href="javascript:void(0);" class="btn-get-started scrollto">Read More</a>
+                    </div>
                 </div>
-
-
             </div>
             @endforeach
-
         </div>
-
     </div>
 </section>
 <!-- End Testimonial Section -->
@@ -200,34 +193,50 @@
         </div>
 
         <div class="row">
-
-            @foreach($employees as $data)
-            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                <div class="member">
-                    <div class="member-img">
-                        @php $employeeImg = '/assets/front/img/Singh-Shaab.jpg'; @endphp
-                        @if(file_exists(public_path('/uploads/employees/').$data->photo))
-                        @php $employeeImg = asset('/uploads/employees').'/'.$data->photo; @endphp
-                        @endif
-                        <img src="{{$employeeImg}}" class="myimg" alt="">
-                        <div class="social">
-                            <a href="javascript:void(0);"><i class="icofont-twitter"></i></a>
-                            <a href="javascript:void(0);"><i class="icofont-facebook"></i></a>
-                            <a href="javascript:void(0);"><i class="icofont-instagram"></i></a>
-                            <a href="javascript:void(0);"><i class="icofont-linkedin"></i></a>
+            <div class="ser-carousels project-slider owl-carousel owl-theme">
+                @foreach($employees as $data)
+                    <div class="item">
+                        <div class="member">
+                            <div class="member-img">
+                                @php $employeeImg = '/assets/front/img/Singh-Shaab.jpg'; @endphp
+                                @if(file_exists(public_path('/uploads/employees/').$data->photo))
+                                @php $employeeImg = asset('/uploads/employees').'/'.$data->photo; @endphp
+                                @endif
+                                <img src="{{$employeeImg}}" class="myimg" alt="">
+                                <div class="social">
+                                    <a href="javascript:void(0);"><i class="icofont-twitter"></i></a>
+                                    <a href="javascript:void(0);"><i class="icofont-facebook"></i></a>
+                                    <a href="javascript:void(0);"><i class="icofont-instagram"></i></a>
+                                    <a href="javascript:void(0);"><i class="icofont-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h4>{{$data->name}}</h4>
+                                <span>{{$data->job_profile}}</span>
+                                <span>Experience {{$data->total_exp}} Years</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="member-info">
-                        <h4>{{$data->name}}</h4>
-                        <span>{{$data->job_profile}}</span>
-                        <span>Experience {{$data->total_exp}} Years</span>
-                    </div>
-                </div>
+                @endforeach
             </div>
-            @endforeach
         </div>
 
     </div>
 </section>
+
+
 <!-- End Employee Section -->
+
+<section class="card-slider">
+    <div class="container">
+        <div class="main-cards-sliding">
+            <div class="item">
+                <div class="img-set">
+                    <img src="/assets/front/img/imgs-1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 @endsection

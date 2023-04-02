@@ -1,5 +1,5 @@
 <?php $settings = Helper::getSettings();?>
-<header id="header" class="fixed-top ">
+<header id="header" class="fixed-top inner-pages">
     <div class="container d-flex align-items-center">
 
       <h1 class="logo mr-auto"><a href="{{url('/')}}"> <span style="color:#e43c5c;">W3e</span>solutions</a></h1>

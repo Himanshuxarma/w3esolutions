@@ -54,36 +54,60 @@
    </div>
    <div class="col-lg-1 col-md-1 col-sm-1"></div>
    </div>
-   </div>
-</section>
-
-<section class="logo-imgs">
-   <div class="container">
-      <div class="row text-center">
+   <div class="row text-center mt-4">
          <div class="col-lg-1 col-md-1 col-sm-1"></div>
          <div class="col-lg-2 col-md-2 col-sm-2 col-2">
             <div class="logoimg-sec">
-               <img src="/assets/front/img/slid-6.png" class="img-fluid" alt="">
+               <img src="/assets/front/img/slid-1.png" class="img-fluid" alt="">
             </div>
          </div>
          <div class="col-lg-2 col-md-2 col-sm-2 col-2"">
          <div class=" logoimg-sec">
-            <img src="/assets/front/img/slid-7.png" class="img-fluid" alt="">
+            <img src="/assets/front/img/slid-2.png" class="img-fluid" alt="">
          </div>
       </div>
       <div class="col-lg-2 col-md-2 col-sm-2 col-2"">
          <div class=" logoimg-sec">
-         <img src="/assets/front/img/slid-8.png" class="img-fluid" alt="">
+         <img src="/assets/front/img/slid-3.jpg" class="img-fluid" alt="">
       </div>
    </div>
    <div class="col-lg-2 col-md-2 col-sm-2 col-2"">
          <div class=" logoimg-sec">
-      <img src="/assets/front/img/slid-9.png" class="img-fluid" alt="">
+      <img src="/assets/front/img/slid-4.jpg" class="img-fluid" alt="">
    </div>
    </div>
    <div class="col-lg-2 col-md-2 col-sm-2 col-2"">
          <div class=" logoimg-sec">
-      <img src="/assets/front/img/slid-10.jpg" class="img-fluid" alt="">
+      <img src="/assets/front/img/slid-5.jpg" class="img-fluid" alt="">
+   </div>
+   </div>
+   <div class="col-lg-1 col-md-1 col-sm-1"></div>
+   </div>
+   <div class="row text-center mt-4">
+         <div class="col-lg-1 col-md-1 col-sm-1"></div>
+         <div class="col-lg-2 col-md-2 col-sm-2 col-2">
+            <div class="logoimg-sec">
+               <img src="/assets/front/img/slid-1.png" class="img-fluid" alt="">
+            </div>
+         </div>
+         <div class="col-lg-2 col-md-2 col-sm-2 col-2"">
+         <div class=" logoimg-sec">
+            <img src="/assets/front/img/slid-2.png" class="img-fluid" alt="">
+         </div>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-2 col-2"">
+         <div class=" logoimg-sec">
+         <img src="/assets/front/img/slid-3.jpg" class="img-fluid" alt="">
+      </div>
+   </div>
+   <div class="col-lg-2 col-md-2 col-sm-2 col-2"">
+         <div class=" logoimg-sec">
+      <img src="/assets/front/img/slid-4.jpg" class="img-fluid" alt="">
+   </div>
+   </div>
+   <div class="col-lg-2 col-md-2 col-sm-2 col-2"">
+         <div class=" logoimg-sec">
+      <img src="/assets/front/img/slid-5.jpg" class="img-fluid" alt="">
    </div>
    </div>
    <div class="col-lg-1 col-md-1 col-sm-1"></div>
@@ -91,39 +115,7 @@
    </div>
 </section>
 
-<section class="logo-imgs">
-   <div class="container">
-      <div class="row text-center">
-         <div class="col-lg-1 col-md-1 col-sm-1"></div>
-         <div class="col-lg-2 col-md-2 col-sm-2 col-2">
-            <div class="logoimg-sec">
-               <img src="/assets/front/img/slid-11.png" class="img-fluid" alt="">
-            </div>
-         </div>
-         <div class="col-lg-2 col-md-2 col-sm-2 col-2"">
-         <div class=" logoimg-sec">
-            <img src="/assets/front/img/slid-12.png" class="img-fluid" alt="">
-         </div>
-      </div>
-      <div class="col-lg-2 col-md-2 col-sm-2 col-2"">
-         <div class=" logoimg-sec">
-         <img src="/assets/front/img/slid-11.png" class="img-fluid" alt="">
-      </div>
-   </div>
-   <div class="col-lg-2 col-md-2 col-sm-2 col-2"">
-         <div class=" logoimg-sec">
-      <img src="/assets/front/img/slid-11.png" class="img-fluid" alt="">
-   </div>
-   </div>
-   <div class="col-lg-2 col-md-2 col-sm-2 col-2"">
-         <div class=" logoimg-sec">
-      <img src="/assets/front/img/slid-11.png" class="img-fluid" alt="">
-   </div>
-   </div>
-   <div class="col-lg-1 col-md-1 col-sm-1"></div>
-   </div>
-   </div>
-</section>
+
 
 <section id="services-group" class="testimonials-group">
    <div class="container">
