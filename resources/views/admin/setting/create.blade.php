@@ -186,58 +186,7 @@
         </div>
     </div>
 </section>
-<script>
-    $(function () {
 
-        $('#quickForm').validate({
-                rules: {
-                    banner_title: {
-                        required: true,
-                        banner_title: true,
-                    },
-                    page_name: {
-                        required: true,
-
-                    },
-                    banner_image: {
-                        required: true
-                    },
-                    status: {
-                        required: true
-                    },
-                },
-                messages: {
-                    banner_title: {
-                        required: "Please enter a banner title",
-
-                    },
-                    page_name: {
-                        required: "Please enter a page name",
-
-                    },
-                    banner_image: {
-                        required: "Please enter a banner image",
-
-                    },
-
-
-                },
-            },
-            errorElement: 'span',
-            errorPlacement: function (error, element) {
-                error.addClass('invalid-feedback');
-                element.closest('.form-group').append(error);
-            },
-            highlight: function (element, errorClass, validClass) {
-                $(element).addClass('is-invalid');
-            },
-            unhighlight: function (element, errorClass, validClass) {
-                $(element).removeClass('is-invalid');
-            }
-        });
-    });
-
-</script>
 @endsection
 @section('customscript')
 <script>

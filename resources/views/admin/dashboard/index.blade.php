@@ -9,8 +9,21 @@
             <div class="col-lg-3 col-6">
                 <div class="small-box bg-info">
                     <div class="inner">
-                        <h3>{{$users}}</h3>
-                        <p>Users</p>
+                        <p> <?php
+                             $today_enquiry=0;
+                             $created_at=date("Y-m-d");
+                            foreach($enquiry as $data){
+                            $newdate = new DateTime($data->created_at);
+                            $db_date= $newdate->format('Y-m-d'); 
+                            if($db_date==$created_at){
+                     $today_enquiry++;
+                    }
+                }
+                
+                echo $today_enquiry;
+                       ?>
+                        </p>
+                        <h4>Today Enquiry</h4>
                     </div>
                     <div class="icon">
                         <i class="fa fa-users"></i>
@@ -36,7 +49,7 @@
 
                 <div class="small-box bg-warning">
                     <div class="inner">
-                    <h3>{{$enquiry}}<sup style="font-size: 20px"></sup></h3>
+                    <h3>{{count($enquiry)}}<sup style="font-size: 20px"></sup></h3>
                         <p>Contact Enquiry</p>
                     </div>
                     <div class="icon">

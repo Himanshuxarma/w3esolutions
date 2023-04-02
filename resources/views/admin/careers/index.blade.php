@@ -13,8 +13,6 @@
                     {{ $message }}
                 </p>
                 @endif
-
-                
                 <div class="card-tools">
                     <div class="input-group input-group-sm" style="width: 150px;">
                         <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
@@ -50,17 +48,14 @@
                             <td>{{$data->email}}</td>
                             <td>{{$data->phone}}</td>
                             <td>
-                                <img src="/uploads/front/careers/{{$data->profile_image}}" alt="{{$data->profile_image}}"width="50%" />
+                                <img src="/uploads/front/careers/{{$data->profile_image}}" alt="{{$data->profile_image}}" width="50%" />
                             </td>
                             <td>{{$data->experience}} Years</td>
                             <td>
-                                <img src="/uploads/front/careers/{{$data->resume}}" alt="{{$data->resume}}" width="50%" />
+                                <img src="/uploads/front/careers/{{$data->resume}}" alt="{{$data->resume}}"width="50%" />
                             </td>
                             <td>{{$data->contact_form}}</td>
                             <td>{{$data->description}}</td>
-
-                           
-                                
                             </td>
                         </tr>
                         @endforeach

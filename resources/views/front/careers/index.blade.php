@@ -11,7 +11,7 @@
         <div class="row mt-5">
             <div class="col-lg-12 mt-5 mt-lg-0">
 
-                <form action="{{route('careersSave')}}" method="post" role="form" enctype="multipart/form-data">
+                <form action="{{route('careersSave')}}" method="post" role="form" class="" enctype="multipart/form-data">
                     @csrf
                     <div class="form-row">
                         <div class="col-md-6 form-group">

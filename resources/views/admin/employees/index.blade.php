@@ -61,8 +61,6 @@
                             <td>{{$data->salary}}</td>
                             <td>{{$data->dob}}</td>
                             <!-- <td>{{$data->description}}</td> -->
-                            
-                           
                             @if($data->status == "1")
                             <td>
                                 <a href="{{ route('employeesStatus',$data->id) }}" class="text-success">Active</a>

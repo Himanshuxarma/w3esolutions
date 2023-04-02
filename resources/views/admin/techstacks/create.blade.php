@@ -84,36 +84,4 @@
 
 </script>
 
-<script>
-    $(function () {
-        $('#quickForm').validate({
-            rules: {
-                page_title: {
-                    required: true,
-                    page_title: true,
-                },
-
-            },
-            messages: {
-                page_title: {
-                    required: "Please enter a email address",
-                    page_title: "Please enter a valid email address"
-                },
-
-            },
-            errorElement: 'span',
-            errorPlacement: function (error, element) {
-                error.addClass('invalid-feedback');
-                element.closest('.form-group').append(error);
-            },
-            highlight: function (element, errorClass, validClass) {
-                $(element).addClass('is-invalid');
-            },
-            unhighlight: function (element, errorClass, validClass) {
-                $(element).removeClass('is-invalid');
-            }
-        });
-    });
-
-</script>
 @endsection

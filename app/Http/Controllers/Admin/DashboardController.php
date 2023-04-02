@@ -21,7 +21,7 @@ class DashboardController extends Controller
         public function index(){
           $users = User::count();
           $pages = Page::count();
-          $enquiry = Enquiry::count();
+          $enquiry = Enquiry::select('created_at')->get();
           $settings = Setting::count();
           return view('admin.dashboard.index',compact('users','pages','enquiry','settings'));
         }

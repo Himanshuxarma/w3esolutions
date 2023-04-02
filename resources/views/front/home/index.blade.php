@@ -51,7 +51,7 @@
     <div class="container">
         <div class="section-title">
             <h2>Testimonial</h2>
-            <h3>We do offer awesome <span>Testimonial</span></h3>
+            <h3>Our valuable client<span> reviews</span></h3>
             <p>Ut possimus qui ut W3esloutions culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
         </div>
 
@@ -65,7 +65,7 @@
                     @endif
                     <div class="icon"><img class="img" src="{{$testimonialImg}}" alt="{{$data->title}}" width="100px" height="100px" /></div>
                     <h4 class="title"><a href="{{route('reviewsDetails')}}">{{$data->title}}</a></h4>
-                    <p class="description">{{$data->description}} </p>
+                    <p class="description">{{ strlen(strip_tags($data->description) < 100 ) ? substr(strip_tags($data->description), 0, 50).' ...' : strip_tags($data->description)}} </p>
                     <div class="btn-decor">
                         <a href="javascript:void(0);" class="btn-get-started scrollto">Read More</a>
                     </div>
@@ -100,7 +100,7 @@
     </div>
 </section>
 <!-- End Cta Section -->
-<!-- ======= Portfolio Section ======= -->
+<!-- ======= projects Section ======= -->
 <section id="portfolio" class="portfolio">
     <div class="container">
 
@@ -150,7 +150,7 @@
 
     </div>
 </section>
-<!-- End Portfolio Section -->
+<!-- End projects Section -->
 
 <!-- ======= F.A.Q Section ======= -->
 <section id="faq" class="faq">
