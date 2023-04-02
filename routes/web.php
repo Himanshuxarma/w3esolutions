@@ -36,6 +36,7 @@ use App\Http\Controllers\Front\HomeController;
         Route::post('contact/store', [App\Http\Controllers\Front\EnquiriesController::class, 'sendEmail'])->name('contactsSave');
         Route::get('/project_detail/{id}', [App\Http\Controllers\Front\ProjectDetailController::class, 'index'])->name('projectDetails');
         Route::get('/reviews', [App\Http\Controllers\Front\ReviewsController::class, 'index'])->name('reviewsDetails');
+        Route::post('reviews/store', [App\Http\Controllers\Front\ReviewsController::class, 'store'])->name('reviewsSave');
         Route::get('/careers', [App\Http\Controllers\Front\CareerController::class, 'index'])->name('careersDetails');
         Route::post('careers/store', [App\Http\Controllers\Front\CareerController::class, 'store'])->name('careersSave');
 
@@ -111,6 +112,7 @@ use App\Http\Controllers\Front\HomeController;
 		
 		 //Contact Enquiries
         Route::get("/enquiries", [App\Http\Controllers\Admin\EnquiriesController::class, 'index'])->name("enquiriesList");
+        Route::get('enquiries/delete/{id}', [EnquiriesController::class, 'destroy'])->name('enquiriesDelete');
 	
 		//Banners
         Route::get("/banners", [BannersController::class, 'index'])->name("bannersList");

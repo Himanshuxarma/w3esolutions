@@ -11,6 +11,12 @@ class EnquiriesController extends Controller{
 		$data['contacts'] = Enquiry::orderBy('id')->paginate(10);
 		return view('admin.enquiries.index',$data);
 	}
+	public function destroy($id){
+		$enquiry = Enquiry::find($id);
+		$enquiry->delete();
+		return redirect()->route('enquiriesList')->with('success', 'Enquiry has been deleted successfully');
+	}
+
 		
 
 }

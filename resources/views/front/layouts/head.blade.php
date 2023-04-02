@@ -16,6 +16,7 @@
   <link href="{{asset('/assets/front/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
   <link href="{{asset('/assets/front/vendor/venobox/venobox.css')}}" rel="stylesheet">
   <link href="{{asset('/assets/front/vendor/owl.carousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Template Main CSS File -->
   <link href="{{asset('/assets/front/css/style.css')}}" rel="stylesheet">

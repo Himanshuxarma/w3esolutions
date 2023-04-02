@@ -1,7 +1,7 @@
 @extends('front.layouts.master')
 @section('content')
 
-<section id="services" class="services">
+<section id="services" class="services ">
    <div class="container">
       <div class="section-title text-left mb-2">
          <div class="serve-content d-flex align-items-center">

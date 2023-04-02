@@ -165,9 +165,8 @@
             @foreach($faqs as $faq)
 
             <li>
-                <a data-toggle="collapse" class="" href="#faq{{$faq->id}}">{{$faq->question}}? <i
-                        class="icofont-simple-up"></i></a>
-                <div id="faq{{$faq->id}}" class="collapse show" data-parent=".faq-list">
+                <a data-toggle="collapse" class="collapsed" href="#faq{{$faq->id}}">{{$faq->question}} <i class="icofont-simple-up"></i></a>
+                <div id="faq{{$faq->id}}" class="collapse" data-parent=".faq-list">
                     <p>
                        {{$faq->answer}}.
                     </p>
@@ -203,12 +202,12 @@
                                 @php $employeeImg = asset('/uploads/employees').'/'.$data->photo; @endphp
                                 @endif
                                 <img src="{{$employeeImg}}" class="myimg" alt="">
-                                <div class="social">
+                                <!-- <div class="social">
                                     <a href="javascript:void(0);"><i class="icofont-twitter"></i></a>
                                     <a href="javascript:void(0);"><i class="icofont-facebook"></i></a>
                                     <a href="javascript:void(0);"><i class="icofont-instagram"></i></a>
                                     <a href="javascript:void(0);"><i class="icofont-linkedin"></i></a>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="member-info">
                                 <h4>{{$data->name}}</h4>
@@ -223,20 +222,7 @@
 
     </div>
 </section>
-
-
 <!-- End Employee Section -->
 
-<section class="card-slider">
-    <div class="container">
-        <div class="main-cards-sliding">
-            <div class="item">
-                <div class="img-set">
-                    <img src="/assets/front/img/imgs-1.jpg" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 @endsection

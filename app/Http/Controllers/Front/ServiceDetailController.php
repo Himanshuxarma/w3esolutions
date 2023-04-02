@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Service;
 use App\Models\Techstack;
 use App\Models\Project;
+use App\Models\Banner;
 
 class ServiceDetailController extends Controller
 {
@@ -15,6 +16,7 @@ class ServiceDetailController extends Controller
         $services = Service::find($id);
         $techstacks = Techstack::all();
         $projects = Project::all();
-        return view('front.service_detail.index',compact('services','techstacks','projects'));
+        $banner = Banner::where('page_name','about-us')->get();
+        return view('front.service_detail.index',compact('services','techstacks','projects','banner'));
     }
 }

@@ -8,9 +8,9 @@
         <div class="carousel-inner">
             <?php 
             $i = 1; 
-            $banner = \Helper::getBanners();
+            $banners = \Helper::getBanners();
             ?>
-            @foreach($banner as $slider)
+            @foreach($banners as $slider)
             <div class="carousel-item @if($i==1) active @endif">
                 @php $sliderImg = '/assets/front/img/default_product.png'; @endphp
                 @if(file_exists(public_path('/uploads/banners/').$slider->banner_image))
