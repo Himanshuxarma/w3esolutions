@@ -51,10 +51,8 @@
         </div>
     </div>
 </section>
-
 @endsection
 @section('customscript')
-
 <script>
     $(function () {
         // Summernote

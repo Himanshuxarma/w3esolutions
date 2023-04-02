@@ -16,9 +16,6 @@ class CareerController extends Controller
                 'name' => 'required',
                 'email' => 'required',
                 'phone' => 'required',
-                // 'profile_image' =>'required|image|mimes:jpeg,png,jpg|max:2048',
-                // 'experience' => 'required',
-                // 'resume' =>'required|image|mimes:jpeg,png,jpg|max:2048',
                 'contact_form' => 'required',
                 'description' => 'required'
 		]);

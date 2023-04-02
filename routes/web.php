@@ -30,14 +30,14 @@ use App\Http\Controllers\Front\HomeController;
 |
 */
 
-Route::get('/', [App\Http\Controllers\Front\HomeController::class, 'index']);
-Route::get('/service_detail/{id}', [App\Http\Controllers\Front\ServiceDetailController::class, 'index'])->name('serviceDetails');
-Route::get('/contact-us', [App\Http\Controllers\Front\EnquiriesController::class, 'index'])->name("contactForm");
-Route::post('contact/store', [App\Http\Controllers\Front\EnquiriesController::class, 'sendEmail'])->name('contactsSave');
-Route::get('/project_detail/{id}', [App\Http\Controllers\Front\ProjectDetailController::class, 'index'])->name('projectDetails');
-Route::get('/reviews', [App\Http\Controllers\Front\ReviewsController::class, 'index'])->name('reviewsDetails');
-Route::get('/careers', [App\Http\Controllers\Front\CareerController::class, 'index'])->name('careersDetails');
-Route::post('careers/store', [App\Http\Controllers\Front\CareerController::class, 'store'])->name('careersSave');
+        Route::get('/', [App\Http\Controllers\Front\HomeController::class, 'index']);
+        Route::get('/service_detail/{id}', [App\Http\Controllers\Front\ServiceDetailController::class, 'index'])->name('serviceDetails');
+        Route::get('/contact-us', [App\Http\Controllers\Front\EnquiriesController::class, 'index'])->name("contactForm");
+        Route::post('contact/store', [App\Http\Controllers\Front\EnquiriesController::class, 'sendEmail'])->name('contactsSave');
+        Route::get('/project_detail/{id}', [App\Http\Controllers\Front\ProjectDetailController::class, 'index'])->name('projectDetails');
+        Route::get('/reviews', [App\Http\Controllers\Front\ReviewsController::class, 'index'])->name('reviewsDetails');
+        Route::get('/careers', [App\Http\Controllers\Front\CareerController::class, 'index'])->name('careersDetails');
+        Route::post('careers/store', [App\Http\Controllers\Front\CareerController::class, 'store'])->name('careersSave');
 
 
     Route::prefix("/admin")->namespace("Admin")->group(function(){

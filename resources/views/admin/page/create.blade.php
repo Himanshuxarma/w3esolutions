@@ -95,42 +95,7 @@
     })
 </script>
 
-<script>
-$(function () {
- 
-  $('#quickForm').validate({
-    rules: {
-      title: {
-        required: true,
-        title: true,
-      },
-      description: {
-        required: true,
-        description: true,
-      },
-    },
-    messages: {
-      title: {
-        required: "Please enter a Title",
-      },
-      description: {
-        required: "Please enter a Description",
-      },
-    },
-    errorElement: 'span',
-    errorPlacement: function (error, element) {
-      error.addClass('invalid-feedback');
-      element.closest('.form-group').append(error);
-    },
-    highlight: function (element, errorClass, validClass) {
-      $(element).addClass('is-invalid');
-    },
-    unhighlight: function (element, errorClass, validClass) {
-      $(element).removeClass('is-invalid');
-    }
-  });
-});
-</script>
+
 @endsection
 
 
