@@ -1303,7 +1303,7 @@ section {
   height: 100vh;
 }
 .description {
-  padding: 17px 0 !important;
+  padding: 2px 0 !important;
 }
 .category-sec{
   width: 30%;
@@ -1395,6 +1395,37 @@ section {
   display: none;
 }
 
+
+.rating>input{
+  display: none;
+}
+
+.rating>label::before{
+  content: '\f005';
+  font-family: FontAwesome;
+  margin: 5px;
+  font-size: 1.5rem;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.rating>.half::before{
+  content: '\f089';
+  position: absolute;
+}
+
+.rating>label{
+  color:#a0a0a0;
+  float: right;
+  transform: 0.2s;
+}
+
+.rating > input:checked ~ label,
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label
+{
+  color:gold;
+}
 
 
 

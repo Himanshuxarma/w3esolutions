@@ -14,7 +14,7 @@
                 </p>
                 @endif
 
-                <a class="btn btn-sm btn-success  " href="{{route('testimonialsCreate')}}"> Create Testimonial</a>
+                <!-- <a class="btn btn-sm btn-success  " href="{{route('testimonialsCreate')}}"> Create Testimonial</a> -->
 
                 <div class="card-tools">
                     <div class="input-group input-group-sm" style="width: 150px;">
@@ -48,11 +48,10 @@
                             <td>{{ $data->id }}</td>
                             <td>{{ $data->title }}</td>
                             <td>{{ strlen(strip_tags($data->description) < 100 ) ? substr(strip_tags($data->description), 0, 100).' ...' : strip_tags($data->description)}}</td>
-                            <td><img src="/uploads/testimonials/{{$data->image}}" alt="{{$data->image}}" width="50%"/></td>
+                            <td><img src="/uploads/front/testimonials/{{$data->image}}" alt="{{$data->image}}" width="50%"/></td>
                            
-                            <td class="rating">
-                            @for($i=1; $i<=$data->rating; $i++) 
-                            <span  style="color: orange;"class="fa fa-star"></span>
+                            <td class="rating">@for($i=1; $i<=$data->rating; $i++) 
+                            <span  style="color: orange;"class="fa fa-star" value="{{$data->rating  }}"></span>
                             @endfor
                             </td>
                         
@@ -70,7 +69,7 @@
                                 <div class="input-group-prepend">
                                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> Action</button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="{{ route('testimonialsEdit',$data->id) }}">Edit</a>
+                                        <!-- <a class="dropdown-item" href="{{ route('testimonialsEdit',$data->id) }}">Edit</a> -->
                                         <a class="dropdown-item" href="{{ route('testimonialsDelete',$data->id) }}">Delete</a>
                                     </div>
                                 </div>
