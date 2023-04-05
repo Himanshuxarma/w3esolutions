@@ -35,8 +35,8 @@
                             <th scope="col" width="10%">Experience</th>
                             <th scope="col" width="10%">Resume</th>
                             <th scope="col" width="10%">Contact Form</th>
-                            <th scope="col" width="10%">Description</th>
-                            <!-- <th scope="col" width="10%">Action</th> -->
+                            <!-- <th scope="col" width="10%">Description</th> -->
+                            <th scope="col" width="10%">Action</th>
 
                         </tr>
                     </thead>
@@ -55,8 +55,16 @@
                                 <img src="/uploads/front/careers/{{$data->resume}}" alt="{{$data->resume}}"width="50%" />
                             </td>
                             <td>{{$data->contact_form}}</td>
-                            <td>{{$data->description}}</td>
+                            <!-- <td>{{ strlen(strip_tags($data->description) < 100 ) ? substr(strip_tags($data->description), 0, 50).' ...' : strip_tags($data->description)}}</td> -->
                             </td>
+                            <td>
+                                <div class="input-group-prepend">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Action</button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="{{ route('careersDelete',$data->id) }}">Delete</a>
+                                    </div>
+                                </div>
+                                </td>
                         </tr>
                         @endforeach
                     </tbody>

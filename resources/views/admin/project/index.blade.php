@@ -34,8 +34,8 @@
                             <th scope="col" width="10%">#</th>
                             <th scope="col" width="10%">Category </th>
                             <th scope="col" width="10%">Title</th>
-                            <th scope="col" width="10%">Slug</th>
-                            <th scope="col" width="10%">Description</th>
+                            <!-- <th scope="col" width="10%">Slug</th> -->
+                            <!-- <th scope="col" width="10%">Description</th> -->
                             <th scope="col" width="10%">Image</th>
                             <th scope="col" width="10%">Featured</th>
                             <th scope="col" width="10%">Status</th>
@@ -49,8 +49,8 @@
                             <!-- <td>{{$project->cat_id}}</td> -->
                             <td>{{ (!empty($project->category) && $project->category->name != '') ? $project->category->name : 'N/A'}}</td>
                             <td>{{ $project->title }}</td>
-                            <td>{{ $project->slug }}</td>
-                            <td>{{ strlen(strip_tags($project->description) < 100 ) ? substr(strip_tags($project->description), 0, 50).' ...' : strip_tags($project->description)}}
+                            <!-- <td>{{ $project->slug }}</td> -->
+                            <!-- <td>{{ strlen(strip_tags($project->description) < 100 ) ? substr(strip_tags($project->description), 0, 50).' ...' : strip_tags($project->description)}} -->
                             </td>
                             <td>
                                 <img src="/uploads/projects/{{$project->image}}" alt="{{$project->image}}"width="50%" />

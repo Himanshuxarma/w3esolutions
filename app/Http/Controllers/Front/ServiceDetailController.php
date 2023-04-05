@@ -9,6 +9,7 @@ use App\Models\Service;
 use App\Models\Techstack;
 use App\Models\Project;
 use App\Models\Banner;
+use App\Models\Testimonial;
 
 class ServiceDetailController extends Controller
 {
@@ -17,6 +18,7 @@ class ServiceDetailController extends Controller
         $techstacks = Techstack::all();
         $projects = Project::all();
         $banner = Banner::where('page_name','about-us')->get();
-        return view('front.service_detail.index',compact('services','techstacks','projects','banner'));
+        $testimonials = Testimonial::where('status',1)->get();
+        return view('front.service_detail.index',compact('services','techstacks','projects','banner','testimonials'));
     }
 }

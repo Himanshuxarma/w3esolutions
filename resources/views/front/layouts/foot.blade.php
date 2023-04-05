@@ -16,4 +16,4 @@
   
   <!-- Template Main JS File -->
   <script src="{{asset('/assets/front/js/main.js')}}"></script>
-  <script src="{{asset('/assets/front/js/script.js')}}"></script>
+  <script src="{{asset('/assets/front/js/custom.js')}}"></script>

@@ -9,11 +9,8 @@
                     <div class="card-header">
                         <h3 class="card-title">Update Project</h3>
                     </div>
-
                     <form id="quickForm" action="{{route('projectsUpdate',$projects->id)}}" method="POST" enctype="multipart/form-data">
                         @csrf
-
-
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-6">
@@ -21,7 +18,9 @@
                                         <label for="title"> Category Name </label>
                                         <select class="form-control" name="cat_id" id="cat_id">
                                             @foreach($category as $cat)
-                                            <option value="{{$cat->id}}">@if($cat->id==$projects->cat_id)@endif{{$cat->name }}</option>
+                                            <option value="{{$cat->id}}"
+                                                {{$projects->cat_id == $cat->id  ? 'selected' : ''}}>{{ $cat->name}}
+                                            </option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -30,12 +29,11 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label for="title"> Title </label>
-                                            <input type="text" name="title" class="form-control"value="{{$projects->title}}" id="product_title" require placeholder="Enter  Title">
+                                            <input type="text" name="title" class="form-control" value="{{$projects->title}}" id="product_title" require placeholder="Enter  Title">
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -48,14 +46,27 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <div class="form-group">
+                                            <label for="project_technologies">Project Technology</label>
+                                            <select class="form-control select2" multiple="multiple"
+                                                name="technology_id[]">
+                                                @foreach($technology as $techstacks)
+                                                @php $selected = explode(",", $projects->technology_id);@endphp {{$techstacks->technology}}
+                                                <option value="{{$techstacks->id}}"{{ (in_array($techstacks->id, $selected)) ? 'selected' : '' }}>{{$techstacks->technology}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="form-group">
                                             <label for="description">Description</label>
                                             <textarea id="summernote" name="description">{{$projects->description}} </textarea>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <div class="form-group">
@@ -74,7 +85,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="form-check">
-                                    <input class="form-check-input" name="status" value="1" type="checkbox"{{($projects->status==1 ? 'checked': '')}}>
+                                    <input class="form-check-input" name="status" value="1" type="checkbox" {{($projects->status==1 ? 'checked': '')}}>
                                     <label class="form-check-label">Status</label>
                                 </div>
                             </div>
@@ -84,11 +95,9 @@
                     </form>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
-
 @endsection
 @section('customscript')
 <script>
@@ -104,7 +113,6 @@
     })
 
 </script>
-
 <script>
     var slug = function (str) {
         var $slug = '';
@@ -118,6 +126,18 @@
     $('#product_title').keyup(function () {
         var takedata = $(this).val()
         $('#product_slug').val(slug(takedata));
+    });
+
+</script>
+<script>
+    $(function () {
+        //Initialize Select2 Elements
+        $('.select2').select2()
+
+        //Initialize Select2 Elements
+        $('.select2bs4').select2({
+            theme: 'bootstrap4'
+        })
     });
 
 </script>

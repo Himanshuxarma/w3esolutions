@@ -47,7 +47,7 @@
                         <tr>
                             <td>{{ $data->id }}</td>
                             <td>{{ $data->title }}</td>
-                            <td>{{ strlen(strip_tags($data->description) < 100 ) ? substr(strip_tags($data->description), 0, 100).' ...' : strip_tags($data->description)}}</td>
+                            <td>{{ strlen(strip_tags($data->description) < 100 ) ? substr(strip_tags($data->description), 0, 50).' ...' : strip_tags($data->description)}}</td>
                             <td><img src="/uploads/front/testimonials/{{$data->image}}" alt="{{$data->image}}" width="50%"/></td>
                            
                             <td class="rating">@for($i=1; $i<=$data->rating; $i++) 

@@ -33,8 +33,8 @@
                   <tr>
                       <th scope="col" width="10%">#</th>
                       <th scope="col" width="10%">Title</th>
-                      <th scope="col" width="10%">Slug</th>
-                      <th scope="col" width="10%">Description</th>
+                      <!-- <th scope="col" width="10%">Slug</th> -->
+                      <!-- <th scope="col" width="10%">Description</th> -->
                       <th scope="col" width="10%">Banner Image</th>
                       <th scope="col" width="10%">Status</th>
                       <th scope="col" width="10%">Action</th>
@@ -46,9 +46,9 @@
                       <tr>
                           <td>{{ $page->id }}</td>
                           <td>{{ $page->title }}</td>
-                          <td>{{ $page->slug }}</td>
-                          <td>{{ strlen(strip_tags($page->description) < 100 ) ? substr(strip_tags($page->description), 0, 100).' ...' : strip_tags($page->description) }}
-                          </td>
+                          <!-- <td>{{ $page->slug }}</td> -->
+                          <!-- <td>{{ strlen(strip_tags($page->description) < 100 ) ? substr(strip_tags($page->description), 0, 100).' ...' : strip_tags($page->description) }}
+                          </td> -->
                           <td><img src="/uploads/pages/{{$page->banner_image}}" alt="{{$page->banner_image}}" width="50%" /></td>
                           @if($page->status == "1")
                          

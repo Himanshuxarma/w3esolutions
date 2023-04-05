@@ -47,7 +47,7 @@
 <!-- End Services Section -->
 
 <!-- ======= Testimonial Section ======= -->
-<section id="testimonials" class="services ">
+<section id="testimonials" class="services ">   
     <div class="container">
         <div class="section-title">
             <h2>Testimonial</h2>

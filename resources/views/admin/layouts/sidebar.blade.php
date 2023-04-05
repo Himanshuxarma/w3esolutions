@@ -99,7 +99,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{url('/admin/employees')}}" class="nav-link @yield('employees_select')">
+                    <a href="{{url('/admin/employees')}}" class="nav-link @yield('employess_select')">
                         <i class="nav-icon fa fa-users"></i>
                         <p>
                         Employee
@@ -124,7 +124,9 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{url('/admin/faqs')}}" class="nav-link @yield('faqs_select')">
-                        <i class="nav-icon fa fa-server"></i>
+                        <i class="nav-icon fa fa-question-circle"></i>
+                        
+
                         <p>
                              FAQ
                         </p>
@@ -132,7 +134,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{url('/admin/careers')}}" class="nav-link @yield('careers_select')">
-                        <i class="nav-icon fa fa-server"></i>
+                        <i class="nav-icon fa fa-graduation-cap"></i>
                         <p>
                              careers
                         </p>

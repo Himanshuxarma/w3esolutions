@@ -31,7 +31,7 @@
                         <tr>
                             <th scope="col" width="10%">#</th>
                             <th scope="col" width="10%">Title</th>
-                            <th scope="col" width="10%">Description</th>
+                            <!-- <th scope="col" width="10%">Description</th> -->
                             <th scope="col" width="10%">Image</th>
                             <th scope="col" width="10%">Status</th>
                             <th scope="col" width="10%">Action</th>
@@ -42,8 +42,8 @@
                         <tr>
                             <td>{{ $service->id }}</td>
                             <td>{{ $service->title }}</td>
-                            <td>{{ strlen(strip_tags($service->description) < 100 ) ? substr(strip_tags($service->description), 0, 100).' ...' : strip_tags($service->description)}}</td>
-                            <td><img src="/uploads/services/{{$service->image}}" alt="{{$service->image}}" width="100%" /></td>
+                            <!-- <td>{{ strlen(strip_tags($service->description) < 100 ) ? substr(strip_tags($service->description), 0, 100).' ...' : strip_tags($service->description)}}</td> -->
+                            <td><img src="/uploads/services/{{$service->image}}" alt="{{$service->image}}" width="50%" /></td>
 
                             @if($service->status == "1")
                             <td>
@@ -76,8 +76,8 @@
 @endsection
 @section('customscript')
 <script>
-setTimeout(function() {
-$('.hide1').fadeOut('slow');
-}, 5000);
+    setTimeout(function() {
+    $('.hide1').fadeOut('slow');
+    }, 5000);
 </script>
 @endsection

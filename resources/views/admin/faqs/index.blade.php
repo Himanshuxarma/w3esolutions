@@ -42,7 +42,7 @@
                         <tr>
                             <td>{{ $data->id }}</td>
                             <td>{{ $data->question }}</td>
-                            <td>{{$data->answer}}</td>
+                            <td>{{ strlen(strip_tags($data->answer) < 100 ) ? substr(strip_tags($data->answer), 0, 50).' ...' : strip_tags($data->answer) }}
 
                             @if($data->status == "1")
                             <td class="project-state">

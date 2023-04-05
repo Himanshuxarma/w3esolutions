@@ -12,6 +12,7 @@ class CareerController extends Controller
         return view('front.careers.index');
     }
     public function store(Request $request){
+		dd($request);
 			$request->validate([
                 'name' => 'required',
                 'email' => 'required',

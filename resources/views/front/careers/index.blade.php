@@ -11,7 +11,7 @@
         <div class="row mt-5">
             <div class="col-lg-12 mt-5 mt-lg-0">
 
-                <form action="{{route('careersSave')}}" method="post" role="form" class="" enctype="multipart/form-data">
+                <form action="{{route('careersSave')}}" method="post" role="form" class="php-email-form" enctype="multipart/form-data">
                     @csrf
                     <div class="form-row">
                         <div class="col-md-6 form-group">
@@ -35,7 +35,7 @@
                         </div>
 
                     </div>
-                    <div class="form-row">
+                   <div class="form-row">
                         <div class="col-md-6 form-group">
                             
                             <select class="form-control" name="experience" id="experience" >
@@ -87,4 +87,14 @@
 
     </div>
 </section>
+<script>
+    function isNumberKey(evt) {
+        var charCode = (evt.which) ? evt.which : evt.keyCode
+        if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+        return true;
+    }
+
+</script>
 @endsection
+

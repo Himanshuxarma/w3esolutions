@@ -42,8 +42,6 @@ class ProjectsController extends Controller
             */
 
         public function store(Request $request){
-            // $category = Category::find();
-            // dd($request);
             $request->validate([
             'cat_id' => 'required',
             'title' => 'required',
@@ -93,7 +91,8 @@ class ProjectsController extends Controller
         public function edit($id){  
             $projects = Project::find($id);
             $category = Category::all();
-            return view('admin.project.edit',compact('projects','category'));
+            $technology = Techstack::all();
+            return view('admin.project.edit',compact('projects','category','technology'));
         }
             /**
             * Update the specified resource in storage.
@@ -130,7 +129,14 @@ class ProjectsController extends Controller
             $projects->slug = $request->slug;
             $projects->description = $request->description;
             $projects->is_featured = $request->is_featured;
-            $projects->save();
+            if( $projects->save()){
+                $data = [];
+               foreach($request->technology_id as $key=>$technology){
+                   $data[] = ['project_id'=>$projects->id, 'technology_id'=> $technology, 'status'=>1];
+                  
+               }
+               ProjectTechnologies::insert($data);
+           }
             return redirect()->route('projectList')->with('success','Project Has Been updated successfully');
         }
 

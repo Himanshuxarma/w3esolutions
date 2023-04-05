@@ -18,6 +18,9 @@ use App\Http\Controllers\Admin\DomainController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\CareerController;
 use App\Http\Controllers\Front\HomeController;
+use App\Http\Controllers\Front\ServiceDetailController;
+use App\Http\Controllers\Front\ProjectDetailController;
+use App\Http\Controllers\Front\ReviewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,13 +33,13 @@ use App\Http\Controllers\Front\HomeController;
 |
 */
 
-        Route::get('/', [App\Http\Controllers\Front\HomeController::class, 'index']);
-        Route::get('/service_detail/{id}', [App\Http\Controllers\Front\ServiceDetailController::class, 'index'])->name('serviceDetails');
+        Route::get('/', [HomeController::class, 'index']);
+        Route::get('/service_detail/{id}', [ServiceDetailController::class, 'index'])->name('serviceDetails');
         Route::get('/contact-us', [App\Http\Controllers\Front\EnquiriesController::class, 'index'])->name("contactForm");
         Route::post('contact/store', [App\Http\Controllers\Front\EnquiriesController::class, 'sendEmail'])->name('contactsSave');
-        Route::get('/project_detail/{id}', [App\Http\Controllers\Front\ProjectDetailController::class, 'index'])->name('projectDetails');
-        Route::get('/reviews', [App\Http\Controllers\Front\ReviewsController::class, 'index'])->name('reviewsDetails');
-        Route::post('reviews/store', [App\Http\Controllers\Front\ReviewsController::class, 'store'])->name('reviewsSave');
+        Route::get('/project_detail/{id}', [ProjectDetailController::class, 'index'])->name('projectDetails');
+        Route::get('/reviews', [ReviewsController::class, 'index'])->name('reviewsDetails');
+        Route::post('reviews/store', [ReviewsController::class, 'store'])->name('reviewsSave');
         Route::get('/careers', [App\Http\Controllers\Front\CareerController::class, 'index'])->name('careersDetails');
         Route::post('careers/store', [App\Http\Controllers\Front\CareerController::class, 'store'])->name('careersSave');
 
@@ -54,61 +57,61 @@ use App\Http\Controllers\Front\HomeController;
         Route::get('/', [DashboardController::class, 'index'])->name('adminHome');
         Route::get("/dashboard", [DashboardController::class, 'index'])->name('adminDashboard');
         //users
-        Route::get("/users", [App\Http\Controllers\Admin\UsersController::class, 'index'])->name("userList");
-        Route::get('users/create', [App\Http\Controllers\Admin\UsersController::class, 'create'])->name('userCreate');
-        Route::post('users/store', [App\Http\Controllers\Admin\UsersController::class, 'store'])->name('userSave');
-        Route::get('users/edit/{id}', [App\Http\Controllers\Admin\UsersController::class, 'edit'])->name('userEdit');
-        Route::put('users/update/{id}', [App\Http\Controllers\Admin\UsersController::class, 'update'])->name('userUpdate');
-        Route::get('users/delete/{id}', [App\Http\Controllers\Admin\UsersController::class, 'destroy'])->name('userDelete');
+        Route::get("/users", [UsersController::class, 'index'])->name("userList");
+        Route::get('users/create', [UsersController::class, 'create'])->name('userCreate');
+        Route::post('users/store', [UsersController::class, 'store'])->name('userSave');
+        Route::get('users/edit/{id}', [UsersController::class, 'edit'])->name('userEdit');
+        Route::put('users/update/{id}', [UsersController::class, 'update'])->name('userUpdate');
+        Route::get('users/delete/{id}', [UsersController::class, 'destroy'])->name('userDelete');
 
         
         //projects
-        Route::get("/projects", [App\Http\Controllers\Admin\ProjectsController::class, 'index'])->name("projectList");
-        Route::get('/projects/create', [App\Http\Controllers\Admin\ProjectsController::class, 'create'])->name('projectsCreate');
-        Route::post('/projects/store', [App\Http\Controllers\Admin\ProjectsController::class, 'store'])->name('projectsSave');
-        Route::get('/projects/edit/{id}', [App\Http\Controllers\Admin\ProjectsController::class, 'edit'])->name('projectsEdit');
-        Route::post('/projects/update/{id}', [App\Http\Controllers\Admin\ProjectsController::class, 'update'])->name('projectsUpdate');
-        Route::get('/projects/delete/{id}', [App\Http\Controllers\Admin\ProjectsController::class, 'destroy'])->name('projectsDelete');
-        Route::get('/projects/status/{id}', [App\Http\Controllers\Admin\ProjectsController::class, 'project_status'])->name('updateStatus');
-        Route::get('/projects/featured/{id}', [App\Http\Controllers\Admin\ProjectsController::class, 'project_featured_status'])->name('featuredStatus');
+        Route::get("/projects", [ProjectsController::class, 'index'])->name("projectList");
+        Route::get('/projects/create', [ProjectsController::class, 'create'])->name('projectsCreate');
+        Route::post('/projects/store', [ProjectsController::class, 'store'])->name('projectsSave');
+        Route::get('/projects/edit/{id}', [ProjectsController::class, 'edit'])->name('projectsEdit');
+        Route::post('/projects/update/{id}', [ProjectsController::class, 'update'])->name('projectsUpdate');
+        Route::get('/projects/delete/{id}', [ProjectsController::class, 'destroy'])->name('projectsDelete');
+        Route::get('/projects/status/{id}', [ProjectsController::class, 'project_status'])->name('updateStatus');
+        Route::get('/projects/featured/{id}', [ProjectsController::class, 'project_featured_status'])->name('featuredStatus');
         // Route::any('/projects/projects_image/{id}', [App\Http\Controllers\Admin\ProjectsController::class, 'projects_image'])->name('productImages');
         
 
         //category
-        Route::get("/category", [App\Http\Controllers\Admin\CategoryController::class, 'index'])->name("categoryList");
-        Route::get('category/create', [App\Http\Controllers\Admin\CategoryController::class, 'create'])->name('categoryCreate');
-        Route::post('category/store', [App\Http\Controllers\Admin\CategoryController::class, 'store'])->name('categorySave');
-        Route::get('category/edit/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'edit'])->name('categoryEdit');
-        Route::post('category/update/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'update'])->name('categoryUpdate');
-        Route::get('category/delete/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'destroy'])->name('categoryDelete');
-        Route::get('category/status/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'status'])->name('categoryStatus');
+        Route::get("/category", [CategoryController::class, 'index'])->name("categoryList");
+        Route::get('category/create', [CategoryController::class, 'create'])->name('categoryCreate');
+        Route::post('category/store', [CategoryController::class, 'store'])->name('categorySave');
+        Route::get('category/edit/{id}', [CategoryController::class, 'edit'])->name('categoryEdit');
+        Route::post('category/update/{id}', [CategoryController::class, 'update'])->name('categoryUpdate');
+        Route::get('category/delete/{id}', [CategoryController::class, 'destroy'])->name('categoryDelete');
+        Route::get('category/status/{id}', [CategoryController::class, 'status'])->name('categoryStatus');
         //page
-        Route::get("/page", [App\Http\Controllers\Admin\PagesController::class, 'index'])->name("pageList");
-        Route::get('page/create', [App\Http\Controllers\Admin\PagesController::class, 'create'])->name('pageCreate');
-        Route::post('page/store', [App\Http\Controllers\Admin\PagesController::class, 'store'])->name('pageSave');
-        Route::get('page/edit/{id}', [App\Http\Controllers\Admin\PagesController::class, 'edit'])->name('pageEdit');
-        Route::post('page/update/{id}', [App\Http\Controllers\Admin\PagesController::class, 'update'])->name('pageUpdate');
-        Route::get('page/delete/{id}', [App\Http\Controllers\Admin\PagesController::class, 'destroy'])->name('pageDelete');
-        Route::get('page/page_status/{id}', [App\Http\Controllers\Admin\PagesController::class, 'page_status'])->name('pageStatus');
+        Route::get("/page", [PagesController::class, 'index'])->name("pageList");
+        Route::get('page/create', [PagesController::class, 'create'])->name('pageCreate');
+        Route::post('page/store', [PagesController::class, 'store'])->name('pageSave');
+        Route::get('page/edit/{id}', [PagesController::class, 'edit'])->name('pageEdit');
+        Route::post('page/update/{id}', [PagesController::class, 'update'])->name('pageUpdate');
+        Route::get('page/delete/{id}', [PagesController::class, 'destroy'])->name('pageDelete');
+        Route::get('page/page_status/{id}', [PagesController::class, 'page_status'])->name('pageStatus');
      
         
         //setting
-        Route::get("/setting", [App\Http\Controllers\Admin\SettingController::class, 'index'])->name("settingsList");
-        Route::get('setting/create', [App\Http\Controllers\Admin\SettingController::class, 'create'])->name('settingsCreate');
-        Route::post('setting/store', [App\Http\Controllers\Admin\SettingController::class, 'store'])->name('settingsSave');
-        Route::get('setting/edit/{id}', [App\Http\Controllers\Admin\SettingController::class, 'edit'])->name('settingsEdit');
-        Route::post('setting/setting_update/{id}', [App\Http\Controllers\Admin\SettingController::class, 'setting_update'])->name('settingsUpdate');
-        Route::get('setting/delete/{id}', [App\Http\Controllers\Admin\SettingController::class, 'destroy'])->name('settingsDelete');
-        Route::get('setting/setting_status/{id}', [App\Http\Controllers\Admin\SettingController::class, 'setting_status'])->name('settingsStatus');
+        Route::get("/setting", [SettingController::class, 'index'])->name("settingsList");
+        Route::get('setting/create', [SettingController::class, 'create'])->name('settingsCreate');
+        Route::post('setting/store', [SettingController::class, 'store'])->name('settingsSave');
+        Route::get('setting/edit/{id}', [SettingController::class, 'edit'])->name('settingsEdit');
+        Route::post('setting/setting_update/{id}', [SettingController::class, 'setting_update'])->name('settingsUpdate');
+        Route::get('setting/delete/{id}', [SettingController::class, 'destroy'])->name('settingsDelete');
+        Route::get('setting/setting_status/{id}', [SettingController::class, 'setting_status'])->name('settingsStatus');
 		
 		 //service
-        Route::get("/service", [App\Http\Controllers\Admin\ServicesController::class, 'index'])->name("servicesList");
-        Route::get('service/create', [App\Http\Controllers\Admin\ServicesController::class, 'create'])->name('servicesCreate');
-        Route::post('service/store', [App\Http\Controllers\Admin\ServicesController::class, 'store'])->name('servicesSave');
-        Route::get('service/edit/{id}', [App\Http\Controllers\Admin\ServicesController::class, 'edit'])->name('servicesEdit');
-        Route::post('service/service_update/{id}', [App\Http\Controllers\Admin\ServicesController::class, 'service_update'])->name('servicesUpdate');
-        Route::get('service/delete/{id}', [App\Http\Controllers\Admin\ServicesController::class, 'destroy'])->name('servicesDelete');
-        Route::get('service/service_status/{id}', [App\Http\Controllers\Admin\ServicesController::class, 'service_status'])->name('servicesStatus');
+        Route::get("/service", [ServicesController::class, 'index'])->name("servicesList");
+        Route::get('service/create', [ServicesController::class, 'create'])->name('servicesCreate');
+        Route::post('service/store', [ServicesController::class, 'store'])->name('servicesSave');
+        Route::get('service/edit/{id}', [ServicesController::class, 'edit'])->name('servicesEdit');
+        Route::post('service/service_update/{id}', [ServicesController::class, 'service_update'])->name('servicesUpdate');
+        Route::get('service/delete/{id}', [ServicesController::class, 'destroy'])->name('servicesDelete');
+        Route::get('service/service_status/{id}', [ServicesController::class, 'service_status'])->name('servicesStatus');
 		
 		 //Contact Enquiries
         Route::get("/enquiries", [App\Http\Controllers\Admin\EnquiriesController::class, 'index'])->name("enquiriesList");
@@ -133,13 +136,13 @@ use App\Http\Controllers\Front\HomeController;
         Route::get('testimonial/testimonials_status/{id}', [TestimonialController::class, 'testimonials_status'])->name('testimonialsStatus');
 
          //techstacks
-         Route::get("/techstacks", [App\Http\Controllers\Admin\TechstacksController::class, 'index'])->name("techstacksList");
-         Route::get('techstacks/create', [App\Http\Controllers\Admin\TechstacksController::class, 'create'])->name('techstacksCreate');
-         Route::post('techstacks/store', [App\Http\Controllers\Admin\TechstacksController::class, 'store'])->name('techstacksSave');
-         Route::get('techstacks/edit/{id}', [App\Http\Controllers\Admin\TechstacksController::class, 'edit'])->name('techstacksEdit');
-         Route::post('techstacks/update/{id}', [App\Http\Controllers\Admin\TechstacksController::class, 'update'])->name('techstacksUpdate');
-         Route::get('techstacks/delete/{id}', [App\Http\Controllers\Admin\TechstacksController::class, 'techstacks'])->name('techstacksDelete');
-         Route::get('techstacks/techstacks_status/{id}', [App\Http\Controllers\Admin\TechstacksController::class, 'techstacks_status'])->name('techstacksStatus');
+         Route::get("/techstacks", [TechstacksController::class, 'index'])->name("techstacksList");
+         Route::get('techstacks/create', [TechstacksController::class, 'create'])->name('techstacksCreate');
+         Route::post('techstacks/store', [TechstacksController::class, 'store'])->name('techstacksSave');
+         Route::get('techstacks/edit/{id}', [TechstacksController::class, 'edit'])->name('techstacksEdit');
+         Route::post('techstacks/update/{id}', [TechstacksController::class, 'update'])->name('techstacksUpdate');
+         Route::get('techstacks/delete/{id}', [TechstacksController::class, 'techstacks'])->name('techstacksDelete');
+         Route::get('techstacks/techstacks_status/{id}', [TechstacksController::class, 'techstacks_status'])->name('techstacksStatus');
 
          
 		//employees
@@ -171,6 +174,7 @@ use App\Http\Controllers\Front\HomeController;
         
         //careers
         Route::get("/careers", [CareerController::class, 'index'])->name("careersList");
+        Route::get('careers/delete/{id}', [CareerController::class, 'careers'])->name('careersDelete');
        
           
       

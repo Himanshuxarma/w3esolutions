@@ -33,8 +33,8 @@
                         <tr>
                             <th scope="col" width="10%">#</th>
                             <th scope="col" width="10%">Name</th>
-                            <th scope="col" width="10%">Slug</th>
-                            <th scope="col" width="10%">Description</th>
+                            <!-- <th scope="col" width="10%">Slug</th> -->
+                            <!-- <th scope="col" width="10%">Description</th> -->
                             <th scope="col" width="10%">Banner Image</th>
                             <th scope="col" width="10%">Status</th>
                             <th scope="col" width="10%">Action</th>
@@ -45,9 +45,9 @@
                         <tr>
                             <td>{{ $cat->id }}</td>
                             <td>{{ $cat->name }}</td>
-                            <td>{{ $cat->slug }}</td>
-                            <td>{{ strlen(strip_tags($cat->description) < 100 ) ? substr(strip_tags($cat->description), 0, 50).' ...' : strip_tags($cat->description) }}
-                            </td>
+                            <!-- <td>{{ $cat->slug }}</td> -->
+                            <!-- <td>{{ strlen(strip_tags($cat->description) < 100 ) ? substr(strip_tags($cat->description), 0, 50).' ...' : strip_tags($cat->description) }}
+                            </td> -->
                             <td>
                                 <img src="/uploads/categories/{{$cat->banner_image}}" alt="{{$cat->banner_image}}"width="50%" />
                             </td>

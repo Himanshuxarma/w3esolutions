@@ -26,7 +26,7 @@
                                         <select class="form-control" name="project_done" id="project_done">
                                             <option value="">--Project Done--</option>
                                                 @foreach($projects as $project)
-                                                    <option value="{{$project->id}}" {{$project->project_done == $project->id  ? 'selected' : ''}}>{{ $project->title}}</option>
+                                                 <option value="{{$project->id}}"{{$project->project_done == $project->id  ? 'selected' : ''}}>{{ $project->title}}</option>
 
                                                 @endforeach
                                         </select>

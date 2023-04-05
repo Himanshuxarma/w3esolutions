@@ -19,14 +19,19 @@
                     </div>
                     <div class="col-12 d-flex tech-detail-row mt-2">
                         <div class="category-sec">
-                            <span class="font-weight-bold">Tech Stack</span>
+                            <span class="font-weight-bold">Techology</span>
                         </div>
                         <div class="text-right d-flex">
-                            <img class="ml-3" src="/assets/front/img/img-icon1.png" alt="img-icons" width="30">
-                            <p class="technology-name ml-1">Laravel</p>
+                            <!-- <img class="ml-3" src="/assets/front/img/img-icon1.png" alt="img-icons" width="30"> -->
+                            @php $i = 1; @endphp
+                            @foreach($data->technology as $tech)
+                            {{ $loop->first ? '' : ' , ' }}
+                            <p class="technology-name ml-1">{{ (!empty($tech) && $tech->technology != '') ? $tech->technology : 'N/A' }} </p>
+                            @php $i++ @endphp
+                            @endforeach
                         </div>
                     </div>
-                    <div class="col-12 d-flex tech-detail-row mt-2">
+                    <!-- <div class="col-12 d-flex tech-detail-row mt-2">
                         <div class="category-sec">
                             <span class="font-weight-bold">Design</span>
                         </div>
@@ -38,14 +43,14 @@
                             <img class="ml-3" src="/assets/front/img/img-icon1.png" alt="img-icons" width="30">
                             <p class="technology-name ml-1">Bootstrap</p>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col-12 d-flex tech-detail-row mt-2">
                         <div class="category-sec">
                             <span class="font-weight-bold">category</span>
                         </div>
                         <div class="text-right d-flex">
-                            <img class="ml-3" src="/assets/front/img/img-icon1.png" alt="img-icons" width="30">
-                            <p class="technology-name ml-1">E-Commerce</p>
+                            <!-- <img class="ml-3" src="/assets/front/img/img-icon1.png" alt="img-icons" width="30"> -->
+                            <p class="technology-name ml-1">{{ (!empty($projects->category) && $projects->category->name != '') ? $projects->category->name : 'N/A'}}</p>
                         </div>
                         <div>
                             <div>
