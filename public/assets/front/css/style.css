@@ -69,13 +69,6 @@ textarea:focus{ outline:none;  }
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   padding: 12px 0;
 }
-.inner-pages .nav-menu a{
-  color:#493c3e;
-}
-#header.inner-pages .logo a{
-  color:#493c3e;
-}
-
 #header.header-scrolled .logo a, #header.header-inner-pages .logo a {
   color: #493c3e;
 }

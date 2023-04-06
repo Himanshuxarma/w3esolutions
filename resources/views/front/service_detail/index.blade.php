@@ -4,7 +4,10 @@
 <section id="services" class="services">
    <div class="container">
       <div class="section-title text-left mb-2">
+      <div class="service-slid owl-carousel owl-theme">
          <div class="serve-content d-flex align-items-center">
+            
+            <div class="item">
          @php $serviceImg = '/assets/front/img/default_product.png'; @endphp
                     @if(file_exists(public_path('/uploads/services/').$services->image))
                     @php $serviceImg = asset('/uploads/services').'/'.$services->image; @endphp
@@ -12,6 +15,8 @@
             <img src="{{$serviceImg}}" alt="{{$services->title}}" width="40px" height="40px">
             <h3 class="ml-2 mb-2"> <span>{{$services->title}}</span></h3>
          </div>
+         </div>
+      </div>
       </div>
       <div class="row">
          

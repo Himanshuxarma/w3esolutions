@@ -227,16 +227,6 @@
 
 <!-- End Employee Section -->
 
-<section class="card-slider">
-    <div class="container">
-        <div class="main-cards-sliding">
-            <div class="item">
-                <div class="img-set">
-                    <img src="/assets/front/img/imgs-1.jpg" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+
 
 @endsection
