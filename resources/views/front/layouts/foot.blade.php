@@ -12,6 +12,8 @@
   <script src="{{asset('/assets/front/vendor/venobox/venobox.min.js')}}"></script>
   
   <script src="{{asset('/assets/front/vendor/owl.carousel/owl.carousel.min.js')}}"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
   
   <!-- Template Main JS File -->
   <script src="{{asset('/assets/front/js/main.js')}}"></script>
+  <script src="{{asset('/assets/front/js/custom.js')}}"></script>

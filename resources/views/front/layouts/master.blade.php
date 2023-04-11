@@ -10,14 +10,9 @@
   <!-- End Header -->
       
   <!-- ======= Hero Section ======= -->
-  <?php
-    if(Request::is('/')) {
-      
-    ?>
+ 
 @include('front.layouts.banner')
-<?php
-    }
-    ?>
+
  
   <!-- End Hero -->
 

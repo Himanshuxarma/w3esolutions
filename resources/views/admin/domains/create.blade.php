@@ -36,7 +36,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="technology"> Technology </label>
-                                        <select class="form-control" name="technology" id="technology">
+                                        <select class="form-control select2" multiple="multiple" name="technology[]" id="technology[]">
                                             <option value="">--Select Technology--</option>
                                             @foreach($technology as $data){
                                             <option value="{{$data->id}}">{{ $data->technology }}</option>
@@ -82,7 +82,19 @@
             mode: "htmlmixed",
             theme: "monokai"
         });
-    })
+    })  
+
+</script>
+<script>
+    $(function () {
+        //Initialize Select2 Elements
+        $('.select2').select2()
+
+        //Initialize Select2 Elements
+        $('.select2bs4').select2({
+            theme: 'bootstrap4'
+        })
+    });
 
 </script>
 @endsection

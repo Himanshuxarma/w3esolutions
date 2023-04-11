@@ -47,7 +47,7 @@
 <!-- End Services Section -->
 
 <!-- ======= Testimonial Section ======= -->
-<section id="testimonials" class="services ">
+<section id="testimonials" class="services ">   
     <div class="container">
         <div class="section-title">
             <h2>Testimonial</h2>
@@ -60,11 +60,17 @@
             <div class=" col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0 ">
                 <div class="icon-box ">
                     @php $testimonialImg = '/assets/front/img/testimonials.png'; @endphp
-                    @if(file_exists(public_path('/uploads/testimonials/').$data->image))
-                    @php $testimonialImg = asset('/uploads/testimonials').'/'.$data->image; @endphp
+                    @if(file_exists(public_path('/uploads/front/testimonials/').$data->image))
+                    @php $testimonialImg = asset('/uploads/front/testimonials').'/'.$data->image; @endphp
                     @endif
                     <div class="icon"><img class="img" src="{{$testimonialImg}}" alt="{{$data->title}}" width="100px" height="100px" /></div>
                     <h4 class="title"><a href="{{route('reviewsDetails')}}">{{$data->title}}</a></h4>
+                    <span>
+                        
+                         @for($i=1; $i<=$data->rating; $i++)
+                    <span style="color: orange;"class="fa fa-star"></span>
+                    @endfor
+                       </span>
                     <p class="description">{{ strlen(strip_tags($data->description) < 100 ) ? substr(strip_tags($data->description), 0, 50).' ...' : strip_tags($data->description)}} </p>
                     <div class="btn-decor">
                         <a href="javascript:void(0);" class="btn-get-started scrollto">Read More</a>
@@ -165,9 +171,8 @@
             @foreach($faqs as $faq)
 
             <li>
-                <a data-toggle="collapse" class="" href="#faq{{$faq->id}}">{{$faq->question}}? <i
-                        class="icofont-simple-up"></i></a>
-                <div id="faq{{$faq->id}}" class="collapse show" data-parent=".faq-list">
+                <a data-toggle="collapse" class="collapsed" href="#faq{{$faq->id}}">{{$faq->question}} <i class="icofont-simple-up"></i></a>
+                <div id="faq{{$faq->id}}" class="collapse" data-parent=".faq-list">
                     <p>
                        {{$faq->answer}}.
                     </p>
@@ -203,12 +208,12 @@
                                 @php $employeeImg = asset('/uploads/employees').'/'.$data->photo; @endphp
                                 @endif
                                 <img src="{{$employeeImg}}" class="myimg" alt="">
-                                <div class="social">
+                                <!-- <div class="social">
                                     <a href="javascript:void(0);"><i class="icofont-twitter"></i></a>
                                     <a href="javascript:void(0);"><i class="icofont-facebook"></i></a>
                                     <a href="javascript:void(0);"><i class="icofont-instagram"></i></a>
                                     <a href="javascript:void(0);"><i class="icofont-linkedin"></i></a>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="member-info">
                                 <h4>{{$data->name}}</h4>
@@ -223,20 +228,7 @@
 
     </div>
 </section>
-
-
 <!-- End Employee Section -->
 
-<section class="card-slider">
-    <div class="container">
-        <div class="main-cards-sliding">
-            <div class="item">
-                <div class="img-set">
-                    <img src="/assets/front/img/imgs-1.jpg" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 @endsection

@@ -33,7 +33,7 @@
                             <th scope="col" width="10%">Name</th>
                             <th scope="col" width="10%">Project Done</th>
                             <th scope="col" width="10%">Technology</th>
-                            <th scope="col" width="10%">Description</th>
+                            <!-- <th scope="col" width="10%">Description</th> -->
                             <th scope="col" width="10%">Status</th>
                             <th scope="col" width="10%">Action</th>
 
@@ -46,7 +46,7 @@
                             <td>{{ $data->name }}</td>
                             <td>{{ (!empty($data->projects) && $data->projects->title != '') ? $data->projects->title : 'N/A'}}</td>
                             <td>{{ (!empty($data->techstack) && $data->techstack->technology != '') ? $data->techstack->technology : 'N/A'}}</td>
-                            <td>{{ strlen(strip_tags($data->description) < 100 ) ? substr(strip_tags($data->description), 0, 100).' ...' : strip_tags($data->description) }}
+                            <!-- <td>{{ strlen(strip_tags($data->description) < 100 ) ? substr(strip_tags($data->description), 0, 100).' ...' : strip_tags($data->description) }} -->
                             </td>
                             @if($data->status == "1")
                             <td class="project-state">

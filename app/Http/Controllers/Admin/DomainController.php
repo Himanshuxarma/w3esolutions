@@ -42,7 +42,7 @@ class DomainController extends Controller
 		$domains = new Domain;
 		$domains->name = $request->name;
 		$domains->project_done = $request->project_done;
-		$domains->technology = $request->technology;
+		$domains['technology'] = json_encode($request->technology);
 		$domains->description = $request->description;
 		$domains->status = $request->status ? $request->status : 0;
 		$domains->save();
@@ -71,6 +71,7 @@ class DomainController extends Controller
 		$domains = Domain::find($id);
 		$projects = Project::all();
 		$techstack = Techstack::all();
+		dd($projects);
 		return view('admin.domains.edit', compact('domains','projects','techstack'));
 	}
 

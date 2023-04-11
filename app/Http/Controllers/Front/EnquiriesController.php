@@ -38,7 +38,6 @@ class EnquiriesController extends Controller{
 	*	Function to render Enquiry  Store and it's content Enquiry dynamically
 	*/
 	public function sendEmail(Request $request){
-        // dd($request);
 			$request->validate([
 			'full_name' => 'required',
 			'email' => 'required',
