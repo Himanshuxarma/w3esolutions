@@ -17,28 +17,24 @@
                             <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>UserName</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Date Of Birth</th>
+                                    <th>Phone</th>
+                                    <th>User Image</th>
                                     <th>Email</th>
-                                    <th>Email Verified At</th>
-                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($users as $data)
                                 <tr>
                                     <td>{{$data->id}}</td>
-                                    <td>{{$data->name}}</td>
+                                    <td>{{$data->first_name}}</td>
+                                    <td>{{$data->last_name}}</td>
+                                    <td>{{$data->dob}}</td>
+                                    <td>{{$data->phone}}</td>
+                                    <td>{{$data->user_image}}</td>
                                     <td>{{$data->email}}</td>
-                                    <td>{{$data->email_verified_at}}</td>
-                                    <td>
-                                        <div class="input-group-prepend">
-                                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> Action</button>
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="javascript:voild(0);">Edit</a>
-                                                <a class="dropdown-item" href="{{ route('userDelete',$data->id) }}">Delete</a>
-                                            </div>
-                                        </div>
-                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>

@@ -5,6 +5,8 @@ use App\Http\Middleware\Authenticate;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Career;
+use Mail;
+use App\Mail\CareerMail;
 
 class CareerController extends Controller
 {
@@ -65,11 +67,10 @@ class CareerController extends Controller
 		*/
 
  
-    public function edit($id){
-		$careers = Career::find($id);
-		return view('admin.careers.edit', compact('careers'));
+    public function reply($id){
+		$careersreply = Career::find($id);
+		return view('admin.careers.reply', compact('careersreply'));
 	}
-
 		/**
 		* Update the specified resource in storage.
 		*
@@ -78,56 +79,17 @@ class CareerController extends Controller
 		* @return \Illuminate\Http\Response
 		*/
 
-    public function update($id, Request $request){
+    public function careers_reply($id, Request $request){
 		$request->validate([
-		'name' => 'required',
-		'email' => 'required',
-		'phone' => 'required',
-		'profile_image' =>'required|image|mimes:jpeg,png,jpg|max:2048',
-		'experience' => 'required',
-		'resume' =>'required|image|mimes:jpeg,png,jpg|max:2048',
-		'contact_form' => 'required',
-		'description' => 'required'
+			'reply' => 'required'
 			]);
-			$careers = Career::find($id);
-			if ($request->profile_image != '') {
-				$path = public_path() . '/uploads/careers/';
-				//code for remove old file
-				if ($careers->profile_image != '' && $careers->profile_image != null) {
-				$file_old = $path . $careers->profile_image;
-				if (file_exists($file_old)) {
-				unlink($file_old);
-				}}
-				
-			if(!empty($request->profile_image)){
-				$fileName1 = time().'_profile_image.'.$request->profile_image->getClientOriginalExtension();
-				$request->profile_image->move(public_path('uploads/careers'), $fileName1);
-				$careers->profile_image = $fileName1;
-			}}
-			if ($request->resume != '') {
-				$path = public_path() . '/uploads/careers/';
-				//code for remove old file
-				if ($careers->resume != '' && $careers->resume != null) {
-				$file_old = $path . $careers->resume;
-				if (file_exists($file_old)) {
-				unlink($file_old);
-				}}
-			if(!empty($request->resume)){
-				$fileName2 = time().'_resume.'.$request->resume->getClientOriginalExtension();
-				$request->resume->move(public_path('uploads/careers'), $fileName2);
-				$careers->resume = $fileName2;
-			}}
-			$careers->name = $request->name;
-			$careers->email = $request->email;
-			$careers->phone = $request->phone;
-			$careers->experience = $request->experience;
-			$careers->contact_form = $request->contact_form;
-			$careers->description = $request->description;
-			$careers->status = $request->status ? $request->status : 0;
-			$careers->save();
-		return redirect()->route('careersList')->with('success', 'Careers Has Been updated successfully');
+			$careers = Career::find($id);			
+			$careers->reply = $request->reply;
+			if($careers->save()){
+				Mail::to('admin@w3esolutions.com')->send(new CareerMail($careers));
+				}
+			return redirect()->route('careersList')->with('success', 'Careers Reply Has Been updated successfully');
 	}
-
 		/**
 		* Remove the specified resource from storage.
 		*

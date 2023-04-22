@@ -4,7 +4,7 @@
 @section('content')
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>Admin</b>LTE</a>
+    <a href="../../index2.html"><b>W3e</b>SOLUTIONS</a>
   </div>
   <div class="card">
     <div class="card-body login-card-body">
@@ -41,12 +41,10 @@
 
       <div class="social-auth-links text-center mb-3">
         <p>- OR -</p>
-        <a href="javascript:void(0);" class="btn btn-block btn-primary">
-          <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
+        <a href="{{ route('forget.password.get') }}" class="btn btn-block btn-primary">
+         Forgot Password
         </a>
-        <a href="javascriptscript(0);" class="btn btn-block btn-danger">
-          <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
-        </a>
+       
       </div>
      </div>
   </div>

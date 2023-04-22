@@ -35,6 +35,7 @@ class LoginController extends Controller
      */
     public function login()
     {
+        // dd('singh');
        
         return view('admin.auth.login',[
             'title' => 'Admin Login  - ' . config('app.name'),
@@ -53,10 +54,12 @@ class LoginController extends Controller
      */
     public function postLogin(Request $request)
     {
+        
        
-        //dd($request);
+        // dd($request);
         //$2y$10$OVDH5E8eUoSe5VUhQSLkenM.NKhSM778NhFosZhCDhij8O9deV8e
         $this->validator($request);
+        
         if(Auth::guard('admin')->attempt($request->only('email','password'),$request->filled('remember'))){
             //Authentication passed...
             

@@ -61,6 +61,7 @@
                                 <div class="input-group-prepend">
                                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Action</button>
                                     <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="{{ route('careersReply',$data->id) }}">Reply</a>
                                         <a class="dropdown-item" href="{{ route('careersDelete',$data->id) }}">Delete</a>
                                     </div>
                                 </div>

@@ -50,7 +50,7 @@
                                 <div class="input-group-prepend">
                                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Action</button>
                                     <div class="dropdown-menu">
-                                        <!-- <a class="dropdown-item" href="javascript:voild(0);">Edit</a> -->
+                                        <a class="dropdown-item" href="{{route('enquiriesReply',$contact->id)}}">Reply</a>
                                         <a class="dropdown-item" href="{{route('enquiriesDelete',$contact->id)}}">Delete</a>
                                     </div>
                                 </div>

@@ -21,6 +21,8 @@ use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\ServiceDetailController;
 use App\Http\Controllers\Front\ProjectDetailController;
 use App\Http\Controllers\Front\ReviewsController;
+use App\Http\Controllers\Admin\Auth\ForgotPasswordController;
+use App\Http\Controllers\Admin\Auth\ChangePasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,13 +51,27 @@ use App\Http\Controllers\Front\ReviewsController;
              Route::group(["middleware" => ["guest:admin"]], function () {
                 Route::get("login", [App\Http\Controllers\Admin\Auth\LoginController::class, 'login',])->name('login');
                 Route::post("login", [App\Http\Controllers\Admin\Auth\LoginController::class, 'postLogin',]);
+                //forgot password
+                Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
+                Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
+                Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
+                Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
+
+                
         });
+        
         Route::get("logout", [App\Http\Controllers\Admin\Auth\LoginController::class, "logout",])->name("adminLogout");
+        
+        
     });
 
     Route::group(['middleware' => ["auth:admin"]], function () {
         Route::get('/', [DashboardController::class, 'index'])->name('adminHome');
         Route::get("/dashboard", [DashboardController::class, 'index'])->name('adminDashboard');
+        //change password
+        Route::get('change-password', [ChangePasswordController::class, 'index'])->name('changePassword');
+        Route::post('change-password', [ChangePasswordController::class, 'store'])->name('change.password ');
+        
         //users
         Route::get("/users", [UsersController::class, 'index'])->name("userList");
         Route::get('users/create', [UsersController::class, 'create'])->name('userCreate');
@@ -63,6 +79,8 @@ use App\Http\Controllers\Front\ReviewsController;
         Route::get('users/edit/{id}', [UsersController::class, 'edit'])->name('userEdit');
         Route::put('users/update/{id}', [UsersController::class, 'update'])->name('userUpdate');
         Route::get('users/delete/{id}', [UsersController::class, 'destroy'])->name('userDelete');
+        Route::get('users/profile', [UsersController::class, 'profile'])->name('userProfile');
+        Route::post('users/profile_update/{id}', [UsersController::class, 'profile_update'])->name('user.profile.Update');
 
         
         //projects
@@ -115,6 +133,8 @@ use App\Http\Controllers\Front\ReviewsController;
 		
 		 //Contact Enquiries
         Route::get("/enquiries", [App\Http\Controllers\Admin\EnquiriesController::class, 'index'])->name("enquiriesList");
+        Route::get('enquiries/reply/{id}', [EnquiriesController::class, 'reply'])->name('enquiriesReply');
+        Route::post('enquiries/enquiries_reply/{id}', [EnquiriesController::class, 'enquiries_reply'])->name('replyUpdate');
         Route::get('enquiries/delete/{id}', [EnquiriesController::class, 'destroy'])->name('enquiriesDelete');
 	
 		//Banners
@@ -174,6 +194,8 @@ use App\Http\Controllers\Front\ReviewsController;
         
         //careers
         Route::get("/careers", [CareerController::class, 'index'])->name("careersList");
+        Route::get('careers/reply/{id}', [CareerController::class, 'reply'])->name('careersReply');
+        Route::post('careers/careers_reply/{id}', [CareerController::class, 'careers_reply'])->name('careers.reply.Update');
         Route::get('careers/delete/{id}', [CareerController::class, 'careers'])->name('careersDelete');
        
           

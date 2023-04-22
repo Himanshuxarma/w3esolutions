@@ -6,6 +6,7 @@ use App\Models\Project;
 use App\Models\Banner;
 use App\Models\Enquiry;
 use App\Models\Career;
+use App\Models\User;
 use Route;
 use Illuminate\Http\Request;
 
@@ -26,6 +27,10 @@ class Helper {
     public static function getCareer(){
         $careers= Career::count();
         return $careers;
+    }
+    public static function getUser(){
+        $users= User::find(1);
+        return $users;
     }
 
 
