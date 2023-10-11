@@ -32,9 +32,7 @@ class BannersController extends Controller{
     public function store(Request $request){
 		$request->validate([
 		'banner_title' => 'required',
-		'page_name' => 'required',
-		'banner_image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
-		'status' => 'required'
+		'page_name' => 'required'
 		]);
 		$banners = new Banner;
 		$banners->banner_title = $request->banner_title;

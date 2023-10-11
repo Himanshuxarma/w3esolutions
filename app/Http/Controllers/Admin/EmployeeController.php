@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 class EmployeeController extends Controller
 {
     public function index(){	
-		$data['employees'] = Employee::orderBy('id', 'ASC')->paginate(10);
+		$data['employees'] = Employee::orderBy('id', 'ASC')->get();
 		return view('admin.employees.index', $data);
 	}
 

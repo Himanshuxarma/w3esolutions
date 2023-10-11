@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\EmployeeController;
 use App\Http\Controllers\Admin\DomainController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\CareerController;
+use App\Http\Controllers\Admin\ServicesController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\ServiceDetailController;
 use App\Http\Controllers\Front\ProjectDetailController;

@@ -12,15 +12,16 @@
             ?>
             @foreach($banners as $slider)
             <div class="carousel-item @if($i==1) active @endif">
-                @php $sliderImg = '/assets/front/img/default_product.png'; @endphp
-                @if(file_exists(public_path('/uploads/banners/').$slider->banner_image))
-                @php $sliderImg = asset('/uploads/banners').'/'.$slider->banner_image; @endphp
+                @if(!empty($slider->banner_image))
+                    @php $sliderImg = asset('/uploads/banners').'/'.$slider->banner_image; @endphp
+                @else
+                     @php $sliderImg = '/assets/front/img/team/default.jpg'; @endphp
                 @endif
                 <img class="slide-img" src="{{$sliderImg}}" class="d-block w-100" alt="Slide">
                 <div class="carousel-caption">
                     <h3>Welcome to <strong>W3esolutions</strong></h3>
                     <h1>We're Creative Agency</h1>
-                    <h2>{{$slider->banner_title}}</h2>
+                    <h2>{{!empty($slider) && !empty($slider->banner_image) ? $slider->banner_title : ''}}</h2>
                     <a href="#about" class="btn-get-started scrollto">Get Started</a>
                 </div>
             </div>

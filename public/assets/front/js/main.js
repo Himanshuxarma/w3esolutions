@@ -176,8 +176,50 @@
       margin:10,
       autoplay:true,
       nav: true,
-      autoplayHoverPause:true
+      autoplayHoverPause:true,
+      responsiveClass:true,
+      responsive:{
+          0:{
+              items:1,
+              nav:true
+          },
+          600:{
+              items:3,
+              nav:false
+          },
+          1000:{
+              items:4,
+              nav:true,
+              loop:false
+          }
+      }
   });
+
+  jQuery('.service-slider').owlCarousel({
+    items:4,
+    loop:true,
+    margin:10,
+    autoplay:true,
+    nav: true,
+    autoplayHoverPause:true,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:true
+        },
+        600:{
+            items:3,
+            nav:false
+        },
+        1000:{
+            items:4,
+            nav:true,
+            loop:false
+        }
+    }
+});
+
 
   jQuery('.review-slider').owlCarousel({
       items:2,
