@@ -9,7 +9,7 @@
 @if(!empty($services) && count($services) > 0)
 <section id="services" class="services">
     <div class="container">
-        <div class="section-title ">
+        <div class="section-title">
             <h2>Services</h2>
             <h3>We do offer awesome <span>Services</span></h3>
             <p> Ut possimus qui ut W3esolutions culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
